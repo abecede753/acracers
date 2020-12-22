@@ -1,0 +1,178 @@
+import configparser
+import datetime
+import json
+import os
+import shutil
+import tarfile
+import tempfile
+
+from django.conf import settings
+from django.db import models
+
+from races import defaults as _D
+
+
+def set_start_timestamp(delay_minutes=2):
+    return datetime.datetime.now() + datetime.timedelta(delay_minutes)
+
+
+class RaceSetup(models.Model):
+    title = models.CharField(max_length=32, unique=True)
+    description = models.TextField(default="no description")
+    tgz = models.FileField(upload_to='tgz/', null=True, blank=True)
+    image = models.ImageField(null=True, upload_to='images/')
+    car = models.ForeignKey('cars.Car', null=True, blank=True,
+                            on_delete=models.SET_NULL)
+    track = models.ForeignKey('tracks.Track', null=True, blank=True,
+                              on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.title
+
+    def unpack_for_acserver(self):
+        tar = tarfile.open(self.tgz.file.name)
+        shutil.rmtree(settings.ACSERVERROOT)
+        shutil.copytree(settings.ACSERVERWRAPPERROOT, settings.ACSERVERROOT,
+                        symlinks=True, dirs_exist_ok=False)
+        shutil.copy(settings.ACSERVEREXE, settings.ACSERVERROOT)
+        tar.extractall(path=settings.ACSERVERROOT)
+        os.mkdir(os.path.join(settings.ACSERVERROOT, 'results'))
+
+    def set_cm_text(self, directory):
+        """based on "directory" makes a nice description
+        including image tag for CM"""
+        with open(os.path.join(directory, 'cfg',
+                               'cm_wrapper_params.json')) as jsonfile:
+            content = json.load(jsonfile)
+        with open(os.path.join(directory, 'cfg',
+                               'cm_wrapper_params.json'), 'w') as jsonfile:
+            content = json.dump(content, jsonfile)
+
+    def get_car_track_urls(self, directory):
+        """XXX: only works for ONE car model. not multiple car models."""
+        with open(os.path.join(directory, 'cfg', 'cm_content',
+                               'content.json')) as jsonfile:
+            content = json.load(jsonfile)
+
+        result = {'car': None, 'track': None}
+        try:
+            carname = list(content['cars'].keys())[0]
+            result['car'] = content['cars'][carname]['url']
+        except Exception:
+            pass
+        try:
+            result['track'] = content['track']['url']
+        except Exception:
+            pass
+        return result
+
+    def fix_cm_wrapper_params(self, directory):
+        """ensures the we have the correct wrapper port,
+        description etc."""
+        with open(os.path.join(directory, 'cfg',
+                               'cm_wrapper_params.json')) as jsonfile:
+            content = json.load(jsonfile)
+        content['port'] = _D.ACSERVERWRAPPERPORT
+        content['downloadPasswordOnly'] = False
+        urls = self.get_car_track_urls(directory)
+
+        downloadtext = '\n'
+        if urls.get('car'):
+            downloadtext += 'Car download: {0}\n'.format(urls['car'])
+            downloadtext += 'Track download: {0}\n'.format(urls['track'])
+        content['description'] = _D.BASE_DESCRIPTION.format(
+            image=self.image.url,
+            description=self.description,
+            downloadtext=downloadtext
+        )
+        with open(os.path.join(directory, 'cfg',
+                               'cm_wrapper_params.json'), 'w') as jsonfile:
+            content = json.dump(content, jsonfile)
+
+    def fix_server_cfg(self, directory):
+        """ensures the we have the correct admin password,
+        wrapper port etc."""
+        config = configparser.ConfigParser()
+        config.optionxform = lambda option: option
+        filename = os.path.join(directory, 'cfg', 'server_cfg.ini')
+        config.read(filename)
+        config["SERVER"]["NAME"] = _D.RACENAME
+        config["SERVER"]["ADMIN_PASSWORD"] = _D.ADMIN_PASSWORD
+
+        with open(filename, 'w') as configfile:
+            config.write(configfile, space_around_delimiters=False)
+
+    def fix_entry_list(self, directory):
+        """ensures the we have fixed setups (if there's a setup file here)"""
+        cfgdir = os.path.join(directory, 'cfg')
+        fnames = os.listdir(cfgdir)
+        for ignore in ("cm_wrapper_params.json cm_content entry_list.ini"
+                       " server_cfg.ini").split():
+            try:
+                fnames.remove(ignore)
+            except ValueError:
+                pass
+        if len(fnames) != 1:  # there isn't exactly one file left
+            return
+
+        fixedsetupfilename = fnames[0]
+
+        config = configparser.ConfigParser()
+        config.optionxform = lambda option: option
+        filename = os.path.join(cfgdir, 'entry_list.ini')
+        config.read(filename)
+        for carname in config:
+            if carname.startswith("CAR_"):
+                config[carname]['FIXED_SETUP'] = fixedsetupfilename
+        with open(filename, 'w') as configfile:
+            config.write(configfile, space_around_delimiters=False)
+
+        # make "setups" directory for the fixed setup file
+        # and put the fixedsetupfile into it.
+        os.makedirs(os.path.join(directory, "setups"), exist_ok=True)
+        os.rename(os.path.join(directory, 'cfg', fixedsetupfilename),
+                  os.path.join(directory, 'setups', fixedsetupfilename))
+
+    def _cleanup(self):
+        """make sure that our settings like adminpassword, description,
+        port etc. are okay"""
+        with tempfile.TemporaryDirectory() as tmpdirname:
+            with tarfile.open(self.tgz.file.name) as tar:
+                tar.extractall(path=tmpdirname)
+
+            self.fix_cm_wrapper_params(tmpdirname)
+            self.fix_server_cfg(tmpdirname)
+            self.fix_entry_list(tmpdirname)
+
+            os.unlink(self.tgz.file.name)
+            with tarfile.open(name=self.tgz.file.name, mode='x:gz') as tar:
+                for name in os.listdir(tmpdirname):
+                    tar.add(os.path.join(tmpdirname, name), arcname=name)
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        self._cleanup()
+
+
+class Race(models.Model):
+    start_ts = models.DateTimeField(default=set_start_timestamp)
+    racesetup = models.ForeignKey(RaceSetup,
+                                  on_delete=models.CASCADE)
+    stdout = models.TextField(default='')
+    stderr = models.TextField(default='')
+
+    end_ts = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return self.racesetup.title
+
+
+class Poll(models.Model):
+    racesetups = models.ManyToManyField(RaceSetup, through='Voting')
+    js = models.TextField(default='', null=True, blank=True)
+
+
+class Voting(models.Model):
+    racesetup = models.ForeignKey(RaceSetup, on_delete=models.CASCADE)
+    poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
+    points = models.IntegerField(default=0)

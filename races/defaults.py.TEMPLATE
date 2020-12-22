@@ -1,0 +1,8 @@
+BASE_DESCRIPTION = """[img=https://ac.abe-cede.com/acracers{image}][/img]
+{description}
+{downloadtext}"""
+ACSERVERWRAPPERPORT = 8991
+ADMIN_PASSWORD = 'this_is_very_s3cr3t'
+RACENAME = 'ACRacers.com D/L included, fixed setupsℹ{0}'.format(
+    ACSERVERWRAPPERPORT)
+

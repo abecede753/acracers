@@ -1,0 +1,45 @@
+DB database models
+==================
+
+race
+   id
+   title
+   racesetup
+   start_timestamp
+   stop_timestamp
+   stdout
+   stderr
+
+   constraint: only ONE record can have "start_ts+ and stop_ts-"
+
+poll
+  racesetups(many2many with votecount)
+
+
+RS Race Server
+==============
+
+always up. 
+
+* STARTUP: cancel any "open" races
+* cancel any polls
+* create a poll
+* repeat {
+  * start 1-minute "no-race" with good description for ContentManager
+  * after no-race:
+    * close poll
+    * create new poll
+    * set start_timestamp for winning race
+    * start winning race
+    * after race write stdout/stderr
+    * set stop_timestamp
+* }
+
+DS django server
+================
+
+user interface
+
+* show current race "join" (if one is there)
+* show poll, let users vote
+
