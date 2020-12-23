@@ -122,9 +122,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/srv/acracers/djapp/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 ACSERVERROOT = '/srv/acracers/server1'
 ACSERVERWRAPPERROOT = '/srv/acracers/acserverwrapper'
 
 ACSERVEREXE = '/srv/acracers/kunos/acServer'
+ACWRAPPEREXE = '/srv/acracers/server1/ac-server-wrapper.js'

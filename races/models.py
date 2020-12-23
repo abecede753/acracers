@@ -78,9 +78,10 @@ class RaceSetup(models.Model):
 
         downloadtext = '\n'
         if urls.get('car'):
-            downloadtext += 'Car download: {0}\n'.format(urls['car'])
-            downloadtext += 'Track download: {0}\n'.format(urls['track'])
+            downloadtext += '[url={0}]download car[/url]  '.format(urls['car'])
+            downloadtext += '[url={0}]download track[/url]\n'.format(urls['track'])
         content['description'] = _D.BASE_DESCRIPTION.format(
+            title=self.title,
             image=self.image.url,
             description=self.description,
             downloadtext=downloadtext
