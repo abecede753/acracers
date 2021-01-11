@@ -4,6 +4,7 @@ races/defaults.py
 media/*
 static/*
 XXX/*
+main/settings.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

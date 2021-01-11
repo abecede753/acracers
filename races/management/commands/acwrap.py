@@ -1,17 +1,16 @@
 from datetime import datetime
-from http.server import HTTPServer, SimpleHTTPRequestHandler
 import logging
 import pathlib
 import random
 import subprocess
 import sys
-import threading
 import time
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
 
-from races.models import RaceSetup, Race
+from races.models import (RaceSetup, Race, RaceQueue,
+                          cleanup_RaceQueue_indices)
 
 
 logger = logging.getLogger(__name__)
@@ -52,12 +51,19 @@ class Command(BaseCommand):
         sys.stdout.flush()
 
     def setup_race(self):
-        Race.objects.all().update(end_ts=datetime.now())
-        valid_setups = RaceSetup.objects.exclude(
-            tgz__isnull=True).exclude(tgz='').exclude(id__lt=13)
-        setups_count = valid_setups.count()
-        race_num = random.randint(1, setups_count) - 1
-        racesetup = valid_setups.order_by('id')[race_num]
+        queue_length = RaceQueue.objects.all().count()
+        if queue_length:
+            rq = RaceQueue.objects.all().order_by('index')[0]
+            print("fetching from queue...", rq)
+            racesetup = rq.setup
+            rq.delete()
+            cleanup_RaceQueue_indices()
+        else:
+            valid_setups = RaceSetup.objects.exclude(
+                tgz__isnull=True).exclude(tgz='')
+            setups_count = valid_setups.count()
+            race_num = random.randint(1, setups_count) - 1
+            racesetup = valid_setups.order_by('id')[race_num]
         self.race = Race(racesetup=racesetup)
         self.race.save()
         self.race.racesetup.unpack_for_acserver()

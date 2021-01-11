@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '+p4r)11%pi3w=r!i-hfes_%h!i3^!nch@z$loln@q%*2m3q+kk'
+SECRET_KEY = 'HERE IS MY SECRET STRING'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -130,3 +130,5 @@ ACSERVERWRAPPERROOT = '/srv/acracers/acserverwrapper'
 
 ACSERVEREXE = '/srv/acracers/kunos/acServer'
 ACWRAPPEREXE = '/srv/acracers/server1/ac-server-wrapper.js'
+
+DISCORDTOKEN = 'DISCORD TOKEN XXX'

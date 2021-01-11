@@ -16,6 +16,22 @@ def set_start_timestamp(delay_minutes=2):
     return datetime.datetime.now() + datetime.timedelta(delay_minutes)
 
 
+class RaceQueue(models.Model):
+    setup = models.ForeignKey('races.RaceSetup', on_delete=models.CASCADE)
+    index = models.IntegerField()
+
+    def __str__(self):
+        return str(self.setup)
+
+
+def cleanup_RaceQueue_indices():
+    current_index = 1
+    for rq in RaceQueue.objects.all().order_by('index'):
+        rq.index = current_index
+        rq.save()
+        current_index += 1
+
+
 class RaceSetup(models.Model):
     title = models.CharField(max_length=32, unique=True)
     description = models.TextField(default="no description")
@@ -99,6 +115,8 @@ class RaceSetup(models.Model):
         config.read(filename)
         config["SERVER"]["NAME"] = _D.RACENAME
         config["SERVER"]["ADMIN_PASSWORD"] = _D.ADMIN_PASSWORD
+        config["SERVER"]["LOOP_MODE"] = "0"
+        config["SERVER"]["WELCOME_MESSAGE"] = "welcome.txt"
 
         with open(filename, 'w') as configfile:
             config.write(configfile, space_around_delimiters=False)
