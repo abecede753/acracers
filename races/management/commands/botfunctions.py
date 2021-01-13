@@ -64,7 +64,8 @@ async def queue(ctx):
             await ctx.send(embed=embed)
     else:
         embed = discord.Embed(color=0x00ff00)
-        embed.title = 'The queue is empty. Therefore a random race setup will be used next.'
+        embed.title = 'The queue is empty. ' + \
+            'Therefore a random race setup will be used next.'
         await ctx.send(embed=embed)
 
 
@@ -113,7 +114,8 @@ async def clear(ctx):
     """Clear the race queue."""
     RaceQueue.objects.all().delete()
     embed = discord.Embed(color=0x00ff00)
-    embed.title = "The queue has been emptied. A random race setup will be used next."
+    embed.title = "The queue has been emptied. " + \
+        "A random race setup will be used next."
     await ctx.send(embed=embed)
     return
 
@@ -141,3 +143,21 @@ def error(description):
     embed.description = description
     return embed
 
+
+# @bot.command()
+# async def dbg(ctx, x: str):
+#     """Clear the race queue."""
+#     embed = discord.Embed(color=0x00ff00)
+#     embed.title = "In debug mode..."
+#     await ctx.send(embed=embed)
+#     """
+# ctx.message.channel.name
+# 'now-playing'
+# 
+# [x.name for x in ctx.author.roles]
+# ['@everyone', 'Member', 'Early Bird']
+# 
+#     """
+#     embed = discord.Embed(color=0x00ff00)
+#     embed.title = "Continuing."
+#     await ctx.send(embed=embed)
