@@ -1,3 +1,5 @@
+import subprocess
+
 import discord
 from discord.ext import commands
 
@@ -13,25 +15,21 @@ bot = commands.Bot(command_prefix='', description=description,
                    intents=intents)
 
 
-# @bot.event
-# async def on_ready():
-#     print('Logged in as {0}'.format(bot.user.name))
-
-
 @bot.command()
 async def list(ctx):
     """Show a list of all race-setups."""
-    MAX_LEN = 32
+    MAX_LEN = 40
     embed = discord.Embed()
     embed.title = "These are all race setups for now."
-    description = "`  ID` `Name                            `\n"
+    description = ("`  ID` `{0:" + str(MAX_LEN) + "}`\n").format('Title')
     rslist = []
     for rs in RaceSetup.objects.all().order_by('title'):
         if len(rs.title) > MAX_LEN:
             title = rs.title[:MAX_LEN] + '…'
         else:
             title = rs.title
-        rslist.append('`{id:4d}` `{title:32}`'.format(id=rs.id, title=title))
+        rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) + '}`').format(
+            id=rs.id, title=title))
     description += '\n'.join(rslist)
     embed.description = description
     embed.set_footer(text='Add a race setup to the queue with '
@@ -121,6 +119,16 @@ async def clear(ctx):
 
 
 @bot.command()
+async def next(ctx):
+    """Abort current race and start the next one."""
+    subprocess.run("sudo /usr/bin/systemctl restart acserver.service".split())
+    embed = discord.Embed(color=0x00ff00)
+    embed.title = "The current race has been aborted and the next one started."
+    await ctx.send(embed=embed)
+    return
+
+
+@bot.command()
 async def info(ctx, id: int):
     """Get more information about a race setup. use 'info ID', where ID is the
     number you get when you 'list' all race setups."""
@@ -144,20 +152,21 @@ def error(description):
     return embed
 
 
-# @bot.command()
-# async def dbg(ctx, x: str):
-#     """Clear the race queue."""
-#     embed = discord.Embed(color=0x00ff00)
-#     embed.title = "In debug mode..."
-#     await ctx.send(embed=embed)
-#     """
-# ctx.message.channel.name
-# 'now-playing'
-# 
-# [x.name for x in ctx.author.roles]
-# ['@everyone', 'Member', 'Early Bird']
-# 
-#     """
-#     embed = discord.Embed(color=0x00ff00)
-#     embed.title = "Continuing."
-#     await ctx.send(embed=embed)
+# STUFF FOR NEXT IMPLEMENTATIONS (roles and such)
+@bot.command()
+async def dbg(ctx, x: str):
+    """Clear the race queue."""
+    embed = discord.Embed(color=0x00ff00)
+    embed.title = "In debug mode..."
+    await ctx.send(embed=embed)
+    """
+ctx.message.channel.name
+'now-playing'
+
+[x.name for x in ctx.author.roles]
+['@everyone', 'Member', 'Early Bird']
+
+    """
+    embed = discord.Embed(color=0x00ff00)
+    embed.title = "Continuing."
+    await ctx.send(embed=embed)

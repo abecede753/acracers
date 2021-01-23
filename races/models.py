@@ -37,10 +37,8 @@ class RaceSetup(models.Model):
     description = models.TextField(default="no description")
     tgz = models.FileField(upload_to='tgz/', null=True, blank=True)
     image = models.ImageField(null=True, upload_to='images/')
-    car = models.ForeignKey('cars.Car', null=True, blank=True,
-                            on_delete=models.SET_NULL)
-    track = models.ForeignKey('tracks.Track', null=True, blank=True,
-                              on_delete=models.SET_NULL)
+    car_download_url = models.URLField(blank=True, default='')
+    track_download_url = models.URLField(blank=True, default='')
 
     def __str__(self):
         return self.title
@@ -84,7 +82,9 @@ class RaceSetup(models.Model):
 
     def fix_cm_wrapper_params(self, directory):
         """ensures the we have the correct wrapper port,
-        description etc."""
+        description etc.
+        returns `True` if model has changed."""
+        dirty = False
         with open(os.path.join(directory, 'cfg',
                                'cm_wrapper_params.json')) as jsonfile:
             content = json.load(jsonfile)
@@ -95,7 +95,16 @@ class RaceSetup(models.Model):
         downloadtext = '\n'
         if urls.get('car'):
             downloadtext += '[url={0}]download car[/url]  '.format(urls['car'])
-            downloadtext += '[url={0}]download track[/url]\n'.format(urls['track'])
+            if self.car_download_url != urls['car']:
+                self.car_download_url = urls['car']
+                dirty = True
+        if urls.get('track'):
+            downloadtext += '[url={0}]download track[/url]\n'.format(
+                urls['track'])
+            if self.track_download_url != urls['track']:
+                self.track_download_url = urls['track']
+                dirty = True
+
         content['description'] = _D.BASE_DESCRIPTION.format(
             title=self.title,
             image=self.image.url,
@@ -105,6 +114,7 @@ class RaceSetup(models.Model):
         with open(os.path.join(directory, 'cfg',
                                'cm_wrapper_params.json'), 'w') as jsonfile:
             content = json.dump(content, jsonfile)
+        return dirty
 
     def fix_server_cfg(self, directory):
         """ensures the we have the correct admin password,
@@ -155,11 +165,12 @@ class RaceSetup(models.Model):
     def _cleanup(self):
         """make sure that our settings like adminpassword, description,
         port etc. are okay"""
+        dirty = False
         with tempfile.TemporaryDirectory() as tmpdirname:
             with tarfile.open(self.tgz.file.name) as tar:
                 tar.extractall(path=tmpdirname)
 
-            self.fix_cm_wrapper_params(tmpdirname)
+            dirty = dirty or self.fix_cm_wrapper_params(tmpdirname)
             self.fix_server_cfg(tmpdirname)
             self.fix_entry_list(tmpdirname)
 
@@ -167,10 +178,12 @@ class RaceSetup(models.Model):
             with tarfile.open(name=self.tgz.file.name, mode='x:gz') as tar:
                 for name in os.listdir(tmpdirname):
                     tar.add(os.path.join(tmpdirname, name), arcname=name)
+        return dirty
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        self._cleanup()
+        if self._cleanup():
+            super().save(*args, **kwargs)  # model has changed. must save again
 
 
 class Race(models.Model):
