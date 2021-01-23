@@ -25,7 +25,7 @@ async def list(ctx):
     rslist = []
     for rs in RaceSetup.objects.all().order_by('title'):
         if len(rs.title) > MAX_LEN:
-            title = rs.title[:MAX_LEN] + '…'
+            title = rs.title[:MAX_LEN - 1] + '…'
         else:
             title = rs.title
         rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) + '}`').format(
@@ -33,7 +33,8 @@ async def list(ctx):
     description += '\n'.join(rslist)
     embed.description = description
     embed.set_footer(text='Add a race setup to the queue with '
-                     '`append ID` or `insert ID`.')
+                     '`append ID` or `insert ID`.\n'
+                     'For more information about a race setup use `info ID`.')
     await ctx.send(embed=embed)
 
 
@@ -50,16 +51,33 @@ def _list_queue(objects=False):
 @bot.command()
 async def queue(ctx):
     """Show the current race queue."""
+    MAX_LEN = 35
     result = _list_queue(objects=True)
+    embed = discord.Embed()
+    embed.title = '**Upcoming race-setups:**'
     if result:
-        embed = discord.Embed(color=0x00ff00)
-        embed.title = '**Upcoming race-setups:**'
-        await ctx.send(embed=embed)
+        rslist = []
+        description = ("`{0:" + str(MAX_LEN) + "}`").format('Title') + \
+            " `Downloads`\n"
         for rq in result:
-            embed = discord.Embed()
-            # embed.title = str(rq)
-            embed.set_image(url='https://acracers.com' + rq.setup.image.url)
-            await ctx.send(embed=embed)
+            rs = rq.setup
+            if len(rs.title) > MAX_LEN:
+                title = rs.title[:MAX_LEN - 1] + '…'
+            else:
+                title = rs.title
+            line = ('`{title:' + str(MAX_LEN) + '}` ').format(title=title)
+            if rs.car_download_url:
+                line += '[`car`]({0}) '.format(rs.car_download_url)
+            else:
+                line += '`---` '
+            if rs.track_download_url:
+                line += '[`track`]({0})'.format(rs.track_download_url)
+            else:
+                line += '`-----`'
+            rslist.append(line)
+        description += '\n'.join(rslist)
+        embed.description = description
+        await ctx.send(embed=embed)
     else:
         embed = discord.Embed(color=0x00ff00)
         embed.title = 'The queue is empty. ' + \
