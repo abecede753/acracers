@@ -59,7 +59,8 @@ class Command(BaseCommand):
             rq.delete()
             cleanup_RaceQueue_indices()
         else:
-            valid_setups = RaceSetup.objects.exclude(
+            valid_setups = RaceSetup.objects.filter(
+                randomizable=True).exclude(
                 tgz__isnull=True).exclude(tgz='')
             setups_count = valid_setups.count()
             race_num = random.randint(1, setups_count) - 1

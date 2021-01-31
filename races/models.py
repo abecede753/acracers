@@ -39,6 +39,8 @@ class RaceSetup(models.Model):
     image = models.ImageField(null=True, upload_to='images/')
     car_download_url = models.URLField(blank=True, default='')
     track_download_url = models.URLField(blank=True, default='')
+    fixed_cars = models.BooleanField(default=False)
+    randomizable = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title
@@ -62,7 +64,7 @@ class RaceSetup(models.Model):
                                'cm_wrapper_params.json'), 'w') as jsonfile:
             content = json.dump(content, jsonfile)
 
-    def get_car_track_urls(self, directory):
+    def get_car_track_urls_from_cfg(self, directory):
         """XXX: only works for ONE car model. not multiple car models."""
         with open(os.path.join(directory, 'cfg', 'cm_content',
                                'content.json')) as jsonfile:
@@ -90,7 +92,7 @@ class RaceSetup(models.Model):
             content = json.load(jsonfile)
         content['port'] = _D.ACSERVERWRAPPERPORT
         content['downloadPasswordOnly'] = False
-        urls = self.get_car_track_urls(directory)
+        urls = self.get_car_track_urls_from_cfg(directory)
 
         downloadtext = '\n'
         if urls.get('car'):
@@ -172,7 +174,8 @@ class RaceSetup(models.Model):
 
             dirty = dirty or self.fix_cm_wrapper_params(tmpdirname)
             self.fix_server_cfg(tmpdirname)
-            self.fix_entry_list(tmpdirname)
+            if not self.fixed_cars:
+                self.fix_entry_list(tmpdirname)
 
             os.unlink(self.tgz.file.name)
             with tarfile.open(name=self.tgz.file.name, mode='x:gz') as tar:
