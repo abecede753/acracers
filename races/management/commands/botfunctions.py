@@ -51,13 +51,17 @@ def _list_queue(objects=False):
 @bot.command()
 async def queue(ctx):
     """Show the current race queue."""
-    MAX_LEN = 35
+    await ctx.send(embed=_queueembed())
+
+
+def _queueembed():
+    MAX_LEN = 32
     result = _list_queue(objects=True)
     embed = discord.Embed()
     embed.title = '**Upcoming race-setups:**'
     if result:
         rslist = []
-        description = ("`{0:" + str(MAX_LEN) + "}`").format('Title') + \
+        description = ("` ID` `{0:" + str(MAX_LEN) + "}`").format('Title') + \
             " `Downloads`\n"
         for rq in result:
             rs = rq.setup
@@ -65,7 +69,9 @@ async def queue(ctx):
                 title = rs.title[:MAX_LEN - 1] + '…'
             else:
                 title = rs.title
-            line = ('`{title:' + str(MAX_LEN) + '}` ').format(title=title)
+
+            line = ('`{pk:3}` `{title:' + str(MAX_LEN) + '}`'
+                    ).format(pk=rs.pk, title=title)
             if rs.car_download_url:
                 line += '[`car`]({0}) '.format(rs.car_download_url)
             else:
@@ -77,12 +83,13 @@ async def queue(ctx):
             rslist.append(line)
         description += '\n'.join(rslist)
         embed.description = description
-        await ctx.send(embed=embed)
+        embed.set_footer(
+            text='For more information about a race use `info ID`.')
     else:
         embed = discord.Embed(color=0x00ff00)
         embed.title = 'The queue is empty. ' + \
             'Therefore a random race setup will be used next.'
-        await ctx.send(embed=embed)
+    return embed
 
 
 @bot.command()
@@ -100,8 +107,9 @@ async def append(ctx, id: int):
         max_index = RaceQueue.objects.all().order_by('-index')[0].index
     rq = RaceQueue(setup=rs, index=max_index + 1)
     rq.save()
-    result = _list_queue()
-    await ctx.send('\n'.join(result))
+    embed = _queueembed()
+    embed.title = 'The race setup has been appended. Here is the current queue.'
+    await ctx.send(embed=embed)
 
 
 @bot.command()
@@ -121,8 +129,9 @@ async def insert(ctx, id: int):
             rq.save()
     rq = RaceQueue(setup=rs, index=new_index)
     rq.save()
-    result = _list_queue()
-    await ctx.send('\n'.join(result))
+    embed = _queueembed()
+    embed.title = 'The race setup has been inserted. Here is the current queue.'
+    await ctx.send(embed=embed)
 
 
 @bot.command()
@@ -147,6 +156,39 @@ async def next(ctx):
 
 
 @bot.command()
+async def playlist(ctx, *, ids: str):
+    """Immediately start a playlist with the tracks given by id.
+    Example: `playlist 14 15 16`"""
+    try:
+        idlist = [int(x) for x in ids.split(' ')]
+    except Exception:
+        await ctx.send(embed=error(
+            "You must use numbers separated by spaces."))
+        return
+    try:
+        objs = [RaceSetup.objects.get(pk=x) for x in idlist]
+    except Exception:
+        await ctx.send(embed=error(
+            "One or more of the ids could not be found. Aborting."))
+        return
+
+    if not objs:
+        await ctx.send(embed=error(
+            "I did not find anything to add to the playlist. Aborting."))
+        return
+
+    RaceQueue.objects.all().delete()
+    for idx, obj in enumerate(objs):
+        rq = RaceQueue(setup=obj, index=idx + 1)
+        rq.save()
+
+    embed = _queueembed()
+    embed.title = "Your playlist has started. Good luck have fun!"
+    subprocess.run("sudo /usr/bin/systemctl restart acserver.service".split())
+    await ctx.send(embed=embed)
+
+
+@bot.command()
 async def info(ctx, id: int):
     """Get more information about a race setup. use 'info ID', where ID is the
     number you get when you 'list' all race setups."""
@@ -159,7 +201,12 @@ async def info(ctx, id: int):
     embed = discord.Embed()
     embed.title = rs.title
     embed.set_image(url='https://acracers.com' + rs.image.url)
-    embed.description = rs.description
+    desc = rs.description
+    if rs.car_download_url:
+        desc += '\n\nCar download: {0}'.format(rs.car_download_url)
+    if rs.track_download_url:
+        desc += '\n\nTrack download: {0}'.format(rs.track_download_url)
+    embed.description = desc
     await ctx.send(embed=embed)
 
 
