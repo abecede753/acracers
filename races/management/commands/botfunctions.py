@@ -104,7 +104,7 @@ def _queueembed():
 
 @bot.command()
 async def append(ctx, id: int):
-    """Appends a combo to the end of the queue
+    """Appends a combo to the queue
     
     Puts the combo with the specified id (as a number which you can find out
     using the 'list' command) to the end of the queue.
@@ -130,7 +130,7 @@ async def append(ctx, id: int):
 
 @bot.command()
 async def insert(ctx, id: int):
-    """Inserts a combo at the beginning of the queue
+    """Inserts a combo into the queue
     
     Puts the combo with the specified id (as a number which you can find out
     using the 'list' command) to the start of the queue, so it will be used
