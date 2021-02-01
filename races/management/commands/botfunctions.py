@@ -224,7 +224,7 @@ async def playlist(ctx, *, ids: str):
 
 @bot.command()
 async def info(ctx, id: int):
-    """Get more information about a combo.
+    """Shows more info about a combo
     
     Use 'info ID', where ID is the number you get when you 'list' all race setups."""
     try:
