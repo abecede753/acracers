@@ -227,12 +227,16 @@ async def info(ctx, id: int):
     """Shows more info about a combo
     
     Use 'info ID', where ID is the number you get when you 'list' all race setups."""
+    await ctx.send(embed=_infoembed(id))
+
+
+def _infoembed(id):
     try:
         rs = RaceSetup.objects.get(pk=id)
     except Exception:
-        await ctx.send(embed=error(
-            "Sorry, I could not find a combo with that ID."))
-        return
+        embed = error(
+            "Sorry, I could not find a combo with that ID.")
+        return embed
     embed = discord.Embed()
     embed.title = rs.title
     embed.set_image(url='https://acracers.com' + rs.image.url)
@@ -242,7 +246,7 @@ async def info(ctx, id: int):
     if rs.track_download_url:
         desc += '\n\nTrack download: {0}'.format(rs.track_download_url)
     embed.description = desc
-    await ctx.send(embed=embed)
+    return embed
 
 
 def error(description):
