@@ -27,19 +27,26 @@ class LiveBot(discord.Client):
         await self.wait_until_ready()
         channel = self.get_channel(settings.DISCORDLIVECHANNEL)
         current_race_id = None
+        livemessage = None
+
+        # delete all messages in the channel when starting up.
+        messages = await channel.history(limit=100).flatten()
+        await channel.delete_messages(messages)
+
+        # insert our two messages that always should be here.
+        livemessage = await channel.send(embed=error("Initializing..."))
+        await channel.send(embed=joinembed())
+
         while not self.is_closed():
             try:
                 race = Race.objects.all().order_by('-id')[0]
             except Exception:
-                await channel.send(embed=error(
+                await livemessage.edit(embed=error(
                     "There is nothing running on the server at the moment."))
 
             if race.pk != current_race_id:
                 current_race_id = race.pk
-                messages = await channel.history(limit=100).flatten()
-                await channel.delete_messages(messages)
-                await channel.send(embed=_infoembed(race.racesetup.id))
-                await channel.send(embed=joinembed())
+                await livemessage.edit(embed=_infoembed(race.racesetup.id))
 
             await asyncio.sleep(4)
 
