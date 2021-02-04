@@ -80,7 +80,7 @@ def _queueembed():
             else:
                 title = rs.title
 
-            line = ('`{pk:3}` `{title:' + str(MAX_LEN) + '}`'
+            line = ('`{pk:3}` `{title:' + str(MAX_LEN) + '}` '
                     ).format(pk=rs.pk, title=title)
             if rs.car_download_url:
                 line += '[`car`]({0}) '.format(rs.car_download_url)
