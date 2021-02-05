@@ -5,6 +5,7 @@ media/*
 static/*
 XXX/*
 main/settings.py
+fact.dmp
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

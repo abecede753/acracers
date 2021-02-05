@@ -33,6 +33,7 @@ def cleanup_RaceQueue_indices():
 
 
 class RaceSetup(models.Model):
+    """we call this "combo" for our users"""
     title = models.CharField(max_length=32, unique=True)
     description = models.TextField(default="no description")
     tgz = models.FileField(upload_to='tgz/', null=True, blank=True)
