@@ -3,11 +3,12 @@ import asyncio
 import discord
 from django.conf import settings
 from django.core.management.base import BaseCommand
-from races.management.commands.botfunctions import _infoembed, error
+from races.management.commands.botfunctions import (
+    _infoembed, error, _queueembed)
 from races.models import Race
 
 
-def joinembed():
+def join_embed():
     embed = discord.Embed()
     embed.title = 'Join the fun now!'
     embed.description = '''
@@ -23,30 +24,45 @@ class LiveBot(discord.Client):
         super().__init__(*args, **kwargs)
         self.bg_task = self.loop.create_task(self.live_status())
 
+    def set_queue_footer(self, queueembed):
+        if 'Title' in queueembed.description:
+            queueembed.set_footer(text="These combos will be started in order after the current round")
+        else:
+            queueembed.set_footer(text='')
+        return queueembed
+
+
     async def live_status(self):
         await self.wait_until_ready()
         channel = self.get_channel(settings.DISCORDLIVECHANNEL)
         current_race_id = None
-        livemessage = None
+        live_message = None
 
         # delete all messages in the channel when starting up.
         messages = await channel.history(limit=100).flatten()
         await channel.delete_messages(messages)
 
         # insert our two messages that always should be here.
-        livemessage = await channel.send(embed=error("Initializing..."))
-        await channel.send(embed=joinembed())
+        live_message = await channel.send(embed=error("Initializing..."))
+        queueembed = self.set_queue_footer(_queueembed())
+        queue_message = await channel.send(embed=queueembed)
+        await channel.send(embed=join_embed())
 
         while not self.is_closed():
             try:
                 race = Race.objects.all().order_by('-id')[0]
             except Exception:
-                await livemessage.edit(embed=error(
+                await live_message.edit(embed=error(
                     "There is nothing running on the server at the moment."))
 
             if race.pk != current_race_id:
                 current_race_id = race.pk
-                await livemessage.edit(embed=_infoembed(race.racesetup.id))
+                await live_message.edit(embed=_infoembed(race.racesetup.id))
+
+            new_queueembed = _queueembed()
+            if new_queueembed.description != queueembed.description:
+                queueembed = self.set_queue_footer(new_queueembed)
+                await queue_message.edit(embed=queueembed)
 
             await asyncio.sleep(4)
 

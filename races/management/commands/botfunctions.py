@@ -96,9 +96,7 @@ def _queueembed():
         embed.set_footer(
             text='For more information about a combo use `info ID`.')
     else:
-        embed = discord.Embed(color=0x00ff00)
-        embed.title = 'The queue is empty. ' + \
-            'Therefore a random combo will be used for the next round.'
+        embed.description = 'The queue is empty, therefore a random combo will be used for the next round.'
     return embed
 
 
