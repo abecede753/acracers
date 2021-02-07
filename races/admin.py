@@ -8,6 +8,15 @@ class RaceAdmin(admin.ModelAdmin):
 
 
 class RaceSetupAdmin(admin.ModelAdmin):
+    fields = ('title', 'description', 'tgz', 'image',
+              ('track_download_url', 'track_override'),
+              ('car_download_url', 'car_override', 'fixed_cars'),
+              'randomizable')
+    list_display = ('title', 'id', 'randomizable', 'fixed_cars',
+                    'car_override', 'track_override',
+                    )
+    ordering = ('title',)
+    search_fields = ('title', 'description')
     pass
 
 

@@ -40,6 +40,8 @@ class RaceSetup(models.Model):
     image = models.ImageField(null=True, upload_to='images/')
     car_download_url = models.URLField(blank=True, default='')
     track_download_url = models.URLField(blank=True, default='')
+    car_override = models.BooleanField(default=False)
+    track_override = models.BooleanField(default=False)
     fixed_cars = models.BooleanField(default=False)
     randomizable = models.BooleanField(default=True)
 
@@ -126,10 +128,20 @@ class RaceSetup(models.Model):
         config.optionxform = lambda option: option
         filename = os.path.join(directory, 'cfg', 'server_cfg.ini')
         config.read(filename)
-        config["SERVER"]["NAME"] = _D.RACENAME
+        config["SERVER"]["NAME"] = _D.RACENAME.format(self.title)
         config["SERVER"]["ADMIN_PASSWORD"] = _D.ADMIN_PASSWORD
         config["SERVER"]["LOOP_MODE"] = "0"
         config["SERVER"]["WELCOME_MESSAGE"] = "welcome.txt"
+
+        try:  # combo may not have a race 
+            config["RACE"]["IS_OPEN"] = "1"
+        except Exception:
+            pass
+
+        try:  # combo may not have a qualify round...
+            config["QUALIFY"]["IS_OPEN"] = "1"
+        except Exception:
+            pass
 
         with open(filename, 'w') as configfile:
             config.write(configfile, space_around_delimiters=False)
