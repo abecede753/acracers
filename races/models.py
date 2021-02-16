@@ -38,8 +38,9 @@ class RaceSetup(models.Model):
     description = models.TextField(default="no description")
     tgz = models.FileField(upload_to='tgz/', null=True, blank=True)
     image = models.ImageField(null=True, upload_to='images/')
-    car_download_url = models.URLField(blank=True, default='')
-    track_download_url = models.URLField(blank=True, default='')
+    car_download_url = models.URLField(max_length=2048, blank=True, default='')
+    track_download_url = models.URLField(max_length=2048, blank=True,
+                                         default='')
     car_override = models.BooleanField(default=False)
     track_override = models.BooleanField(default=False)
     fixed_cars = models.BooleanField(default=False)
