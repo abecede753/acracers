@@ -130,3 +130,5 @@ ACSERVEREXE = '/srv/acracers/kunos/acServer'
 ACWRAPPEREXE = '/srv/acracers/server1/ac-server-wrapper.js'
 
 DISCORDTOKEN = 'DISCORD TOKEN XXX'
+DISCORDLIVETOKEN = DISCORDTOKEN
+DISCORDLIVECHANNELS = (12345678,)  # list of channel ids to broadcast liveserver status
