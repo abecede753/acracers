@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import re
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -131,4 +132,22 @@ ACWRAPPEREXE = '/srv/acracers/server1/ac-server-wrapper.js'
 
 DISCORDTOKEN = 'DISCORD TOKEN XXX'
 DISCORDLIVETOKEN = DISCORDTOKEN
-DISCORDLIVECHANNELS = (12345678,)  # list of channel ids to broadcast liveserver status
+
+
+def _get_channel_ids(filename):
+    with open(filename) as f:
+        result = []
+        for line in f:
+            srch = re.search(r'^(\d+).*$', line)
+            if srch:
+                result.append(int(srch.groups()[0]))
+    return tuple(result)
+
+
+# the bot posts live status only to these channels
+DISCORDLIVECHANNELS = _get_channel_ids(
+    '/srv/acracers/djapp/main/livechannels.txt')
+
+# the bot only listens on these channel ids for commands
+DISCORDCMDCHANNELS = _get_channel_ids(
+    '/srv/acracers/djapp/main/cmdchannels.txt')

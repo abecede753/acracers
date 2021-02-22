@@ -1,9 +1,12 @@
 import subprocess
+import sys
+import traceback
 
 import discord
 from discord.ext import commands
 
 from races.models import RaceSetup, RaceQueue
+from races.management.commands.decorators import is_writeable_channel
 
 description = ('Here are the commands to set up "rounds" of car/track combos '
                'for hosting a couple of races with friends.\nEach round '
@@ -14,10 +17,11 @@ intents = discord.Intents.default()
 intents.members = True
 
 bot = commands.Bot(command_prefix='', description=description,
-                   intents=intents)
+                   intents=intents, help_command=None)
 
 
 @bot.command()
+@commands.check(is_writeable_channel)
 async def list(ctx):
     """Shows all car/track combos
 
@@ -54,6 +58,7 @@ def _list_queue(objects=False):
 
 
 @bot.command()
+@commands.check(is_writeable_channel)
 async def queue(ctx):
     """Shows the current queue of rounds
 
@@ -101,6 +106,7 @@ def _queueembed():
 
 
 @bot.command()
+@commands.check(is_writeable_channel)
 async def append(ctx, id: int):
     """Appends a combo to the queue
     
@@ -127,6 +133,7 @@ async def append(ctx, id: int):
 
 
 @bot.command()
+@commands.check(is_writeable_channel)
 async def insert(ctx, id: int):
     """Inserts a combo into the queue
     
@@ -156,6 +163,7 @@ async def insert(ctx, id: int):
 
 
 @bot.command()
+@commands.check(is_writeable_channel)
 async def clear(ctx):
     """Clears the queue
     
@@ -171,6 +179,7 @@ async def clear(ctx):
 
 
 @bot.command()
+@commands.check(is_writeable_channel)
 async def next(ctx):
     """Immediately starts next round
 
@@ -184,6 +193,7 @@ async def next(ctx):
 
 
 @bot.command()
+@commands.check(is_writeable_channel)
 async def playlist(ctx, *, ids: str):
     """Immediately starts a playlist
     
@@ -221,11 +231,40 @@ async def playlist(ctx, *, ids: str):
 
 
 @bot.command()
+@commands.check(is_writeable_channel)
 async def info(ctx, id: int):
     """Shows more info about a combo
     
     Use 'info ID', where ID is the number you get when you 'list' all race setups."""
     await ctx.send(embed=_infoembed(id))
+
+
+@bot.command()
+@commands.check(is_writeable_channel)
+async def help(ctx):
+    helptext = '''\
+Here are the commands to set up "rounds" of car/track combos for hosting a couple of races with friends.
+Each round consists of 10min qualifying, 10min race one, 10min race two with inverted starting grid.
+
+append
+  Appends a combo to the queue (`append ID`)
+clear
+  Clears the queue
+info
+  Shows more info about a combo (`info ID`)
+insert
+  Inserts a combo into the queue (`insert ID`)
+list
+  Shows all car/track combos
+next
+  Immediately starts next round
+playlist
+  Immediately starts a playlist (`playlist ID ID ID`)
+queue
+  Shows the current queue of rounds
+'''
+
+    await ctx.send(helptext)
 
 
 def _infoembed(id):
@@ -254,6 +293,17 @@ def error(description):
     return embed
 
 
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.errors.CheckFailure):
+        pass
+    else:
+        print('Ignoring exception in command {}:'.format(
+            ctx.command), file=sys.stderr)
+        traceback.print_exception(
+            type(error), error, error.__traceback__, file=sys.stderr)
+
+
 # STUFF FOR NEXT IMPLEMENTATIONS (roles and such)
 # @bot.command()
 # async def dbg(ctx, x: str):
@@ -272,3 +322,4 @@ def error(description):
 #     embed = discord.Embed(color=0x00ff00)
 #     embed.title = "Continuing."
 #     await ctx.send(embed=embed)
+
