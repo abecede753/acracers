@@ -44,15 +44,20 @@ class LiveBot(discord.Client):
         queueembed.set_footer(text=text)
         return queueembed
 
-    def _set_live_footer(self, embed):
-        txt = "Can not get live status from the server"
+    def _serverinfo(self):
+        info = {'clients': '?', 'maxclients': '?', 'free': '?'}
         try:
             info = requests.get(
                 'http://127.0.0.1:8081/INFO', timeout=1).json()
-            txt = '{0} people on the server. ({1} slots free)'.format(
-                info['clients'], info['maxclients'] - info['clients'])
+            info['free'] = info['maxclients'] - info['clients']
         except Exception:
             pass
+        return info
+
+    def _set_live_footer(self, embed):
+        info = self._serverinfo()
+        txt = '{0} people on the server. ({1} slots free)'.format(
+            info['clients'], info['free'])
         embed.set_footer(text=txt)
         return embed
 
@@ -61,6 +66,7 @@ class LiveBot(discord.Client):
         self.channels = [self.get_channel(c) for c in
                          settings.DISCORDLIVECHANNELS]
         current_race_id = None
+        current_free = None
 
         # delete all messages in the channel when starting up.
         for channel in self.channels:
@@ -90,8 +96,10 @@ class LiveBot(discord.Client):
                     messages=self.live_messages
                 )
 
-            if race.pk != current_race_id:
+            new_free = self._serverinfo()['free']
+            if race.pk != current_race_id or new_free != current_free:
                 current_race_id = race.pk
+                current_free = new_free
                 embed = _infoembed(race.racesetup.id)
                 embed = self._set_live_footer(embed)
                 await self.broadcast(embed=embed,
