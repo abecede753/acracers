@@ -1,6 +1,8 @@
 import asyncio
 
 import discord
+import requests
+
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from races.management.commands.botfunctions import (
@@ -24,6 +26,7 @@ def join_embed():
 class LiveBot(discord.Client):
 
     channels = ()
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.live_messages = []
@@ -40,6 +43,18 @@ class LiveBot(discord.Client):
             text = ""
         queueembed.set_footer(text=text)
         return queueembed
+
+    def _set_live_footer(self, embed):
+        txt = "Can not get live status from the server"
+        try:
+            info = requests.get(
+                'http://127.0.0.1:8081/INFO', timeout=1).json()
+            txt = '{0} people on the server. ({1} slots free)'.format(
+                info['clients'], info['maxclients'] - info['clients'])
+        except Exception:
+            pass
+        embed.set_footer(text=txt)
+        return embed
 
     async def live_status(self):
         await self.wait_until_ready()
@@ -77,7 +92,9 @@ class LiveBot(discord.Client):
 
             if race.pk != current_race_id:
                 current_race_id = race.pk
-                await self.broadcast(embed=_infoembed(race.racesetup.id),
+                embed = _infoembed(race.racesetup.id)
+                embed = self._set_live_footer(embed)
+                await self.broadcast(embed=embed,
                                      messages=self.live_messages)
 
             new_queueembed = _queueembed()
