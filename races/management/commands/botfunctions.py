@@ -6,7 +6,8 @@ import discord
 from discord.ext import commands
 
 from races.models import RaceSetup, RaceQueue
-from races.management.commands.decorators import is_writeable_channel
+from races.management.commands.decorators import (
+    is_writeable_channel, is_elevated_role)
 
 description = ('Here are the commands to set up "rounds" of car/track combos '
                'for hosting a couple of races with friends.\nEach round '
@@ -164,6 +165,7 @@ async def insert(ctx, id: int):
 
 @bot.command()
 @commands.check(is_writeable_channel)
+@commands.check(is_elevated_role)
 async def clear(ctx):
     """Clears the queue
     
@@ -180,6 +182,7 @@ async def clear(ctx):
 
 @bot.command()
 @commands.check(is_writeable_channel)
+@commands.check(is_elevated_role)
 async def next(ctx):
     """Immediately starts next round
 
@@ -194,6 +197,7 @@ async def next(ctx):
 
 @bot.command()
 @commands.check(is_writeable_channel)
+@commands.check(is_elevated_role)
 async def playlist(ctx, *, ids: str):
     """Immediately starts a playlist
     
@@ -245,21 +249,23 @@ async def help(ctx):
     helptext = '''\
 Here are the commands to set up "rounds" of car/track combos for hosting a couple of races with friends.
 Each round consists of 10min qualifying, 10min race one, 10min race two with inverted starting grid.
+Currently running race and queue and link to join are in <#814881913658671185>
 
-append
-  Appends a combo to the queue (`append ID`)
-clear
-  Clears the queue
-info
-  Shows more info about a combo (`info ID`)
-insert
-  Inserts a combo into the queue (`insert ID`)
-list
-  Shows all car/track combos
-next
+next (only if you have @AFTuesdays role)
   Immediately starts next round
-playlist
+playlist (only if you have @AFTuesdays role)
   Immediately starts a playlist (`playlist ID ID ID`)
+clear (only if you have @AFTuesdays role)
+  Clears the queue
+
+**list**
+  Shows all car/track combos
+**info**
+  Shows more info about a combo (`info ID`)
+**append**
+  Appends a combo to the end of the queue (`append ID`)
+**insert**
+  Inserts a combo at the beginning of the queue (`insert ID`)
 queue
   Shows the current queue of rounds
 '''
