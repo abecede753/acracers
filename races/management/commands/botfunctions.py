@@ -135,6 +135,7 @@ async def append(ctx, id: int):
 
 @bot.command()
 @commands.check(is_writeable_channel)
+@commands.check(is_elevated_role)
 async def insert(ctx, id: int):
     """Inserts a combo into the queue
     
@@ -251,23 +252,25 @@ Here are the commands to set up "rounds" of car/track combos for hosting a coupl
 Each round consists of 10min qualifying, 10min race one, 10min race two with inverted starting grid.
 Currently running race and queue and link to join are in <#814881913658671185>
 
-next (only if you have @AFTuesdays role)
+**__Commands for people with `@AFTuesday` role only__**
+next
   Immediately starts next round
-playlist (only if you have @AFTuesdays role)
+playlist
   Immediately starts a playlist (`playlist ID ID ID`)
-clear (only if you have @AFTuesdays role)
+clear
   Clears the queue
+insert
+  Inserts a combo at the beginning of the queue (`insert ID`)
 
+**__Commands usable by everyone__**
 **list**
   Shows all car/track combos
 **info**
   Shows more info about a combo (`info ID`)
 **append**
   Appends a combo to the end of the queue (`append ID`)
-**insert**
-  Inserts a combo at the beginning of the queue (`insert ID`)
-queue
-  Shows the current queue of rounds
+**queue**
+  Shows the current queue of rounds (also visible in <#814881913658671185>)
 '''
 
     await ctx.send(helptext)
