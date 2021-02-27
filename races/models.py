@@ -204,7 +204,7 @@ class RaceSetup(models.Model):
 
 
 class Race(models.Model):
-    start_ts = models.DateTimeField(default=set_start_timestamp)
+    start_ts = models.DateTimeField(auto_now_add=True)  #default=set_start_timestamp)
     racesetup = models.ForeignKey(RaceSetup,
                                   on_delete=models.CASCADE)
     stdout = models.TextField(default='')
@@ -225,3 +225,10 @@ class Voting(models.Model):
     racesetup = models.ForeignKey(RaceSetup, on_delete=models.CASCADE)
     poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
     points = models.IntegerField(default=0)
+
+
+class Vote(models.Model):
+    discorduser = models.CharField(max_length=1024)
+    racesetup = models.ForeignKey(RaceSetup, on_delete=models.CASCADE)
+    value = models.SmallIntegerField()
+

@@ -9,6 +9,6 @@ def is_writeable_channel(ctx):
 
 def is_elevated_role(ctx):
     """make sure user has correct permissions"""
-    rolename = "AFTuesdays"
-    if rolename in [r.name for r in ctx.author.roles]:
+    role_id = 815186444678070302
+    if role_id in [r.id for r in ctx.author.roles]:
         return True

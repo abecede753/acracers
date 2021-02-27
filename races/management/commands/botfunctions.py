@@ -4,8 +4,9 @@ import traceback
 
 import discord
 from discord.ext import commands
+from django.db.models import Sum
 
-from races.models import RaceSetup, RaceQueue
+from races.models import RaceSetup, RaceQueue, Vote
 from races.management.commands.decorators import (
     is_writeable_channel, is_elevated_role)
 
@@ -238,10 +239,68 @@ async def playlist(ctx, *, ids: str):
 @bot.command()
 @commands.check(is_writeable_channel)
 async def info(ctx, id: int):
-    """Shows more info about a combo
-    
-    Use 'info ID', where ID is the number you get when you 'list' all race setups."""
+    """Shows more info about a combo"""
     await ctx.send(embed=_infoembed(id))
+
+
+@bot.command()
+@commands.check(is_writeable_channel)
+async def love(ctx, id: int):
+    """User loves the combo by ID"""
+    embed = _vote(ctx, id, 3)
+    await ctx.send(embed=embed)
+    return
+
+
+@bot.command()
+@commands.check(is_writeable_channel)
+async def like(ctx, id: int):
+    """User likes the combo by ID"""
+    embed = _vote(ctx, id, 1)
+    await ctx.send(embed=embed)
+    return
+
+
+@bot.command()
+@commands.check(is_writeable_channel)
+async def dislike(ctx, id: int):
+    """User dislikes the combo by ID"""
+    embed = _vote(ctx, id, -1)
+    await ctx.send(embed=embed)
+    return
+
+
+@bot.command()
+@commands.check(is_writeable_channel)
+async def hate(ctx, id: int):
+    """User hates the combo by ID"""
+    embed = _vote(ctx, id, -3)
+    await ctx.send(embed=embed)
+    return
+
+
+def _vote(ctx, rs_id, value):
+    try:
+        rs = RaceSetup.objects.get(pk=rs_id)
+    except Exception:
+        return error("Sorry, I could not find a combo with that ID.")
+    vote, created = Vote.objects.get_or_create(
+        racesetup=rs,
+        discorduser='{0}#{1}'.format(ctx.author.name,
+                                     ctx.author.discriminator),
+        defaults={'value':value})
+    vote.value = value
+    vote.save()
+    embed = discord.Embed()
+    if created:
+        embed.title = "Your vote has been saved."
+    else:
+        embed.title = "Your vote has been changed."
+    embed.description = 'The combo "{0}" has now {1} points.'.format(
+        rs.title,
+        rs.vote_set.all().aggregate(Sum('value'))['value__sum'])
+
+    return embed
 
 
 @bot.command()
@@ -252,7 +311,7 @@ Here are the commands to set up "rounds" of car/track combos for hosting a coupl
 Each round consists of 10min qualifying, 10min race one, 10min race two with inverted starting grid.
 Currently running race and queue and link to join are in <#814881913658671185>
 
-**__Commands for people with `@AFTuesday` role only__**
+**__Commands for people with `@AFTuesdays Organizer` role only__**
 next
   Immediately starts next round
 playlist
@@ -271,6 +330,9 @@ insert
   Appends a combo to the end of the queue (`append ID`)
 **queue**
   Shows the current queue of rounds (also visible in <#814881913658671185>)
+**love/like/dislike/hate**
+  Tell the bot what you think of a combo. Example: `love 7` if you love the combo with ID 7.
+  (love = +3 points, like = +1 point, dislike = -1 point, hate = -3 points)
 '''
 
     await ctx.send(helptext)
