@@ -25,22 +25,23 @@ bot = commands.Bot(command_prefix='', description=description,
 @bot.command()
 @commands.check(is_writeable_channel)
 async def list(ctx):
-    """Shows all car/track combos
+    """Shows all car/track combos with their score
 
     You can then add a combo (using its ID) to the queue for having fun with your friends.
     """
     MAX_LEN = 40
     embed = discord.Embed()
     embed.title = "These are all combos for now."
-    description = ("`  ID` `{0:" + str(MAX_LEN) + "}`\n").format('Title')
+    description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `Score`\n").format('Title')
     rslist = []
-    for rs in RaceSetup.objects.all().order_by('title'):
+    for rs in RaceSetup.objects.annotate(sum_vote=Sum('vote__value')).order_by('title'):
         if len(rs.title) > MAX_LEN:
             title = rs.title[:MAX_LEN - 1] + '…'
         else:
             title = rs.title
-        rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) + '}`').format(
-            id=rs.id, title=title))
+        score = rs.sum_vote or 0
+        rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) + '}` `{score:+5d}`').format(
+            id=rs.id, title=title, score=score))
     description += '\n'.join(rslist)
     embed.description = description
     embed.set_footer(text='Add a combo to the queue with '
@@ -323,7 +324,7 @@ insert
 
 **__Commands usable by everyone__**
 **list**
-  Shows all car/track combos
+  Shows all car/track combos including their score (calculated by peoples' opinions)
 **info**
   Shows more info about a combo (`info ID`)
 **append**
