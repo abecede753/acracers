@@ -60,18 +60,6 @@ def _list_queue(objects=False):
     return result
 
 
-@bot.command()
-@commands.check(is_writeable_channel)
-async def queue(ctx):
-    """Shows the current queue of rounds
-
-    When you or someone else "appends" or "inserts" a combo, then this will be
-    added as a round to the queue. Each round usually consists of qualifying, race 1
-    and race 2 (with reversed grid).
-    """
-    await ctx.send(embed=_queueembed())
-
-
 def _queueembed():
     MAX_LEN = 32
     result = _list_queue(objects=True)
@@ -329,8 +317,6 @@ insert
   Shows more info about a combo (`info ID`)
 **append**
   Appends a combo to the end of the queue (`append ID`)
-**queue**
-  Shows the current queue of rounds (also visible in <#814881913658671185>)
 **love/like/dislike/hate**
   Tell the bot what you think of a combo. Example: `love 7` if you love the combo with ID 7.
   (love = +3 points, like = +1 point, dislike = -1 point, hate = -3 points)
