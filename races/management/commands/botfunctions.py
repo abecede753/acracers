@@ -5,6 +5,7 @@ import traceback
 import discord
 from discord.ext import commands
 from django.db.models import Sum
+import requests
 
 from races.models import RaceSetup, RaceQueue, Vote
 from races.management.commands.decorators import (
@@ -113,13 +114,23 @@ async def append(ctx, id: int):
             "Sorry, I could not find a combo with that ID."))
         return
     queue_length = RaceQueue.objects.all().count()
-    max_index = 0
-    if queue_length:
-        max_index = RaceQueue.objects.all().order_by('-index')[0].index
-    rq = RaceQueue(setup=rs, index=max_index + 1)
-    rq.save()
-    embed = _queueembed()
-    embed.title = 'The combo has been appended. Here is the current queue.'
+    people_on_server = _serverinfo()['clients']
+    if people_on_server in (0, '0') and queue_length == 0:
+        rq = RaceQueue(setup=rs, index=1)
+        rq.save()
+        _restart_acserver()
+        embed = discord.Embed()
+        embed.title = ("You're lucky! Nobody was on the server, "
+                       "so I restarted it with your combo. "
+                       "Join now and have fun!")
+    else:
+        max_index = 0
+        if queue_length:
+            max_index = RaceQueue.objects.all().order_by('-index')[0].index
+        rq = RaceQueue(setup=rs, index=max_index + 1)
+        rq.save()
+        embed = _queueembed()
+        embed.title = 'The combo has been appended. Here is the current queue.'
     await ctx.send(embed=embed)
 
 
@@ -179,12 +190,15 @@ async def next(ctx):
 
     Aborts the current round and immediately starts the next one in the
     queue, if there are combos waiting. Otherwise starts a random combo."""
-    subprocess.run("sudo /usr/bin/systemctl restart acserver.service".split())
+    _restart_acserver()
     embed = discord.Embed(color=0x00ff00)
     embed.title = "The current round has been aborted and the next one started."
     await ctx.send(embed=embed)
     return
 
+def _restart_acserver():
+    subprocess.run("sudo /usr/bin/systemctl restart acserver.service".split())
+    return
 
 @bot.command()
 @commands.check(is_writeable_channel)
@@ -316,7 +330,7 @@ insert
 **info**
   Shows more info about a combo (`info ID`)
 **append**
-  Appends a combo to the end of the queue (`append ID`)
+  Appends a combo to the end of the queue (`append ID`). If the queue is empty and nobody is on the server, then your combo will be started instantly!
 **love/like/dislike/hate**
   Tell the bot what you think of a combo. Example: `love 7` if you love the combo with ID 7.
   (love = +3 points, like = +1 point, dislike = -1 point, hate = -3 points)
@@ -361,6 +375,16 @@ async def on_command_error(ctx, error):
         traceback.print_exception(
             type(error), error, error.__traceback__, file=sys.stderr)
 
+
+def _serverinfo():
+    info = {'clients': '?', 'maxclients': '?', 'free': '?'}
+    try:
+        info = requests.get(
+            'http://127.0.0.1:8081/INFO', timeout=1).json()
+        info['free'] = info['maxclients'] - info['clients']
+    except Exception:
+        pass
+    return info
 
 # STUFF FOR NEXT IMPLEMENTATIONS (roles and such)
 # @bot.command()

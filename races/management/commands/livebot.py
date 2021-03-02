@@ -1,12 +1,11 @@
 import asyncio
 
 import discord
-import requests
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from races.management.commands.botfunctions import (
-    _infoembed, error, _queueembed)
+    _infoembed, error, _queueembed, _serverinfo)
 from races.models import Race
 
 
@@ -44,18 +43,8 @@ class LiveBot(discord.Client):
         queueembed.set_footer(text=text)
         return queueembed
 
-    def _serverinfo(self):
-        info = {'clients': '?', 'maxclients': '?', 'free': '?'}
-        try:
-            info = requests.get(
-                'http://127.0.0.1:8081/INFO', timeout=1).json()
-            info['free'] = info['maxclients'] - info['clients']
-        except Exception:
-            pass
-        return info
-
     def _set_live_footer(self, embed):
-        info = self._serverinfo()
+        info = _serverinfo()
         txt = '{0} people on the server. ({1} slots free)'.format(
             info['clients'], info['free'])
         embed.set_footer(text=txt)
@@ -96,7 +85,7 @@ class LiveBot(discord.Client):
                     messages=self.live_messages
                 )
 
-            new_free = self._serverinfo()['free']
+            new_free = _serverinfo()['free']
             if race.pk != current_race_id or new_free != current_free:
                 current_race_id = race.pk
                 current_free = new_free
