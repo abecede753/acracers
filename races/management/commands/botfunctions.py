@@ -4,12 +4,13 @@ import traceback
 
 import discord
 from discord.ext import commands
-from django.db.models import Sum
+from django.db.models import Count, Case, When, IntegerField, Sum
 import requests
 
 from races.models import RaceSetup, RaceQueue, Vote
 from races.management.commands.decorators import (
     is_writeable_channel, is_elevated_role)
+from races.management.commands import utils
 
 description = ('Here are the commands to set up "rounds" of car/track combos '
                'for hosting a couple of races with friends.\nEach round '
@@ -30,19 +31,31 @@ async def list(ctx):
 
     You can then add a combo (using its ID) to the queue for having fun with your friends.
     """
-    MAX_LEN = 40
+    MAX_LEN = 38
     embed = discord.Embed()
     embed.title = "These are all combos for now."
-    description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `Score`\n").format('Title')
+    description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `Ø Vote`\n").format('Title')
     rslist = []
-    for rs in RaceSetup.objects.annotate(sum_vote=Sum('vote__value')).order_by('title'):
+    for rs in RaceSetup.objects.annotate(
+        numhates=Count(Case(When(
+            vote__value=-3, then=1), output_field=IntegerField())),
+        numdislikes=Count(Case(When(
+            vote__value=-1, then=1), output_field=IntegerField())),
+        numlikes=Count(Case(When(
+            vote__value=1, then=1), output_field=IntegerField())),
+        numloves=Count(Case(When(
+            vote__value=3, then=1), output_field=IntegerField())),
+    ).order_by('title'):
         if len(rs.title) > MAX_LEN:
             title = rs.title[:MAX_LEN - 1] + '…'
         else:
             title = rs.title
-        score = rs.sum_vote or 0
-        rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) + '}` `{score:+5d}`').format(
-            id=rs.id, title=title, score=score))
+        details = utils.DetailVotes(rs.numhates, rs.numdislikes,
+                                    rs.numlikes, rs.numloves)
+        smiley, score = details.smiley
+        rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) +
+                       '}` `{score:+1.1f}`{smiley}').format(
+            id=rs.id, title=title, smiley=smiley, score=score))
     description += '\n'.join(rslist)
     embed.description = description
     embed.set_footer(text='Add a combo to the queue with '

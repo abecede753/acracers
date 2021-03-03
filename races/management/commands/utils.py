@@ -1,0 +1,78 @@
+import statistics
+
+
+class DetailVotes:
+    hates = 0
+    likes = 0
+    dislikes = 0
+    loves = 0
+    unicodebars = ' ▏▎▍▌▋▊▉█'
+    smileys = '😣🙁🙂😊'
+
+    def __init__(self, hates=0, dislikes=0, likes=0, loves=0):
+        self.hates = hates
+        self.likes = likes
+        self.dislikes = dislikes
+        self.loves = loves
+
+    def sixteenths(self, what):
+        the_max = max(self.hates, self.likes, self.dislikes, self.loves)
+        if the_max != 0:
+            size = round(100/the_max * what/6.25)
+            result = ''
+            if size >= 8:
+                result = self.unicodebars[8] + self.unicodebars[size-8]
+            else:
+                result = self.unicodebars[size] + self.unicodebars[0]
+        else:
+            result = '  '
+        return result
+
+    def get_line(self, what):
+        return '{0}{1:3d}\n'.format(
+            self.sixteenths(what),
+            what)
+
+    @property
+    def bars(self):
+        result = ''
+        result += '😣 ' + self.get_line(self.hates)
+        result += '🙁 ' + self.get_line(self.dislikes)
+        result += '🙂 ' + self.get_line(self.likes)
+        result += '😊 ' + self.get_line(self.loves)
+        return result
+
+    @property
+    def smiley(self):
+        lst = [-3 for x in range(self.hates)]
+        lst += [-1 for x in range(self.dislikes)]
+        lst += [1 for x in range(self.likes)]
+        lst += [3 for x in range(self.loves)]
+        if not len(lst):
+            return'-', 0
+        mean = statistics.mean(lst)
+        smileyindex = 0
+        if mean > -1.5:
+            smileyindex = 1
+        if mean >= 0:
+            smileyindex = 2
+        if mean >= 1.5:
+            smileyindex = 3
+        return self.smileys[smileyindex], mean
+
+
+if __name__ == "__main__":
+    for items in (
+        [2, 4, 6, 1],
+        [1, 4, 6, 1],
+        [0, 0, 0, 0],
+        [1, 0, 0, 1],
+        [0, 1, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1],
+    ):
+        print(items)
+        dv = DetailVotes(*items)
+        print(dv.bars)
+        print(dv.smiley)
+        print("#"*40)
