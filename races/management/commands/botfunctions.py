@@ -295,6 +295,20 @@ async def hate(ctx, id: int):
     return
 
 
+def _votedetails(rs_id):
+    rs = RaceSetup.objects.filter(pk=rs_id).annotate(
+        numhates=Count(Case(When(
+            vote__value=-3, then=1), output_field=IntegerField())),
+        numdislikes=Count(Case(When(
+            vote__value=-1, then=1), output_field=IntegerField())),
+        numlikes=Count(Case(When(
+            vote__value=1, then=1), output_field=IntegerField())),
+        numloves=Count(Case(When(
+            vote__value=3, then=1), output_field=IntegerField())),
+    )[0]
+    return (rs.numhates, rs.numdislikes, rs.numlikes, rs.numloves)
+
+
 def _vote(ctx, rs_id, value):
     try:
         rs = RaceSetup.objects.get(pk=rs_id)
@@ -304,7 +318,7 @@ def _vote(ctx, rs_id, value):
         racesetup=rs,
         discorduser='{0}#{1}'.format(ctx.author.name,
                                      ctx.author.discriminator),
-        defaults={'value':value})
+        defaults={'value': value})
     vote.value = value
     vote.save()
     embed = discord.Embed()
@@ -312,9 +326,14 @@ def _vote(ctx, rs_id, value):
         embed.title = "Your vote has been saved."
     else:
         embed.title = "Your vote has been changed."
-    embed.description = 'The combo "{0}" has now {1} points.'.format(
-        rs.title,
-        rs.vote_set.all().aggregate(Sum('value'))['value__sum'])
+
+    smiley, mean = utils.DetailVotes(*_votedetails(rs_id)).smiley
+    embed.description = \
+        'The combo "{0}" has now a mean score of {1:1.1f} {2}.'.format(
+            rs.title,
+            mean,
+            smiley
+        )
 
     return embed
 
