@@ -1,3 +1,4 @@
+import statistics
 import discord
 from discord.ext import commands
 from django.conf import settings
@@ -10,6 +11,7 @@ from races.models import RaceSetup
 from races.management.commands.decorators import (
     is_writeable_channel,)
 from races.management.commands import utils
+from races.management.commands.botfunctions import error, _votedetails
 
 
 intents = discord.Intents.default()
@@ -21,38 +23,50 @@ bot = commands.Bot(command_prefix='beta',
 
 @bot.command()
 @commands.check(is_writeable_channel)
-async def list(ctx):
-    MAX_LEN = 38
+async def info(ctx, id: int):
+    """Shows more info about a combo"""
+    await ctx.send(embed=_infoembed(id))
+
+
+def _infoembed(id):
+    try:
+        rs = RaceSetup.objects.get(pk=id)
+    except Exception:
+        embed = error(
+            "Sorry, I could not find a combo with that ID.")
+        return embed
     embed = discord.Embed()
-    embed.title = "These are all combos for now."
-    description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `Rating`\n").format('Title')
-    rslist = []
-    for rs in RaceSetup.objects.annotate(
-        numhates=Count(Case(When(
-            vote__value=-3, then=1), output_field=IntegerField())),
-        numdislikes=Count(Case(When(
-            vote__value=-1, then=1), output_field=IntegerField())),
-        numlikes=Count(Case(When(
-            vote__value=1, then=1), output_field=IntegerField())),
-        numloves=Count(Case(When(
-            vote__value=3, then=1), output_field=IntegerField())),
-    ).order_by('title'):
-        if len(rs.title) > MAX_LEN:
-            title = rs.title[:MAX_LEN - 1] + '…'
-        else:
-            title = rs.title
-        details = utils.DetailVotes(rs.numhates, rs.numdislikes,
-                                    rs.numlikes, rs.numloves)
-        smiley, score = details.smiley
-        rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) +
-                       '}` `{score:+1.1f}`{smiley}').format(
-            id=rs.id, title=title, smiley=smiley, score=score))
-    description += '\n'.join(rslist)
-    embed.description = description
-    embed.set_footer(text='Add a combo to the queue with '
-                     '`append ID` or `insert ID`.\n'
-                     'For more information about a combo use `info ID`.')
-    await ctx.send(embed=embed)
+    embed.title = rs.title
+    embed.set_image(url='https://acracers.com' + rs.image.url)
+
+    votedetails = _votedetails(id)
+    dv = utils.DetailVotes(*votedetails)
+
+    embed.add_field(name='Detailed votes',
+                    value=dv.barsplus,
+                    inline=True)
+    try:
+        mediantxt = '{0:6.2f}'.format(statistics.median(dv.datadump))
+    except Exception:
+        mediantxt = ' n/a'
+    try:
+        stddevtxt = '{0:6.2f}'.format(statistics.stdev(dv.datadump))
+    except Exception:
+        stddevtxt = ' n/a'
+
+    stattext = ('`Mean  : {0:6.2f}`\n`Median: {1}`\n'
+                '`StdDev: {2}`\n`Votes :{3:4d}   `').format(
+                    dv.smiley[1], mediantxt, stddevtxt, len(dv.datadump))
+
+    embed.add_field(name='Statistics', value=stattext, inline=True)
+
+    desc = rs.description
+    if rs.car_download_url:
+        desc += '\n\nCar download: {0}'.format(rs.car_download_url)
+    if rs.track_download_url:
+        desc += '\n\nTrack download: {0}'.format(rs.track_download_url)
+    embed.description = desc
+    return embed
 
 
 class Command(BaseCommand):

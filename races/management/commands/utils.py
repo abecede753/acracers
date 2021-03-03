@@ -29,25 +29,38 @@ class DetailVotes:
         return result
 
     def get_line(self, what):
-        return '{0}{1:3d}\n'.format(
+        return '{0}{1:4d}'.format(
             self.sixteenths(what),
             what)
 
     @property
     def bars(self):
-        result = ''
-        result += '😣 ' + self.get_line(self.hates)
-        result += '🙁 ' + self.get_line(self.dislikes)
-        result += '🙂 ' + self.get_line(self.likes)
-        result += '😊 ' + self.get_line(self.loves)
+        result = '`😣 ' + self.get_line(self.hates) + '`\n'
+        result += '`🙁 ' + self.get_line(self.dislikes) + '`\n'
+        result += '`🙂 ' + self.get_line(self.likes) + '`\n'
+        result += '`😊 ' + self.get_line(self.loves) + '`\n'
         return result
 
     @property
-    def smiley(self):
+    def barsplus(self):
+        lines = self.bars
+        prefixes = ['`Hate   :` ', '`Dislike:` ', '`Like   :` ', '`Love   :` ']
+        result = ''
+        for idx, line in enumerate(lines.splitlines()):
+            result += prefixes[idx] + line + '\n'
+        return result
+
+    @property
+    def datadump(self):
         lst = [-3 for x in range(self.hates)]
         lst += [-1 for x in range(self.dislikes)]
         lst += [1 for x in range(self.likes)]
         lst += [3 for x in range(self.loves)]
+        return lst
+
+    @property
+    def smiley(self):
+        lst = self.datadump
         if not len(lst):
             return'-', 0
         mean = statistics.mean(lst)

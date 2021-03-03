@@ -1,3 +1,4 @@
+import statistics
 import subprocess
 import sys
 import traceback
@@ -381,6 +382,28 @@ def _infoembed(id):
     embed = discord.Embed()
     embed.title = rs.title
     embed.set_image(url='https://acracers.com' + rs.image.url)
+
+    votedetails = _votedetails(id)
+    dv = utils.DetailVotes(*votedetails)
+
+    embed.add_field(name='Detailed votes',
+                    value=dv.barsplus,
+                    inline=True)
+    try:
+        mediantxt = '{0:6.2f}'.format(statistics.median(dv.datadump))
+    except Exception:
+        mediantxt = ' n/a'
+    try:
+        stddevtxt = '{0:6.2f}'.format(statistics.stdev(dv.datadump))
+    except Exception:
+        stddevtxt = ' n/a'
+
+    stattext = ('`Mean  : {0:6.2f}`\n`Median: {1}`\n'
+                '`StdDev: {2}`\n`Votes :{3:4d}   `').format(
+                    dv.smiley[1], mediantxt, stddevtxt, len(dv.datadump))
+
+    embed.add_field(name='Statistics', value=stattext, inline=True)
+
     desc = rs.description
     if rs.car_download_url:
         desc += '\n\nCar download: {0}'.format(rs.car_download_url)
