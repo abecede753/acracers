@@ -392,11 +392,11 @@ def _infoembed(id):
     try:
         mediantxt = '{0:6.2f}'.format(statistics.median(dv.datadump))
     except Exception:
-        mediantxt = ' n/a'
+        mediantxt = '  n/a '
     try:
         stddevtxt = '{0:6.2f}'.format(statistics.stdev(dv.datadump))
     except Exception:
-        stddevtxt = ' n/a'
+        stddevtxt = '  n/a '
 
     stattext = ('`Mean  : {0:6.2f}`\n`Median: {1}`\n'
                 '`StdDev: {2}`\n`Votes :{3:4d}   `').format(
