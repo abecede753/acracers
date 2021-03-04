@@ -1,3 +1,4 @@
+import datetime
 import statistics
 import subprocess
 import sys
@@ -6,6 +7,7 @@ import traceback
 import discord
 from discord.ext import commands
 from django.db.models import Count, Case, When, IntegerField, Sum
+from django.utils import timezone 
 import requests
 
 from races.models import RaceSetup, RaceQueue, Vote
@@ -37,6 +39,7 @@ async def list(ctx):
     embed.title = "These are all combos for now."
     description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `Ø Vote`\n").format('Title')
     rslist = []
+    we_have_new_tracks = False
     for rs in RaceSetup.objects.annotate(
         numhates=Count(Case(When(
             vote__value=-3, then=1), output_field=IntegerField())),
@@ -47,10 +50,17 @@ async def list(ctx):
         numloves=Count(Case(When(
             vote__value=3, then=1), output_field=IntegerField())),
     ).order_by('title'):
-        if len(rs.title) > MAX_LEN:
-            title = rs.title[:MAX_LEN - 1] + '…'
+
+        if rs.created > timezone.now() - datetime.timedelta(days=5):
+            full_title = "☆" + rs.title
+            we_have_new_tracks = True
         else:
-            title = rs.title
+            full_title = rs.title
+
+        if len(full_title) > (MAX_LEN):
+            title = full_title[:MAX_LEN] + '…'
+        else:
+            title = full_title
         details = utils.DetailVotes(rs.numhates, rs.numdislikes,
                                     rs.numlikes, rs.numloves)
         smiley, score = details.smiley
@@ -59,9 +69,15 @@ async def list(ctx):
             id=rs.id, title=title, smiley=smiley, score=score))
     description += '\n'.join(rslist)
     embed.description = description
+    if we_have_new_tracks:
+        append_footer_text = ('\n(Combos marked with a ☆ have been added to '
+                              'the server in the last five days.)')
+    else:
+        append_footer_text = ''
     embed.set_footer(text='Add a combo to the queue with '
                      '`append ID` or `insert ID`.\n'
-                     'For more information about a combo use `info ID`.')
+                     'For more information about a combo use `info ID`.' +
+                     append_footer_text)
     await ctx.send(embed=embed)
 
 

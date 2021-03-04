@@ -45,6 +45,7 @@ class RaceSetup(models.Model):
     track_override = models.BooleanField(default=False)
     fixed_cars = models.BooleanField(default=False)
     randomizable = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)  #default=set_start_timestamp)
 
     def __str__(self):
         return self.title
