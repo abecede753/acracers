@@ -45,7 +45,7 @@ class RaceSetup(models.Model):
     track_override = models.BooleanField(default=False)
     fixed_cars = models.BooleanField(default=False)
     randomizable = models.BooleanField(default=True)
-    created = models.DateTimeField(auto_now_add=True)  #default=set_start_timestamp)
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
@@ -135,7 +135,7 @@ class RaceSetup(models.Model):
         config["SERVER"]["LOOP_MODE"] = "0"
         config["SERVER"]["WELCOME_MESSAGE"] = "welcome.txt"
 
-        try:  # combo may not have a race 
+        try:  # combo may not have a race
             config["RACE"]["IS_OPEN"] = "1"
         except Exception:
             pass
@@ -145,6 +145,34 @@ class RaceSetup(models.Model):
         except Exception:
             pass
 
+        # conversion from qualify to practice - we won't do qualifying anymore
+        if 'QUALIFY' in config.sections() and \
+           '__CM_PRACTICE_OFF' in config.sections():
+            items = config.items('QUALIFY')
+            config.add_section('PRACTICE')
+            for item in items:
+                config.set('PRACTICE', item[0], item[1])
+            config.remove_section('QUALIFY')
+            config.remove_section('__CM_PRACTICE_OFF')
+
+        # conversion from 2 races to just 1 race
+        config['SERVER']['REVERSED_GRID_RACE_POSITIONS'] = '0'
+
+        # reduce damage multiplier to at most 50
+        try:
+            dm = int(config['SERVER']['DAMAGE_MULTIPLIER'])
+            if dm > 50:
+                config['SERVER']['DAMAGE_MULTIPLIER'] = '50'
+        except Exception:
+            pass
+
+        # wait time before race should be at least 45 seconds
+        try:
+            wt = int(config['RACE']['WAIT_TIME'])
+            if wt < 45:
+                config['RACE']['WAIT_TIME'] = '45'
+        except Exception:
+            pass
         with open(filename, 'w') as configfile:
             config.write(configfile, space_around_delimiters=False)
 
@@ -205,7 +233,7 @@ class RaceSetup(models.Model):
 
 
 class Race(models.Model):
-    start_ts = models.DateTimeField(auto_now_add=True)  #default=set_start_timestamp)
+    start_ts = models.DateTimeField(auto_now_add=True)
     racesetup = models.ForeignKey(RaceSetup,
                                   on_delete=models.CASCADE)
     stdout = models.TextField(default='')
@@ -232,4 +260,3 @@ class Vote(models.Model):
     discorduser = models.CharField(max_length=1024)
     racesetup = models.ForeignKey(RaceSetup, on_delete=models.CASCADE)
     value = models.SmallIntegerField()
-
