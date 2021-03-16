@@ -6,14 +6,15 @@ import traceback
 
 import discord
 from discord.ext import commands
-from django.db.models import Count, Case, When, IntegerField, Sum
-from django.utils import timezone 
+from django.db.models import Count, Case, When, IntegerField
+from django.utils import timezone
 import requests
 
 from races.models import RaceSetup, RaceQueue, Vote
 from races.management.commands.decorators import (
     is_writeable_channel, is_elevated_role)
 from races.management.commands import utils
+from races.management.commands.barchart import bars
 
 description = ('Here are the commands to set up "rounds" of car/track combos '
                'for hosting a couple of races with friends.\nEach round '
@@ -32,15 +33,19 @@ bot = commands.Bot(command_prefix='', description=description,
 async def list(ctx):
     """Shows all car/track combos with their score
 
-    You can then add a combo (using its ID) to the queue for having fun with your friends.
+    You can then add a combo (using its ID) to the queue for
+    having fun with your friends.
     """
     MAX_LEN = 38
     embed = discord.Embed()
     embed.title = "These are all combos for now."
-    description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `Ø Vote`\n").format('Title')
+    description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `HDLL`\n").format(
+        'Title')
+# OLD    description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `Ø Vote`\n").format(
+# OLD        'Title')
     rslist = []
     we_have_new_tracks = False
-    for rs in RaceSetup.objects.annotate(
+    racesetups = RaceSetup.objects.annotate(
         numhates=Count(Case(When(
             vote__value=-3, then=1), output_field=IntegerField())),
         numdislikes=Count(Case(When(
@@ -49,8 +54,15 @@ async def list(ctx):
             vote__value=1, then=1), output_field=IntegerField())),
         numloves=Count(Case(When(
             vote__value=3, then=1), output_field=IntegerField())),
-    ).order_by('title'):
-
+        numvotes=Count('vote'),
+    ).order_by('title')
+    max_votes_for_racesetup = max(
+        racesetups.latest("numhates").numhates,
+        racesetups.latest("numdislikes").numdislikes,
+        racesetups.latest("numlikes").numlikes,
+        racesetups.latest("numloves").numloves,
+    )
+    for rs in racesetups:
         if rs.created > timezone.now() - datetime.timedelta(days=5):
             full_title = "☆" + rs.title
             we_have_new_tracks = True
@@ -63,19 +75,28 @@ async def list(ctx):
             title = full_title
         details = utils.DetailVotes(rs.numhates, rs.numdislikes,
                                     rs.numlikes, rs.numloves)
+        barchart = bars(rs.numhates, rs.numdislikes, rs.numlikes, rs.numloves,
+                        max_votes_for_racesetup)
         smiley, score = details.smiley
+
         rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) +
-                       '}` `{score:+1.1f}`{smiley}').format(
-            id=rs.id, title=title, smiley=smiley, score=score))
+                       '}` `{barchart}`{smiley}').format(
+# OLD VERSION        rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) +
+# OLD VERSION                       '}` `{score:+1.1f}`{smiley}').format(
+            id=rs.id, title=title, smiley=smiley, score=score,
+                           barchart=barchart))
     description += '\n'.join(rslist)
     embed.description = description
+
     if we_have_new_tracks:
         append_footer_text = ('\n(Combos marked with a ☆ have been added to '
                               'the server in the last five days.)')
     else:
         append_footer_text = ''
     embed.set_footer(text='Add a combo to the queue with '
-                     '`append ID` or `insert ID`.\n'
+                     '`append ID`.\n'
+                     '"HDLL" means the number of hates / dislikes'
+                     ' / likes / loves for a combo.\n'
                      'For more information about a combo use `info ID`.' +
                      append_footer_text)
     await ctx.send(embed=embed)

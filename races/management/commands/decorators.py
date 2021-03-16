@@ -9,6 +9,6 @@ def is_writeable_channel(ctx):
 
 def is_elevated_role(ctx):
     """make sure user has correct permissions"""
-    role_id = 815186444678070302
-    if role_id in [r.id for r in ctx.author.roles]:
+    if settings.ELEVATED_ROLES.intersection(
+            [r.id for r in ctx.author.roles]):
         return True
