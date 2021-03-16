@@ -1,5 +1,6 @@
 import configparser
 import datetime
+import glob
 import json
 import os
 import shutil
@@ -179,9 +180,9 @@ class RaceSetup(models.Model):
     def fix_entry_list(self, directory):
         """ensures the we have fixed setups (if there's a setup file here)"""
         cfgdir = os.path.join(directory, 'cfg')
-        fnames = os.listdir(cfgdir)
-        for ignore in ("cm_wrapper_params.json cm_content entry_list.ini"
-                       " server_cfg.ini").split():
+        fnames = [os.path.basename(x) for x in
+                  glob.glob('{0}/*.ini'.format(cfgdir))]
+        for ignore in ("entry_list.ini", "server_cfg.ini"):
             try:
                 fnames.remove(ignore)
             except ValueError:
