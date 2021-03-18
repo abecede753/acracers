@@ -8,7 +8,7 @@ class RaceAdmin(admin.ModelAdmin):
 
 
 class RaceSetupAdmin(admin.ModelAdmin):
-    fields = ('title', 'description', 'tgz', 'image',
+    fields = ('title', 'hidden', 'description', 'tgz', 'image',
               ('track_download_url', 'track_override'),
               ('car_download_url', 'car_override', 'fixed_cars'),
               'randomizable')

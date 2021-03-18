@@ -45,7 +45,7 @@ async def list(ctx):
 # OLD        'Title')
     rslist = []
     we_have_new_tracks = False
-    racesetups = RaceSetup.objects.annotate(
+    racesetups = RaceSetup.objects.exclude(hidden=True).annotate(
         numhates=Count(Case(When(
             vote__value=-3, then=1), output_field=IntegerField())),
         numdislikes=Count(Case(When(
@@ -112,9 +112,17 @@ def _list_queue(objects=False):
     return result
 
 
-def _queueembed():
+class _PseudoRaceQueue:
+    def __init__(self, setup):
+        self.setup = setup
+
+
+def _queueembed(racesetup_list=None):
     MAX_LEN = 32
-    result = _list_queue(objects=True)
+    if racesetup_list:
+        result = [_PseudoRaceQueue(rs) for rs in racesetup_list]
+    else:
+        result = _list_queue(objects=True)
     embed = discord.Embed()
     embed.title = '**Upcoming combos:**'
     if result:
@@ -146,6 +154,37 @@ def _queueembed():
     else:
         embed.description = 'The queue is empty, therefore a random combo will be used for the next round.'
     return embed
+
+
+@bot.command()
+@commands.check(is_writeable_channel)
+@commands.check(is_elevated_role)
+async def infos(ctx, *, ids: str):
+    """Show download infos for given racesetup ids
+
+    Example: infos 14 15 16"""
+    try:
+        idlist = [int(x) for x in ids.split(' ')]
+    except Exception:
+        await ctx.send(embed=error(
+            "You must use numbers separated by spaces."))
+        return
+    try:
+        objs = [RaceSetup.objects.get(pk=x) for x in idlist]
+    except Exception:
+        await ctx.send(embed=error(
+            "One or more of the ids could not be found. Aborting."))
+        return
+
+    if not objs:
+        await ctx.send(embed=error(
+            "I did not find anything to add to the playlist. Aborting."))
+        return
+
+    embed = _queueembed(objs)
+    embed.title = "Downloads for the upcoming playlist:"
+    embed.set_footer(text='')
+    await ctx.send(embed=embed)
 
 
 @bot.command()
@@ -243,20 +282,23 @@ async def next(ctx):
     queue, if there are combos waiting. Otherwise starts a random combo."""
     _restart_acserver()
     embed = discord.Embed(color=0x00ff00)
-    embed.title = "The current round has been aborted and the next one started."
+    embed.title = ("The current round has been aborted "
+                   "and the next one started.")
     await ctx.send(embed=embed)
     return
+
 
 def _restart_acserver():
     subprocess.run("sudo /usr/bin/systemctl restart acserver.service".split())
     return
+
 
 @bot.command()
 @commands.check(is_writeable_channel)
 @commands.check(is_elevated_role)
 async def playlist(ctx, *, ids: str):
     """Immediately starts a playlist
-    
+
     Aborts the current round, clears the queue, and adds the combos given by id
     to the queue. Useful when starting a playlist with friends.
 
