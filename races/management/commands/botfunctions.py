@@ -119,16 +119,6 @@ async def list(ctx):
     await ctx.send(embed=embed)
 
 
-def _list_queue(objects=False):
-    result = []
-    for rq in RaceQueue.objects.all().order_by('index'):
-        if objects:
-            result.append(rq)
-        else:
-            result.append('{0}'.format(rq))
-    return result
-
-
 class _PseudoRaceQueue:
     def __init__(self, setup):
         self.setup = setup
@@ -139,7 +129,7 @@ def _queueembed(racesetup_list=None):
     if racesetup_list:
         result = [_PseudoRaceQueue(rs) for rs in racesetup_list]
     else:
-        result = _list_queue(objects=True)
+        result = RaceQueue.objects.all().order_by('index')
     embed = discord.Embed()
     embed.title = '**Upcoming combos:**'
     if result:
@@ -169,17 +159,17 @@ def _queueembed(racesetup_list=None):
         embed.set_footer(
             text='For more information about a combo use `info ID`.')
     else:
-        embed.description = 'The queue is empty, therefore a random combo will be used for the next round.'
+        embed.description = ('The queue is empty, therefore a random combo '
+                             'will be used for the next round.')
     return embed
 
 
 @bot.command()
 @commands.check(is_writeable_channel)
-@commands.check(is_elevated_role)
-async def infos(ctx, *, ids: str):
+async def downloads(ctx, *, ids: str):
     """Show download infos for given racesetup ids
 
-    Example: infos 14 15 16"""
+    Example: downloads 14 15 16"""
     try:
         idlist = [int(x) for x in ids.split(' ')]
     except Exception:
@@ -199,7 +189,7 @@ async def infos(ctx, *, ids: str):
         return
 
     embed = _queueembed(objs)
-    embed.title = "Downloads for the upcoming playlist:"
+    embed.title = ""
     embed.set_footer(text='')
     await ctx.send(embed=embed)
 
@@ -208,7 +198,7 @@ async def infos(ctx, *, ids: str):
 @commands.check(is_writeable_channel)
 async def append(ctx, id: int):
     """Appends a combo to the queue
-    
+
     Puts the combo with the specified id (as a number which you can find out
     using the 'list' command) to the end of the queue.
 
@@ -463,6 +453,8 @@ insert
 **love/like/dislike/hate**
   Tell the bot what you think of a combo. Example: `love 7` if you love the combo with ID 7.
   (love = +3 points, like = +1 point, dislike = -1 point, hate = -3 points)
+**downloads**
+  Get download links for the selected combos. Example: `downloads 7 16 60`
 '''
 
     await ctx.send(helptext)
