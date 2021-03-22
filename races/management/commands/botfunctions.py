@@ -37,12 +37,11 @@ async def list(ctx):
     having fun with your friends.
     """
     MAX_LEN = 38
+    MAX_LINES_PER_EMBED = 32
     embed = discord.Embed()
     embed.title = "These are all combos for now."
     description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `HDLL`\n").format(
         'Title')
-# OLD    description = ("`  ID` `{0:" + str(MAX_LEN) + "}` `Ø Vote`\n").format(
-# OLD        'Title')
     rslist = []
     we_have_new_tracks = False
     racesetups = RaceSetup.objects.exclude(hidden=True).annotate(
@@ -81,12 +80,31 @@ async def list(ctx):
 
         rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) +
                        '}` `{barchart}`{smiley}').format(
-# OLD VERSION        rslist.append(('`{id:4d}` `{title:' + str(MAX_LEN) +
-# OLD VERSION                       '}` `{score:+1.1f}`{smiley}').format(
             id=rs.id, title=title, smiley=smiley, score=score,
                            barchart=barchart))
-    description += '\n'.join(rslist)
-    embed.description = description
+
+    # make multiple embeds if rslist is too long
+    if len(rslist) > MAX_LINES_PER_EMBED - 1:
+        partialembed = discord.Embed()
+        partialembed.title = embed.title
+        partialdesc = description
+        for x in range(MAX_LINES_PER_EMBED - 1):
+            partialdesc += rslist.pop(0) + '\n'
+        while rslist:
+            partialembed.description = partialdesc[:-1]
+            await ctx.send(embed=partialembed)
+            partialembed = discord.Embed()
+            partialdesc = ''
+            for x in range(MAX_LINES_PER_EMBED):
+                try:
+                    partialdesc += rslist.pop(0) + '\n'
+                except IndexError:
+                    pass
+        embed.title = ''
+        embed.description = partialdesc[:-1]
+    else:
+        description += '\n'.join(rslist)
+        embed.description = description
 
     if we_have_new_tracks:
         append_footer_text = ('\n(Combos marked with a ☆ have been added to '
