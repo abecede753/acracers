@@ -107,16 +107,15 @@ async def list(ctx):
         embed.description = description
 
     if we_have_new_tracks:
-        append_footer_text = ('\n(Combos marked with a ☆ have been added to '
-                              'the server in the last five days.)')
+        append_footer_text = ('\nCombos with a "☆" have been added '
+                              'in the last 5 days.')
     else:
         append_footer_text = ''
-    embed.set_footer(text='Add a combo to the queue with '
-                     '`append ID`.\n'
-                     '"HDLL" means the number of hates / dislikes'
-                     ' / likes / loves for a combo.\n'
-                     'For more information about a combo use `info ID`.' +
-                     append_footer_text)
+    embed.set_footer(text=''
+                     'For more info about a combo use `info ID`.\n'
+                     'Start a combo on the server now with `append ID`.\n'
+                     '"HDLL" = number of hates / dislikes / likes / loves.'
+                     + append_footer_text)
     await ctx.send(embed=embed)
 
 
@@ -247,7 +246,7 @@ async def append(ctx, id: int):
 @commands.check(is_elevated_role)
 async def insert(ctx, id: int):
     """Inserts a combo into the queue
-    
+
     Puts the combo with the specified id (as a number which you can find out
     using the 'list' command) to the start of the queue, so it will be used
     right after the currently running round.
@@ -278,7 +277,7 @@ async def insert(ctx, id: int):
 @commands.check(is_elevated_role)
 async def clear(ctx):
     """Clears the queue
-    
+
     Deletes all rounds waiting in the queue. The currently running round
     continues until finished, and after that a new round with a
     random combo will be started. (As long as the queue stays empty)
@@ -537,23 +536,3 @@ def _serverinfo():
     except Exception:
         pass
     return info
-
-# STUFF FOR NEXT IMPLEMENTATIONS (roles and such)
-# @bot.command()
-# async def dbg(ctx, x: str):
-#     """Clear the race queue."""
-#     embed = discord.Embed(color=0x00ff00)
-#     embed.title = "In debug mode..."
-#     await ctx.send(embed=embed)
-#     """
-# ctx.message.channel.name
-# 'now-playing'
-# 
-# [x.name for x in ctx.author.roles]
-# ['@everyone', 'Member', 'Early Bird']
-# 
-#     """
-#     embed = discord.Embed(color=0x00ff00)
-#     embed.title = "Continuing."
-#     await ctx.send(embed=embed)
-
