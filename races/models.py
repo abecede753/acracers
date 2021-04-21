@@ -168,11 +168,11 @@ class RaceSetup(models.Model):
         except Exception:
             pass
 
-        # wait time before race should be at least 45 seconds
+        # wait time before race should be exactly 20 seconds
         try:
             wt = int(config['RACE']['WAIT_TIME'])
-            if wt < 45:
-                config['RACE']['WAIT_TIME'] = '45'
+            if wt != 20:
+                config['RACE']['WAIT_TIME'] = '20'
         except Exception:
             pass
         with open(filename, 'w') as configfile:

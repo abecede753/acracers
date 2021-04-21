@@ -60,7 +60,8 @@ class LiveBot(discord.Client):
         # delete all messages in the channel when starting up.
         for channel in self.channels:
             messages = await channel.history(limit=100).flatten()
-            await channel.delete_messages(messages)
+            for message in messages:
+                await message.delete()
 
         # insert our two messages that always should be here.
         for channel in self.channels:
