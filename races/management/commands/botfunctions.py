@@ -429,9 +429,9 @@ def _vote(ctx, rs_id, value):
 @commands.check(is_writeable_channel)
 async def help(ctx):
     helptext = '''\
-Here are the commands to set up "rounds" of car/track combos for hosting a couple of races with friends.
+All commands to set up "rounds" of car/track combos for hosting a couple of races with friends.
 Each round consists of 10min practice and 10min race.
-Currently running combo, waitng queue and link to join are in <#814881913658671185>
+Currently running combo, waiting queue and link to join are in <#814881913658671185>
 
 **__Commands for people with `@AFTuesdays Organizer` role only__**
 next

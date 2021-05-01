@@ -17,7 +17,7 @@ def join_embed():
         "(https://acstuff.ru/s/q:race/online/join?"
         "ip=176.223.131.53&httpPort=8081)\n\n"
         "(If you don't have Content Manager, you might "
-        "try searching for 'Assetto Friends 8' in the AC server list.)"
+        "try searching for 'Assetto Friends 5' in the AC server list.)"
     )
     return embed
 
