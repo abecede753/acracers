@@ -31,7 +31,6 @@ bot = commands.Bot(command_prefix='', description=description,
 
 @bot.command()
 @commands.check(is_writeable_channel)
-@commands.check(is_elevated_role)
 async def append_extra(ctx, *, cmdline: str):
     """Append a special round"""
     try:
@@ -501,7 +500,7 @@ insert
   Same as `append`, but does __not__ start your combo instantly when the server is empty.
   **BUT** there are some optional parameters: `-pNN` and `-rNN` for a custom amount of minutes for `p`ractice and `r`ace. Example: `-r20` for a 20 minute long race. Max minutes are 60.
   Also use `-o` if you want open setups, so you can change it.
-  Example: `append 7 -p20 -r45 -o` for 20min practice, 45 min race, open setups
+  Example: `append_extra 7 -p20 -r45 -o` for 20min practice, 45 min race, open setups
 **love/like/dislike/hate**
   Tell the bot what you think of a combo. Example: `love 7` if you love the combo with ID 7.
   (love = +3 points, like = +1 point, dislike = -1 point, hate = -3 points)
