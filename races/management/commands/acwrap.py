@@ -11,6 +11,7 @@ from django.core.management.base import BaseCommand
 
 from races.models import (RaceSetup, Race, RaceQueue,
                           cleanup_RaceQueue_indices)
+from races.management.commands.live_options import set_live_options
 
 
 logger = logging.getLogger(__name__)
@@ -56,6 +57,7 @@ class Command(BaseCommand):
             rq = RaceQueue.objects.all().order_by('index')[0]
             print("fetching from queue...", rq)
             racesetup = rq.setup
+            race_options = rq.options
             rq.delete()
             cleanup_RaceQueue_indices()
         else:
@@ -68,3 +70,5 @@ class Command(BaseCommand):
         self.race = Race(racesetup=racesetup)
         self.race.save()
         self.race.racesetup.unpack_for_acserver()
+        if race_options:
+            set_live_options(race_options)

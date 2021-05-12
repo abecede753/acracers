@@ -20,6 +20,7 @@ def set_start_timestamp(delay_minutes=2):
 class RaceQueue(models.Model):
     setup = models.ForeignKey('races.RaceSetup', on_delete=models.CASCADE)
     index = models.IntegerField()
+    options = models.TextField(default='')
 
     def __str__(self):
         return str(self.setup)
@@ -129,7 +130,7 @@ class RaceSetup(models.Model):
         """ensures the we have the correct admin password,
         wrapper port etc."""
         config = configparser.ConfigParser()
-        config.optionxform = lambda option: option
+        config.optionxform = lambda option: option  # keep uppercase keys
         filename = os.path.join(directory, 'cfg', 'server_cfg.ini')
         config.read(filename)
         config["SERVER"]["NAME"] = _D.RACENAME.format(self.title)
