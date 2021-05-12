@@ -52,6 +52,7 @@ class Command(BaseCommand):
         sys.stdout.flush()
 
     def setup_race(self):
+        race_options = ''
         queue_length = RaceQueue.objects.all().count()
         if queue_length:
             rq = RaceQueue.objects.all().order_by('index')[0]
