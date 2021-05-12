@@ -14,6 +14,7 @@ from races.models import RaceSetup, RaceQueue, Vote
 from races.management.commands.decorators import (
     is_writeable_channel, is_elevated_role)
 from races.management.commands import utils
+from races.management.commands.live_options import parse_options
 from races.management.commands.barchart import bars
 
 description = ('Here are the commands to set up "rounds" of car/track combos '
@@ -26,6 +27,52 @@ intents.members = True
 
 bot = commands.Bot(command_prefix='', description=description,
                    intents=intents, help_command=None)
+
+
+@bot.command()
+@commands.check(is_writeable_channel)
+@commands.check(is_elevated_role)
+async def append_extra(ctx, *, cmdline: str):
+    """Append a special round"""
+    try:
+        rs_id = cmdline.split(' ')[0]
+    except Exception:
+        await ctx.send(embed=error(
+            "couldnt find an id."))
+        return
+    try:
+        params = cmdline.split(' ')[1:]
+    except Exception:
+        await ctx.send(embed=error(
+            "There's nothing special I could see. ({0})".format(cmdline)))
+        return
+    if len(params) < 1:
+        await ctx.send(embed=error(
+            "There's nothing special I could see. :("))
+        return
+    try:
+        opts = parse_options(params)
+        assert opts.r
+        assert opts.p
+        assert opts.o
+    except Exception:
+        await ctx.send(embed=error(
+            "Sorry."))
+        return
+    try:
+        rs = RaceSetup.objects.get(pk=rs_id)
+    except Exception:
+        await ctx.send(embed=error(
+            "Sorry, I could not find a combo with that ID."))
+        return
+    max_index = 0
+    try:
+        max_index = RaceQueue.objects.all().order_by('-index')[0].index
+    except Exception:
+        pass
+    rq = RaceQueue(setup=rs, index=max_index + 1, options=' '.join(params))
+    rq.save()
+    await ctx.send("OK.")
 
 
 @bot.command()
@@ -450,6 +497,11 @@ insert
   Shows more info about a combo (`info ID`)
 **append**
   Appends a combo to the end of the queue (`append ID`). If the queue is empty and nobody is on the server, then your combo will be started instantly!
+**append_extra**
+  Same as `append`, but does __not__ start your combo instantly when the server is empty.
+  **BUT** there are some optional parameters: `-pNN` and `-rNN` for a custom amount of minutes for `p`ractice and `r`ace. Example: `-r20` for a 20 minute long race. Max minutes are 60.
+  Also use `-o` if you want open setups, so you can change it.
+  Example: `append 7 -p20 -r45 -o` for 20min practice, 45 min race, open setups
 **love/like/dislike/hate**
   Tell the bot what you think of a combo. Example: `love 7` if you love the combo with ID 7.
   (love = +3 points, like = +1 point, dislike = -1 point, hate = -3 points)
