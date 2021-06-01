@@ -17,7 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.views.generic import TemplateView
 
+from main import views
+
 urlpatterns = [
     path('aadmin/', admin.site.urls),
     path('jstest/', TemplateView.as_view(template_name='jstest.html')),
+    path('roulette/', views.login),
+    path('roulette/callback/', views.login_callback),
 ]
