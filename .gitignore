@@ -6,6 +6,7 @@ static/*
 XXX/*
 main/settings.py
 *.dmp
+devstuff/rsr_stats/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
