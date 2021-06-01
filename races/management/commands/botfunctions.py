@@ -51,9 +51,6 @@ async def append_extra(ctx, *, cmdline: str):
         return
     try:
         opts = parse_options(params)
-        assert opts.r
-        assert opts.p
-        assert opts.o
     except Exception:
         await ctx.send(embed=error(
             "Sorry."))
@@ -71,7 +68,16 @@ async def append_extra(ctx, *, cmdline: str):
         pass
     rq = RaceQueue(setup=rs, index=max_index + 1, options=' '.join(params))
     rq.save()
-    await ctx.send("OK.")
+    reply = 'I added the combo **{0}** to the queue.'.format(rq.setup)
+    additional = []
+    if opts.p:
+        additional.append("practice: {0} minutes".format(opts.p))
+    if opts.r:
+        additional.append("race: {0} minutes".format(opts.p))
+    if opts.o:
+        additional.append("car setup: open")
+    reply += '\n' + ', '.join(additional)
+    await ctx.send(reply)
 
 
 @bot.command()
