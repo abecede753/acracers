@@ -73,7 +73,7 @@ async def append_extra(ctx, *, cmdline: str):
     if opts.p:
         additional.append("practice: {0} minutes".format(opts.p))
     if opts.r:
-        additional.append("race: {0} minutes".format(opts.p))
+        additional.append("race: {0} minutes".format(opts.r))
     if opts.o:
         additional.append("car setup: open")
     reply += '\n' + ', '.join(additional)
