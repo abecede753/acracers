@@ -1,0 +1,66 @@
+1957|Aosta Grand Sport
+1974|Aosta Sport
+773|Barbagallo
+2732|Barcelona - GP
+2733|Barcelona - Moto
+3648|Black Cat County
+3646|Black Cat County - Long
+3647|Black Cat County - Short
+1375|Blackwood_Reloaded
+3102|Brands Hatch - GP
+3103|Brands Hatch - Indy
+3040|Bridgehampton Race Circuit Fall
+480|Castle Hill
+1294|Donington Park GP
+1293|Donington Park National
+3676|Drag 1000m
+3610|Drag 2000m
+3678|Drag 200m
+3679|Drag 400m
+3680|Drag 500m
+1|Drift
+126|Gentrack 1
+308|Grobnik
+7049|Highlands
+7048|Highlands Drift
+7050|Highlands Long
+7051|Highlands Short
+2|Imola
+15552|Laguna Seca
+3|Magione
+20|Monza
+4772|Monza 1966 - Full Course
+4777|Monza 1966 - Junior Course
+4778|Monza 1966 - Road Course
+5|Mugello
+293|Newbury 2002
+292|Newbury 2006
+1006|Nordschleife
+1005|Nordschleife - Endurance
+3669|Nordschleife - Endurance Cup
+1007|Nordschleife - Tourist
+3289|Nurburgring - GP
+3287|Nurburgring - GP (GT)
+3286|Nurburgring - Sprint
+3284|Nurburgring - Sprint (GT)
+12803|Okayama Grand Prix
+2904|Paul Ricard BLANCPAIN v0.9.7
+262|Prato (Long)
+263|Prato (Short)
+4406|Red Bull Ring GP
+4408|Red Bull Ring National
+3485|Riverside Long
+404|Salzburgring
+3288|Silverstone - International
+3677|Silverstone - National
+5124|Silverstone 1967
+3285|Silverstone GP
+341|Spa
+3114|Tor Pozna?
+643|Trento-Bondone
+3570|Vallelunga
+3569|Vallelunga - Classic
+3674|Vallelunga - Club
+3527|VIR Full Course
+2123|Zandvoort
+3720|Zandvoort OSRW

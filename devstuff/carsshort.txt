@@ -1,0 +1,87 @@
+1|Abarth 500 EsseEsse
+52|Abarth 500 EsseEsse Step1
+2687|Abarth 595 SS
+2715|Abarth 595 SS Step 1
+2691|Abarth 595 SS Step 2
+7156|Alfa Romeo 33 Stradale
+6899|Alfa Romeo Giulia Quadrifoglio
+1201|Alfa Romeo GTA
+1757|Alfa Romeo Mito QV
+2421|Audi R8 V10 Plus
+3530|Audi S1
+1758|Audi Sport quattro
+4424|Audi Sport quattro S1 E2
+1880|Audi Sport quattro Step1
+64|BMW 1M
+71|BMW 1M Stage 3
+7|BMW M3 GT2
+53|BMW M3 E30 Drift
+65|BMW M3 E30 Gr.A 92
+47|BMW M3 E30 Group A
+3|BMW M3 E30 Step1
+4|BMW M3 E92
+5|BMW M3 E92 drift
+6|BMW M3 E92 Step1
+7|BMW M3 GT2
+8|BMW Z4 E89
+67|BMW Z4 E89 Drift
+9|BMW Z4 E89 Step1
+60|BMW Z4 GT3
+2688|Chevrolet Corvette C7 Stingray
+78|Ferrari 312T
+41|Ferrari 458 GT2
+10|Ferrari 458 Italia
+62|Ferrari 458 Italia Stage 3
+42|Ferrari 599XX EVO
+59|Ferrari F40
+61|Ferrari F40 Stage 3
+431|Ferrari LaFerrari
+2689|Ford Mustang 2015
+474|Giulietta QV
+829|Giulietta QV Launch Edition 2014
+11|KTM X-Bow R
+2166|Lamborghini Huracan GT3
+1759|Lamborghini Miura P400 SV
+7003|Lamborghini Sesto Elemento
+12|Lotus 2-Eleven
+475|Lotus 2-Eleven GT4
+69|Lotus 98T
+14|Lotus Elise SC
+58|Lotus Elise SC Step1
+54|Lotus Elise SC Step2
+43|Lotus Evora GTC
+66|Lotus Evora GTE
+551|Lotus Evora GTE Carbon
+81|Lotus Evora GX
+55|Lotus Evora S
+72|Lotus Evora S Stage 2
+46|Lotus Exige 240R
+79|Lotus Exige 240R Stage3
+436|Lotus Exige S
+56|Lotus Exige S roadster
+15|Lotus Exige Scura
+552|Lotus Exige V6 CUP
+74|Lotus Exos 125
+76|Lotus Exos 125 Stage 1
+13|Lotus Type 49
+7004|Maserati Alfieri
+3458|Maserati Levante S
+6921|Maserati Quattroporte GTS
+4757|Mazda 787B
+4756|Mazda Miata NA
+57|McLaren MP4-12C
+45|McLaren MP4-12C GT3
+370|Mercedes SLS AMG
+399|Mercedes SLS AMG GT3
+1754|Nissan GT-R NISMO
+16|P4/5 Competizione 2011
+77|Pagani Huayra
+7005|Pagani Huayra BC
+17|Pagani Zonda R
+4024|Porsche Cayenne Turbo S
+4157|Porsche Macan Turbo
+3683|Porsche Panamera Turbo
+850|RUF CTR Yellowbird
+476|Shelby Cobra 427 S/C
+18|Tatuus FA01
+1753|Toyota GT86

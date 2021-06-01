@@ -1,0 +1,181 @@
+2487|Abarth 500 Assetto Corse
+1|Abarth 500 EsseEsse
+52|Abarth 500 EsseEsse Step1
+2687|Abarth 595 SS
+2715|Abarth 595 SS Step 1
+2691|Abarth 595 SS Step 2
+1202|Alfa Romeo 155 TI V6
+7156|Alfa Romeo 33 Stradale
+1200|Alfa Romeo 4C
+6899|Alfa Romeo Giulia Quadrifoglio
+1201|Alfa Romeo GTA
+1757|Alfa Romeo Mito QV
+5307|Audi R18 e-tron quattro 2014
+5066|Audi R8 LMS 2016
+2170|Audi R8 LMS Ultra
+2421|Audi R8 V10 Plus
+3530|Audi S1
+1758|Audi Sport quattro
+4424|Audi Sport quattro S1 E2
+1880|Audi Sport quattro Step1
+5033|Audi TT Cup
+5060|Audi TT RS (VLN)
+64|BMW 1M
+71|BMW 1M Stage 3
+1208|BMW M235i Racing
+2|BMW M3 E30
+53|BMW M3 E30 Drift
+65|BMW M3 E30 Gr.A 92
+47|BMW M3 E30 Group A
+3|BMW M3 E30 Step1
+4|BMW M3 E92
+5|BMW M3 E92 drift
+6|BMW M3 E92 Step1
+7|BMW M3 GT2
+2168|BMW M4
+2165|BMW M4 Akrapovic
+8|BMW Z4 E89
+67|BMW Z4 E89 Drift
+9|BMW Z4 E89 Step1
+60|BMW Z4 GT3
+2688|Chevrolet Corvette C7 Stingray
+1209|Chevrolet Corvette C7R
+394|Dallara F312
+5129|Dallara F317
+5894|Ferrari 250 GTO
+5897|Ferrari 312/67
+78|Ferrari 312T
+5896|Ferrari 330 P4
+41|Ferrari 458 GT2
+10|Ferrari 458 Italia
+62|Ferrari 458 Italia Stage 3
+3401|Ferrari 488 GT3
+3533|Ferrari 488 GTB
+42|Ferrari 599XX EVO
+6253|Ferrari 812 Superfast
+3441|Ferrari F138
+5938|Ferrari F2004
+59|Ferrari F40
+61|Ferrari F40 Stage 3
+3531|Ferrari FXX K
+5895|Ferrari GTO
+431|Ferrari LaFerrari
+3455|Ferrari SF15-T
+6441|Ferrari SF70H
+2489|Ford Escort RS1600
+2171|Ford GT40
+2689|Ford Mustang 2015
+474|Giulietta QV
+829|Giulietta QV Launch Edition 2014
+11|KTM X-Bow R
+3402|Lamborghini Aventador SV
+2167|Lamborghini Countach
+2208|Lamborghini Countach S1
+2488|Lamborghini Gallardo SL
+2535|Lamborghini Gallardo SL Step3
+2166|Lamborghini Huracan GT3
+7576|Lamborghini Huracan Performant
+7685|Lamborghini Huracan Performante
+2268|Lamborghini Huracan ST
+1759|Lamborghini Miura P400 SV
+7003|Lamborghini Sesto Elemento
+12|Lotus 2-Eleven
+475|Lotus 2-Eleven GT4
+5034|Lotus 3-Eleven
+2265|Lotus 72D
+69|Lotus 98T
+14|Lotus Elise SC
+58|Lotus Elise SC Step1
+54|Lotus Elise SC Step2
+43|Lotus Evora GTC
+66|Lotus Evora GTE
+551|Lotus Evora GTE Carbon
+81|Lotus Evora GX
+55|Lotus Evora S
+72|Lotus Evora S Stage 2
+46|Lotus Exige 240R
+79|Lotus Exige 240R Stage3
+436|Lotus Exige S
+56|Lotus Exige S roadster
+15|Lotus Exige Scura
+552|Lotus Exige V6 CUP
+74|Lotus Exos 125
+76|Lotus Exos 125 Stage 1
+2491|Lotus Type 25
+13|Lotus Type 49
+3445|Maserati 250F 12 cylinder
+3443|Maserati 250F 6 cylinder
+7004|Maserati Alfieri
+3442|Maserati GranTurismo MC GT4
+3458|Maserati Levante S
+5158|Maserati MC12 GT1
+6921|Maserati Quattroporte GTS
+4757|Mazda 787B
+4756|Mazda Miata NA
+3221|Mazda MX5 Cup
+3222|Mazda MX5 ND
+3218|Mazda RX-7 Spirit R
+3250|Mazda RX-7 Tuned
+5114|McLaren 570S
+2490|McLaren 650S GT3
+1204|McLaren F1 GTR
+57|McLaren MP4-12C
+45|McLaren MP4-12C GT3
+1203|McLaren P1?
+5372|McLaren P1? GTR
+370|Mercedes SLS AMG
+399|Mercedes SLS AMG GT3
+1206|Mercedes-Benz 190E EVO II
+2501|Mercedes-Benz AMG GT3
+1207|Mercedes-Benz C9 1989 LM
+3281|Nissan 370z Nismo
+1205|Nissan GT-R GT3
+1754|Nissan GT-R NISMO
+3282|Nissan Skyline GTR R34 V-Spec
+16|P4/5 Competizione 2011
+77|Pagani Huayra
+7005|Pagani Huayra BC
+17|Pagani Zonda R
+4013|Porsche 718 Boxster S
+4014|Porsche 718 Boxster S PDK
+3682|Porsche 718 Cayman S
+4015|Porsche 718 RS 60 Spyder
+4104|Porsche 908 LH
+3710|Porsche 911 Carrera RSR 3.0
+3679|Porsche 911 Carrera S
+4011|Porsche 911 GT1-98
+4133|Porsche 911 GT3 Cup 2017
+4148|Porsche 911 GT3 R 2016
+4016|Porsche 911 GT3 RS
+4091|Porsche 911 R
+4760|Porsche 911 RSR 2017
+4127|Porsche 911 Turbo S
+4092|Porsche 917 K
+3680|Porsche 917/30 Spyder
+3709|Porsche 918 Spyder
+4010|Porsche 919 Hybrid 2015
+4093|Porsche 919 Hybrid 2016
+3739|Porsche 935/78 Moby Dick
+4020|Porsche 962 C Long Tail
+4012|Porsche 962 C Short Tail
+4024|Porsche Cayenne Turbo S
+4009|Porsche Cayman GT4
+3740|Porsche Cayman GT4 Clubsport
+4157|Porsche Macan Turbo
+3683|Porsche Panamera Turbo
+3532|Praga R1
+850|RUF CTR Yellowbird
+2202|RUF RT12 R
+2199|RUF RT12 R AWD
+2169|SCG 003C
+476|Shelby Cobra 427 S/C
+18|Tatuus FA01
+3219|Toyota AE86
+3224|Toyota AE86 Drift
+3223|Toyota AE86 Tuned
+5373|Toyota Celica ST185 4WD Turbo
+1753|Toyota GT86
+3216|Toyota Supra MKIV
+3217|Toyota Supra MKIV Drift
+3260|Toyota Supra MKIV Time Attack
+5386|Toyota TS040 Hybrid 2014

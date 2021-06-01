@@ -1,0 +1,29 @@
+## Fahrer Faktoren anhand des letzten rennens berechnen
+
+fahrer_faktor = rundenzeit_letztes_rennen_fahrer / rundenzeit_letztes_rennen_standard
+
+
+## A's  auswählen
+
+
+schätzrundenzeiten für jeden fahrer und jedes auto der neuen runde berechnen:
+fahrer_zeit = fahrer_faktor * auto_rundenzeit_neues_rennen_standard
+
+vier fahrer abcd, 3 autos 123  jeder wert ist eine fahrer_zeit
+
+zeitstrahl
+
+0     10     20     30     40     50     60     70
+   c1  a1 b1       a2 d1   b2      d2  d3  a3    d4
+   
+iteriere vom ersten wert zum ende
+ such eine volle gruppe von fahrern mit je einem auto beginnend mit aktuellem index.
+ wenn gefunden:
+     ermittle median_zeit der cX bY aZ dY
+     berechne jeden fahrer_wert = fahrer_zeit / median_zeit
+     stdabw der fahrer_werte berechnen und in groupinfo sammeln
+
+nimm die groupinfo mit der kleinsten stdabweichung. das sind die autos!
+
+
+ 

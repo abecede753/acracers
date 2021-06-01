@@ -1,0 +1,30 @@
+3040|Bridgehampton Race Circuit Fall
+1294|Donington Park GP
+1293|Donington Park National
+308|Grobnik
+7049|Highlands
+7048|Highlands Drift
+7050|Highlands Long
+7051|Highlands Short
+2|Imola
+15552|Laguna Seca
+3|Magione
+20|Monza
+5|Mugello
+3289|Nurburgring - GP
+3287|Nurburgring - GP (GT)
+3286|Nurburgring - Sprint
+3284|Nurburgring - Sprint (GT)
+12803|Okayama Grand Prix
+4406|Red Bull Ring GP
+4408|Red Bull Ring National
+3485|Riverside Long
+3288|Silverstone - International
+3677|Silverstone - National
+3285|Silverstone GP
+341|Spa
+3114|Tor Pozna?
+3570|Vallelunga
+3569|Vallelunga - Classic
+3674|Vallelunga - Club
+2123|Zandvoort
