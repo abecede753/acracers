@@ -31,7 +31,7 @@ class Home(TemplateView):
         else:
             context['current'] = None
         context['joinurl'] = 'acmanager://race/online/join?ip={0}&httpPort={1}'.format(
-            settings.JOIN_IP, settings.JOIN_PORT)
+            settings.ACSERVERWRAPPERIP, settings.ACSERVERWRAPPERPORT)
         return context
 
 
