@@ -46,6 +46,7 @@ class AdhocRace(models.Model):
     fixed_setups = models.BooleanField(default=False)
     show_public = models.BooleanField(default=False)
     start_rule = models.IntegerField(default=0, choices=START_RULES)
+    run_forever = models.BooleanField(default=False)
 
     def __str__(self):
         return "{0}".format(self.racesetup.title)
@@ -106,6 +107,7 @@ class AdhocRace(models.Model):
         if self.join_password:
             srv['SERVER']['PASSWORD'] = self.join_password
         srv['SERVER']['START_RULE'] = str(self.start_rule)
+        srv['SERVER']['LOOP_MODE'] = "1" if self.run_forever else "0"
 
         # TODO make this modifiable
         srv['SERVER']['AUTOCLUTCH_ALLOWED'] = '1'
@@ -177,13 +179,11 @@ class AdhocRace(models.Model):
     def teardown(self):
         resultsdir = pathlib.Path(self.sessionrootdir,
                                   '..', 'results').resolve()
-        resulttext = ''
+        self.result = ''
         if resultsdir.is_dir():
             for child in resultsdir.iterdir():
                 if 'RACE' in child.as_posix():
-                    resulttext += child.read_text() + '\n'
-        if resulttext:
-            self.result = child.read_text()
+                    self.result += child.read_text() + '\n'
         self.end_ts = timezone.now()
         self.save()
-        return resulttext  # if empty, then we can be deleted by daemon.
+        return self.result  # if empty, then we can be deleted by daemon.

@@ -48,7 +48,10 @@
 			<h2>Security</h2>
 			{% bootstrap_field form.admin_password %}
 			{% bootstrap_field form.join_password %}
-			{% bootstrap_field form.show_public %}
+			<div class="row">
+				<div class="col-md-6">{% bootstrap_field form.show_public %}</div>
+				<div class="col-md-6">{% bootstrap_field form.run_forever %}</div>
+			</div>
 		</div>
 	</div>
 	<div class="row">

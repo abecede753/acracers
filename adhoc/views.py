@@ -16,7 +16,7 @@ class AdhocCreateView(UserPassesTestMixin, CreateView):
     fields = ('racesetup', 'practice_minutes', 'qualifying_minutes',
               'race_minutes', 'reverse_grid', 'join_password',
               'admin_password', 'fixed_setups', 'show_public',
-              'start_rule')
+              'start_rule', 'run_forever')
     login_url = '/'
 
     def test_func(self):
