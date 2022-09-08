@@ -100,6 +100,8 @@ class RaceSetup(models.Model):
     def fix_cm_wrapper_params(self, directory):
         """ensures the we have the correct wrapper port,
         description etc.
+        just create a "standard" config
+        also take care of car / track overrides.
         returns `True` if model has changed."""
         dirty = False
         with open(os.path.join(directory, 'cfg',
@@ -249,31 +251,31 @@ class RaceSetup(models.Model):
             super().save(*args, **kwargs)  # model has changed. must save again
 
 
-class Race(models.Model):
-    start_ts = models.DateTimeField(auto_now_add=True)
-    racesetup = models.ForeignKey(RaceSetup,
-                                  on_delete=models.CASCADE)
-    stdout = models.TextField(default='')
-    stderr = models.TextField(default='')
-
-    end_ts = models.DateTimeField(null=True)
-
-    def __str__(self):
-        return self.racesetup.title
-
-
-class Poll(models.Model):
-    racesetups = models.ManyToManyField(RaceSetup, through='Voting')
-    js = models.TextField(default='', null=True, blank=True)
-
-
-class Voting(models.Model):
-    racesetup = models.ForeignKey(RaceSetup, on_delete=models.CASCADE)
-    poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
-    points = models.IntegerField(default=0)
-
-
-class Vote(models.Model):
-    discorduser = models.CharField(max_length=1024)
-    racesetup = models.ForeignKey(RaceSetup, on_delete=models.CASCADE)
-    value = models.SmallIntegerField()
+# class Race(models.Model):
+#     start_ts = models.DateTimeField(auto_now_add=True)
+#     racesetup = models.ForeignKey(RaceSetup,
+#                                   on_delete=models.CASCADE)
+#     stdout = models.TextField(default='')
+#     stderr = models.TextField(default='')
+# 
+#     end_ts = models.DateTimeField(null=True)
+# 
+#     def __str__(self):
+#         return self.racesetup.title
+# 
+# 
+# class Poll(models.Model):
+#     racesetups = models.ManyToManyField(RaceSetup, through='Voting')
+#     js = models.TextField(default='', null=True, blank=True)
+# 
+# 
+# class Voting(models.Model):
+#     racesetup = models.ForeignKey(RaceSetup, on_delete=models.CASCADE)
+#     poll = models.ForeignKey(Poll, on_delete=models.CASCADE)
+#     points = models.IntegerField(default=0)
+# 
+# 
+# class Vote(models.Model):
+#     discorduser = models.CharField(max_length=1024)
+#     racesetup = models.ForeignKey(RaceSetup, on_delete=models.CASCADE)
+#     value = models.SmallIntegerField()

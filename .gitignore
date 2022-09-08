@@ -1,3 +1,4 @@
+OUTSIDE/*
 races/defaults.py
 media/*
 static/*
@@ -7,6 +8,7 @@ main/localsettings.py
 devstuff/rsr_stats*
 devstuff/OLDrsr_stats*
 serverstuff/*
+main/localsettings.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
