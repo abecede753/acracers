@@ -1,0 +1,87 @@
+{% extends "main/base.html" %}
+{% load easy_thumbnails_tags %}
+{% load bootstrap5 %}
+{% load markup_tags %}
+{% block page_header %}
+{% endblock %}
+{% block content %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+
+<form action="" method="post" class="form">
+	<div class="row">
+		{% csrf_token %}
+		<div class="col-md-6">
+			<select class="rsselector" name="racesetup" id="id_racesetup" size=10>
+				{% for rs in racesetups %}
+				<option value="{{ rs.pk }}" style="background-image:url({{ rs.image.micro.url }});">{{ rs.title }}
+				</option>
+				{% endfor %}
+			</select>
+		</div>
+		<div id="rsdetail" class="col-md-6" style="height:444px; overflow-y:scroll">
+			{% for rs in racesetups %}
+<div id="rsdetail{{ rs.pk }}" data-fixedcars="{{ rs.fixed_cars }}">
+    <img src="{{ rs.image.url }}">
+    <h1>{{ rs.title }}</h1>
+    {{ rs.description|apply_markup:"restructuredtext"}}
+</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<h2>Sessions</h2>
+			<div class="row">
+				<div class="col-md-4">{% bootstrap_field form.practice_minutes %}</div>
+				<div class="col-md-4">{% bootstrap_field form.qualifying_minutes %}</div>
+				<div class="col-md-4">{% bootstrap_field form.race_minutes %}</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">{% bootstrap_field form.reverse_grid %}</div>
+				<div class="col-md-4"><label class="form-label">&nbsp;</label>{% bootstrap_field form.fixed_setups %}</div>
+				<div class="col-md-4">{% bootstrap_field form.start_rule %}</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<h2>Security</h2>
+			{% bootstrap_field form.admin_password %}
+			{% bootstrap_field form.join_password %}
+			{% bootstrap_field form.show_public %}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			{% buttons %}
+			<button type="submit" class="btn btn-primary">
+				Create race
+			</button>
+			{% endbuttons %}
+		</div>
+	</div>
+</form>
+{% endblock %}
+
+{% block afterbody %}
+<script>
+	$(document).ready(function() {
+
+		$("#id_racesetup" )
+			.change(function () {
+
+
+				$("#rsdetail div").removeClass("current");
+				$("#rsdetail" + $("#id_racesetup option:selected").val())
+					.addClass("current");
+			})
+			.change();
+		$("#id_racesetup").focus();
+
+	});
+</script>
+{% endblock %}
+
+{% comment %}
+vim:ts=2:noexpandtab:smartindent:shiftwidth=2:
+{% endcomment %}

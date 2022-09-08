@@ -1,0 +1,61 @@
+{% load markup_tags %}
+{% if current %}
+<div><span id="wehaveacombo" style="display:none">{{ current.pk }}</span>
+
+    <img class="img-fluid" src="{{ current.racesetup.image.url }}">
+    <h4>{{ current.racesetup.title }}</h4>
+    {{ current.racesetup.description|apply_markup:"restructuredtext"}}
+
+    <div class="row">
+
+        <div class="col-md-6">
+            {% if current.practice_minutes %}Practice:{{ current.practice_minutes }}m<br>{% endif %}
+            {% if current.qualifying_minutes %}Qualifying:{{ current.qualifying_minutes }}m<br>{% endif %}
+
+            {% if current.reverse_grid %}
+            {% if current.race_minutes %}Race 1:{{ current.race_minutes }}m<br>{% endif %}
+            {% if current.race_minutes %}Race 2:{{ current.race_minutes }}m{% endif %}
+            {% else %}
+            {% if current.race_minutes %}Race:{{ current.race_minutes }}m{% endif %}
+            {% endif %}
+        </div>
+        <div class="col-md-6 text-center">
+            <a class="btn btn-primary container-fluid" href="{{ joinurl }}">Join with Content Manager</a>
+        </div>
+    </div>
+
+    {% if request.user.is_superuser %}
+    <div class="row">
+        {% if current.join_password %}
+        <div class="col-sm">
+            <a class="btn btn-secondary container-fluid" data-bs-toggle="collapse" href="#joinpassword" role="button" aria-expanded="false" aria-controls="joinpassword">
+                Show "Join" password
+            </a>
+        </div>
+        {% endif %}
+        <div class="col-sm">
+            <a class="btn btn-secondary container-fluid" data-bs-toggle="collapse" href="#adminpassword" role="button" aria-expanded="false" aria-controls="adminpassword">
+                Show "Admin" password
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        {% if current.join_password %}
+        <div class="col-sm">
+            <h4 class="collapse text-center" id="joinpassword">
+                {{ current.join_password }}
+            </h4>
+        </div>
+        {% endif %}
+        <div class="col-sm">
+            <h4 class="collapse text-center" id="adminpassword">
+                {{ current.admin_password }}
+            </h4>
+        </div>
+    </div>
+    {% endif %}
+
+</div>
+{% else %}
+The server is idle.
+{% endif %}

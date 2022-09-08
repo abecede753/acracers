@@ -1,0 +1,61 @@
+import os
+
+
+# You can keep the BASE_DIR setting as it is.
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'asfwieo92h3r9i23ujfnfiuh9faf+dwr#3Fee'
+
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database_name',
+        'HOST': '127.0.0.1',
+    }
+}
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') + os.path.sep
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# where should an instance of acServer run? (Directory will be created on the
+# fly. Make sure that the parent directory exists!
+
+ACSERVERROOT = '/some/dir/acracers/server1'
+
+# root directory of the ac-server-wrapper script
+ACSERVERWRAPPERROOT = '/some/dir/acracers/acserverwrapper'
+
+# executable filename of "acServer" incl. path.
+ACSERVEREXE = '/some/dir/acracers/kunos/acServer'
+
+# executable filename of "ac-server-wrapper.js" incl. path.
+ACWRAPPEREXE = '/some/dir/acracers/server1/ac-server-wrapper.js'
+
+# default admin password for any new uploaded race-setups
+DEFAULT_ADMIN_PASSWORD = 'thisismys3cr3t'
+
+
+# Server name for steam auth redirection on success.
+ABSOLUTE_URL = 'www.my.server.com'
+
+# steam web API key
+STEAM_WEB_API = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
+
+DEBUG=True
+
+CSRF_TRUSTED_ORIGINS = ['http://localhost',
+                        'http://127.0.0.1']
+
+LOG_FILENAME = '/some/dir/debug.log'
+
+# how to join via content manager
+JOIN_IP = 127.0.0.1  # ip address of your server
+JOIN_PORT = 8881  # port of your acServer

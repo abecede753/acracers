@@ -1,0 +1,22 @@
+<div class="row">
+	<h4>Upcoming races</h4>
+	<table class="table">
+		<thead><tr>
+				<th scope="col">&nbsp;</th>
+				<th scope="col">Title</th>
+				<th scope="col">Sessions</th>
+				<th scope="col">Downloads</th>
+			</tr></head>
+			{% for rs in queue %}
+			{% include "adhoc/queued_item.html" with object=rs %}
+			{% endfor %}
+	</table>
+	<p><small>You can drag any download link from here into the middle of your Content Manager window for easy installation.</small></p>
+
+	{% if request.user.is_superuser %}
+	<a class="btn btn-primary" href="{% url 'adhoc:create' %}">Add another race</a>
+	{% endif %}
+</div>
+{% comment %}
+vim:ts=2:noexpandtab:smartindent:shiftwidth=2:
+{% endcomment %}

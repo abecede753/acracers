@@ -1,0 +1,40 @@
+{% extends "main/base.html" %}
+{% block content %}
+
+
+
+
+{% load bootstrap5 %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<h1>Preferences</h1>
+<p>Anything you enter here will be the default value displayed when starting a race.</p>
+
+{# Display a form #}
+<form action="" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">
+        Submit
+    </button>
+    {% endbuttons %}
+</form>
+
+</div>
+{% endblock %}
+
+{% block afterbody %}
+<script>
+    $(document).ready(function() {
+        $("#id_racesetup").change(function() {
+            alert( "Handler for .change() called." );
+        });
+    });
+</script>
+{% endblock %}
+
+{% comment %}
+vim:ts=2:noexpandtab:smartindent:shiftwidth=2:
+{% endcomment %}

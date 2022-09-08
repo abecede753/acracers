@@ -1,0 +1,30 @@
+    <tr>
+        <td scope="col">
+            {% if request.user.is_superuser %}
+            <form action="{% url "adhoc:delete" object.pk %}" method="post">
+                  {% csrf_token %}<button class="btn btn-danger btn-sm">✕</button>
+            </form>
+            {% endif %}</td>
+        <td scope="col">{{ object }}</td>
+        <td scope="col">
+            {% if object.practice_minutes %}P:{{ object.practice_minutes }}m{% endif %}
+            {% if object.qualifying_minutes %}Q:{{ object.qualifying_minutes }}m{% endif %}
+
+            {% if object.reverse_grid %}
+            {% if object.race_minutes %}R1:{{ object.race_minutes }}m{% endif %}
+            {% if object.race_minutes %}R2:{{ object.race_minutes }}m{% endif %}
+            {% else %}
+            {% if object.race_minutes %}R:{{ object.race_minutes }}m{% endif %}
+            {% endif %}
+        </td>
+        <td scope="col">
+    {% if object.racesetup.car_download_url %}
+    <a href="{{ object.racesetup.car_download_url }}" target="_blank">
+        Car</a>
+    {% endif %}
+    {% if object.racesetup.track_download_url %}
+
+    <a href="{{ object.racesetup.track_download_url }}" target="_blank">Track</a>
+    {% endif %}
+        </td>
+    </tr>

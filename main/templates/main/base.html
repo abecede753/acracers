@@ -1,0 +1,48 @@
+{% load bootstrap5 %}
+{% load static %}
+
+<!DOCTYPE html>  
+<html lang="en">  
+	<head>  
+		<meta charset="UTF-8">  
+		<title>ACRacers - {{ title }}</title>  
+		<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<link rel="stylesheet" href="{% static "styles.css" %}">
+<link rel="stylesheet" href="{% static "bootstrap_icons/css/bootstrap_icons.css" %}">
+
+{% block page_header %}{% endblock %}
+	</head>
+	<body>
+		<div class="container">
+
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">ACRacers.com</a>
+    <form class="d-flex">
+			{% if request.user.is_authenticated %}
+			<a href="{% url 'profile' request.user.props.pk %}" class="btn btn-outline-success">
+			<img src="{{request.user.props.icon}}">
+			{{ request.user.props.personaname }}
+			</a>
+			{% else %}
+			<a href="{% url 'steamlogin' %}" class="btn btn-outline-success"
+							><img src="{% static 'loginwithsteam.png' %}"></a>
+			{% endif %}
+    </form>
+  </div>
+</nav>
+				{% block content %}{% endblock %}
+		</div>
+	</body>  
+{% block afterbody %}{% endblock %}
+</html>  
+
+<!--
+	vim:ts=2:noexpandtab:smartindent:shiftwidth=2
+-->

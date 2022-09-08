@@ -1,0 +1,35 @@
+.rsselector {
+	width:100%;
+}
+.rsselector option {
+	padding-top:10px;
+	padding-left:110px;
+	height:44px;
+	background-position:0px 0px;
+	background-repeat:no-repeat;
+	border-bottom:1px solid black;
+	font-size:18px;
+	font-weight:bold;
+}
+div#rsdetail>div {
+	display:none;
+}
+div#rsdetail>div>img {
+	width:100%;
+}
+div#rsdetail>div.current {
+	display:block;
+}
+
+#killdiv {
+	position:relative;
+}
+#killcombo {
+	position:absolute;
+	right:0;
+}
+
+/* homepage */
+.queueentry>h3 {
+}
+

@@ -1,0 +1,122 @@
+{% extends "main/base.html" %}
+{% load bootstrap_icons %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-6">
+    <h4>Current race</h4>
+    {% if request.user.is_superuser %}
+		<div id="killdiv">
+			<button type="button" style="display:none" class="btn btn-danger btn-sm" id="killcombo">✕</button>
+		</div>
+
+<div class="modal fade" id="killModal" tabindex="-1" aria-labelledby="killModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="killModalLabel">Warning!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          Do you really want to stop the running combo?
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-bs-dismiss="modal" class="btn btn-secondary">Cancel</button>
+        <button type="button" id="stopcombo" data-url="{% url 'adhoc:kill' %}"
+            class="btn btn-danger">Stop running combo!</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="waitModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Stopping the combo...</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+				Please wait...
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+    <script>
+var killModal = new bootstrap.Modal(document.getElementById('killModal'), {})
+var killModalEl = document.getElementById('killModal');
+killModalEl.addEventListener('hidden.bs.modal', function (event) {
+	theTimeout = setTimeout("updater()", 2000);
+});
+killModalEl.addEventListener('shown.bs.modal', function (event) {
+	clearTimeout(theTimeout);
+});
+var waitModal = new bootstrap.Modal(document.getElementById('waitModal'), {})
+
+
+$('#killcombo').on('click', function(e){
+	killModal.show();
+});
+
+const wait = t => new Promise(s => setTimeout(s, t, t));
+
+$('#stopcombo').on('click', function(e){
+	e.preventDefault();
+
+	$.ajax({
+		type: "GET",
+		url: $("#stopcombo").data('url'),
+		success: async function (response) {
+			$('#killModal').modal('hide');
+			waitModal.show()
+			await wait(4500);
+			waitModal.hide()
+		},
+		error: function(error) {
+			alert("Oopsie. please reload the page.");
+		}
+	});
+});
+    </script>
+
+		{% endif %}
+		<div id="currentracecontent">{% include "main/current_snippet.html" %}</div>
+	</div>
+	<div id="upcomingcontent" class="col-md-6">{% include "main/upcoming_snippet.html" %}</div>
+</div>
+<div id="updatechecker" style="display:none"></div>
+{% endblock %}
+
+{% block afterbody %}
+<script>
+var theTimeout;
+function updater() {
+	$('#updatechecker').load("/home_update/", 
+		function(response, status, xhr) {
+			if ($("#updatechecker").text().indexOf("The server is idle") == -1) {
+				$("#killcombo").show();
+			} else {
+				$("#killcombo").hide();
+			}
+			if ($("#currentracecontent").html() != $("#currentupdate").html()) {
+				$("#currentracecontent").html($("#currentupdate").html());
+			}
+			if ($("#upcomingcontent").html() != $("#upcomingupdate").html()) {
+				$("#upcomingcontent").html($("#upcomingupdate").html());
+			}
+			
+
+			theTimeout = setTimeout("updater()", 2000);
+		}
+	);
+}
+
+$(document).ready(function() {
+	updater();
+});
+</script>
+{% endblock %}
+{% comment %}
+vim:ts=2:noexpandtab:smartindent:shiftwidth=2:
+{% endcomment %}
