@@ -2,6 +2,7 @@ OUTSIDE/*
 media/*
 static/*
 XXX/*
+devstuff/*
 main/localsettings.py
 *.dmp
 devstuff/rsr_stats*
