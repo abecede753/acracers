@@ -24,6 +24,7 @@
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">ACRacers.com</a>
+		<a class="btn" href="https://discord.gg/pJRrjZCARe">Join the Discord</a>
     <form class="d-flex">
 			{% if request.user.is_authenticated %}
 			<a href="{% url 'profile' request.user.props.pk %}" class="btn btn-outline-success">
