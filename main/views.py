@@ -30,13 +30,16 @@ class Home(TemplateView):
             context['current'] = current[0]
         else:
             context['current'] = None
-        context['joinurl'] = 'acmanager://race/online/join?ip={0}&httpPort={1}'.format(
-            settings.ACSERVERWRAPPERIP, settings.ACSERVERWRAPPERPORT)
+        context['joinurl'] = ('acmanager://race/online/join?'
+                              'ip={0}&httpPort={1}').format(
+                                  settings.ACSERVERWRAPPERIP,
+                                  settings.ACSERVERPORT)
         return context
 
 
 class HomeUpdate(Home):
     template_name = 'main/home_update.html'
+
 
 def steamlogin(request):
     return auth('/steamlogin/callback/')
