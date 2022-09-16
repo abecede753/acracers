@@ -1,0 +1,5 @@
+{% include "main/welcomes/header.txt" %}
+IMPORTANT ANNOUNCEMENT:
+This is a one-off session. After the race please QUIT the game and wait a few seconds
+until a new great car/track combo is visible for you in Content Manager. THEN RE-JOIN!
+.

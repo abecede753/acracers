@@ -1,11 +1,13 @@
 import json
 import os
 import pathlib
-from django.utils import timezone
 
 from django.conf import settings
-from adhoc.raceconfigs import ServerConfig, EntryList
 from django.db import models
+from django.template.loader import get_template
+from django.utils import timezone
+
+from adhoc.raceconfigs import ServerConfig, EntryList
 from races.models import RaceSetup
 
 
@@ -59,13 +61,14 @@ class AdhocRace(models.Model):
          'WEATHER_0': {'GRAPHICS':'3_clear'}
         }``
         """
-        self.sessionrootdir = self.racesetup.unpack_for_acserver()
+        self.sessioncfgdir = self.racesetup.unpack_for_acserver()
+        self.sessiondir = (pathlib.Path(self.sessioncfgdir) / '..').resolve()
 
         # alter ini files...
         self.serverconfig = ServerConfig(
-            os.path.join(self.sessionrootdir, 'server_cfg.ini'))
+            os.path.join(self.sessioncfgdir, 'server_cfg.ini'))
         self.entrylist = EntryList(
-            os.path.join(self.sessionrootdir, 'entry_list.ini'))
+            os.path.join(self.sessioncfgdir, 'entry_list.ini'))
 
         srv = self.serverconfig.ini
         for sectionname in 'PRACTICE RACE QUALIFY'.split():
@@ -134,7 +137,13 @@ class AdhocRace(models.Model):
         self.serverconfig.save()
         self.entrylist.save()
         self.fix_download_urls()
-        
+
+        # welcome txt
+        tmpl = get_template('main/welcomes/onerace.txt')
+        if self.run_forever:
+            tmpl = get_template('main/welcomes/loop.txt')
+        (self.sessiondir / 'welcome.txt').write_text(tmpl.render())
+
         self.start_ts = timezone.now()
         self.index = None  # remove this adhocrace from queue
         self.save()
@@ -154,7 +163,7 @@ class AdhocRace(models.Model):
         """make sure the download urls are correct, if we have
         car/track overrides in the racesetup model."""
         dirty = False
-        wrapperjson = os.path.join(self.sessionrootdir,
+        wrapperjson = os.path.join(self.sessioncfgdir,
                                    'cm_content/content.json')
         with open(wrapperjson) as jsonfile:
             content = json.load(jsonfile)
@@ -177,8 +186,7 @@ class AdhocRace(models.Model):
                 json.dump(content, jsonfile)
 
     def teardown(self):
-        resultsdir = pathlib.Path(self.sessionrootdir,
-                                  '..', 'results').resolve()
+        resultsdir = self.sessiondir / "results"
         self.result = ''
         if resultsdir.is_dir():
             for child in resultsdir.iterdir():
