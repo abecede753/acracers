@@ -14,7 +14,7 @@
 		<meta name="msapplication-TileColor" content="#da532c">
 		<meta name="msapplication-config" content="/static/browserconfig.xml">
 		<meta name="theme-color" content="#ffffff">
-		<title>ACRacers - {{ title }}</title>  
+		<title>ACRacers {{ title }}</title>  
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
 					integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 					crossorigin="anonymous"></script>
@@ -31,16 +31,16 @@
 
 <nav class="navbar navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">ACRacers.com</a>
-		<a class="btn btn-outline-success" href="https://discord.gg/pJRrjZCARe">Join our Discord</a>
+		<a class="navbar-brand" href="/"><img style="height:3.5em" src="/static/headerlogo.png"></a>
+		<a class="btn btn-info" href="https://discord.gg/pJRrjZCARe">Join our Discord</a>
     <form class="d-flex">
 			{% if request.user.is_authenticated %}
-			<a href="{% url 'profile' request.user.props.pk %}" class="btn btn-outline-success">
+			<a href="{% url 'profile' request.user.props.pk %}" class="btn btn-info">
 			<img src="{{request.user.props.icon}}">
 			{{ request.user.props.personaname }}
 			</a>
 			{% else %}
-			<a href="{% url 'steamlogin' %}" class="btn btn-outline-success"
+			<a href="{% url 'steamlogin' %}" class="btn btn-info"
 							><img src="{% static 'loginwithsteam.png' %}"></a>
 			{% endif %}
     </form>

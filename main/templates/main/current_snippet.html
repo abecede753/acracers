@@ -3,7 +3,9 @@
 <div><span id="wehaveacombo" style="display:none">{{ current.pk }}</span>
 
     <img class="img-fluid" src="{{ current.racesetup.image.url }}">
-    <h4>{{ current.racesetup.title }}</h4>
+    <h4>{% if current.run_forever %}<span class="info" title="Session repeats forever (until a superuser stops it)">↺</span>
+        {% else %}<span class="info" title="After the race the server goes to the next combo in the queue">⇥</span>{% endif %}
+        {{ current.racesetup.title }}</h4>
     {{ current.racesetup.description|apply_markup:"restructuredtext"}}
 
     <div class="row">

@@ -38,3 +38,6 @@ div#rsdetail>div.current {
 .queueentry>h3 {
 }
 
+.info {
+    cursor:help;
+}

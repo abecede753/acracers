@@ -5,7 +5,10 @@
                   {% csrf_token %}<button class="btn btn-danger btn-sm">✕</button>
             </form>
             {% endif %}</td>
-        <td scope="col">{{ object }}</td>
+        <td scope="col">
+        {% if object.run_forever %}<span class="info" title="Session repeats forever (until a superuser stops it)">↺</span>
+        {% else %}<span class="info" title="After the race the server goes to the next combo in the queue">⇥</span>{% endif %}
+        {{ object }}</td>
         <td scope="col">
             {% if object.practice_minutes %}P:{{ object.practice_minutes }}m{% endif %}
             {% if object.qualifying_minutes %}Q:{{ object.qualifying_minutes }}m{% endif %}
