@@ -5,18 +5,26 @@
 <html lang="en">  
 	<head>  
 		<meta charset="UTF-8">  
+		<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/static/favicon-16x16.png">
+		<link rel="manifest" href="/static/site.webmanifest">
+		<link rel="mask-icon" href="/static/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/static/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/static/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
 		<title>ACRacers - {{ title }}</title>  
-		<script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+					integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+					crossorigin="anonymous"></script>
 
-{% bootstrap_css %}
-{% bootstrap_javascript %}
-<link rel="stylesheet" href="{% static "styles.css" %}">
-<link rel="stylesheet" href="{% static "bootstrap_icons/css/bootstrap_icons.css" %}">
+		{% bootstrap_css %}
+		{% bootstrap_javascript %}
+		<link rel="stylesheet" href="{% static "styles.css" %}">
+		<link rel="stylesheet" href="{% static "bootstrap_icons/css/bootstrap_icons.css" %}">
 
-{% block page_header %}{% endblock %}
+		{% block page_header %}{% endblock %}
 	</head>
 	<body>
 		<div class="container">
