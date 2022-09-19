@@ -1,0 +1,3 @@
+{% include "main/welcomes/header.txt" %}
+This is a race from a tierdrop event.
+.
