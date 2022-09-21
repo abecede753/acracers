@@ -8,7 +8,9 @@ from django.template.loader import get_template
 from django.utils import timezone
 
 from adhoc.raceconfigs import ServerConfig, EntryList
+from main.acserver import ac_run
 from races.models import RaceSetup
+from races.tierdrop import Tierdrop
 
 
 def cleanup_AdhocRace_indices():
@@ -49,6 +51,8 @@ class AdhocRace(models.Model):
     show_public = models.BooleanField(default=False)
     start_rule = models.IntegerField(default=0, choices=START_RULES)
     run_forever = models.BooleanField(default=False)
+
+    finished = False  # for adhocserver, especially dierdrop races
 
     def __str__(self):
         return "{0}".format(self.racesetup.title)
@@ -149,16 +153,6 @@ class AdhocRace(models.Model):
         self.save()
         cleanup_AdhocRace_indices()
 
-#        if self.racesetup.tierdrop:
-#            self.init_tierdrop()
-
-#    def init_tierdrop(self):
-#        self.td = TierDrop()
-#        self.td.results = []
-#        self.td.drivers = []
-#        self.td.models = self.entrylist.models
-#        self.td.num_races = len(self.models)
-
     def fix_download_urls(self):
         """make sure the download urls are correct, if we have
         car/track overrides in the racesetup model."""
@@ -185,13 +179,25 @@ class AdhocRace(models.Model):
             with open(wrapperjson, 'w') as jsonfile:
                 json.dump(content, jsonfile)
 
-    def teardown(self):
+    def run(self):
+        if self.racesetup.tierdrop:
+            Tierdrop(self).run()
+        else:
+            ac_run()
+
+    @property
+    def result_available(self):
+        return self.teardown(delete=False)
+
+    def teardown(self, delete=True):
+        have_result = False
         resultsdir = self.sessiondir / "results"
         self.result = ''
         if resultsdir.is_dir():
             for child in resultsdir.iterdir():
                 if 'RACE' in child.as_posix():
+                    have_result = True
                     self.result += child.read_text() + '\n'
         self.end_ts = timezone.now()
         self.save()
-        return self.result  # if empty, then we can be deleted by daemon.
+        return have_result

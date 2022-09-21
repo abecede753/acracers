@@ -32,10 +32,12 @@ class Driver:
 
 
 class Car:
-    def __init__(self, model, skin, guid, fixed_setup):
+    def __init__(self, carnumber, model, skin, guid, drivername, fixed_setup):
+        self.carnumber = carnumber
         self.model = model
         self.skin = skin
         self.guid = guid
+        self.drivername = drivername
         self.fixed_setup = fixed_setup
 
     def __repr__(self):
@@ -45,14 +47,46 @@ class Car:
 class EntryList(CParser):
     """Driver list in cfg/entry_list.ini in a pythonic format."""
 
-    @property
-    def models(self):
-        the_models = []
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.cars = self._get_cars()
+
+    def _get_cars(self):
+        the_cars = []
         for groupname in self.ini.keys():
             if 'CAR' in groupname:
-                the_models.append(Car(
-                    self.ini[groupname]['MODEL'],
-                    self.ini[groupname]['SKIN'],
-                    self.ini[groupname]['GUID'],
-                    self.ini[groupname]['FIXED_SETUP']))
-        return the_models
+                carnumber = int(groupname[groupname.rfind('_') + 1:])
+                the_cars.append(Car(
+                    carnumber,
+                    self.ini[groupname].get('MODEL'),
+                    self.ini[groupname].get('SKIN'),
+                    self.ini[groupname].get('GUID'),
+                    self.ini[groupname].get('DRIVERNAME'),
+                    self.ini[groupname].get('FIXED_SETUP')))
+        return the_cars
+
+
+class ServerSetup:
+    """the complete server setup."""
+
+    def __init__(self, server_cfg_filename, entry_list_filename):
+        self.server_cfg = ServerConfig(server_cfg_filename)
+        self.entry_list = EntryList(entry_list_filename)
+
+        self.cars_count = 1
+        self.drivers = []
+        import pdb; pdb.set_trace()
+        
+        # self.server.serverconfig.ini['SERVER']['CARS'] = self.cars[0]
+
+    @property
+    def rounds(self):
+        return len(self.entry_list.cars)
+
+    def write(self):
+        """overwrite server_cfg.ini and entry_list.ini
+        according to current values."""
+
+
+
+
