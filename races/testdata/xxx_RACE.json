@@ -1,0 +1,5892 @@
+{
+	"TrackName": "ks_red_bull_ring",
+	"TrackConfig": "layout_gp",
+	"Type": "RACE",
+	"DurationSecs": 0,
+	"RaceLaps": 0,
+	"Cars": [
+		{
+			"CarId": 0,
+			"Driver": {
+				"Name": "Craig Dunkley",
+				"Team": "",
+				"Nation": "GBR",
+				"Guid": "654654654654654",
+				"GuidsList": [
+					"76561198107328720"
+				]
+			},
+			"Model": "ks_alfa_romeo_155_v6",
+			"Skin": "racing_91",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 1,
+			"Driver": {
+				"Name": "Axel Moebius",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561198113854003",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_alfa_romeo_155_v6",
+			"Skin": "0_racing_8",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 2,
+			"Driver": {
+				"Name": "Fernando Pina",
+				"Team": "",
+				"Nation": "ESP",
+				"Guid": "76561198069577469",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_alfa_romeo_155_v6",
+			"Skin": "racing_18",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 3,
+			"Driver": {
+				"Name": "Callum Hornby",
+				"Team": "",
+				"Nation": "ENG",
+				"Guid": "76561197965721845",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_alfa_romeo_155_v6",
+			"Skin": "racing_19",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 4,
+			"Driver": {
+				"Name": "Steen Skov Laursen",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561197992687126",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_alfa_romeo_155_v6",
+			"Skin": "racing_21",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 5,
+			"Driver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_alfa_romeo_155_v6",
+			"Skin": "racing_5",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 6,
+			"Driver": {
+				"Name": "Aki Bjorksten",
+				"Team": "",
+				"Nation": "FIN",
+				"Guid": "76561198052055644",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_alfa_romeo_155_v6",
+			"Skin": "racing_6",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 7,
+			"Driver": {
+				"Name": "Michal Strzelec",
+				"Team": "",
+				"Nation": "POL",
+				"Guid": "76561198083007421",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "bmw_m3_e30_dtm",
+			"Skin": "LUK",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 8,
+			"Driver": {
+				"Name": "Yohann Karolczak",
+				"Team": "",
+				"Nation": "FRA",
+				"Guid": "76561198027881774",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "bmw_m3_e30_dtm",
+			"Skin": "bmw",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 9,
+			"Driver": {
+				"Name": "Denis Betty",
+				"Team": "",
+				"Nation": "GBR",
+				"Guid": "76561198089562368",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "bmw_m3_e30_dtm",
+			"Skin": "black",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 10,
+			"Driver": {
+				"Name": "john power",
+				"Team": "",
+				"Nation": "AC",
+				"Guid": "76561198084642156",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "bmw_m3_e30_dtm",
+			"Skin": "0_fina_7",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 11,
+			"Driver": {
+				"Name": "Bert Hoenigmann",
+				"Team": "",
+				"Nation": "USA",
+				"Guid": "76561198808721767",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "bmw_m3_e30_dtm",
+			"Skin": "0_fina_7",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 12,
+			"Driver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "bmw_m3_e30_dtm",
+			"Skin": "LUK",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 13,
+			"Driver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "bmw_m3_e30_dtm",
+			"Skin": "bmw",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 14,
+			"Driver": {
+				"Name": "Maciej Sochacki",
+				"Team": "",
+				"Nation": "POL",
+				"Guid": "76561198096003985",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_mercedes_190_evo2",
+			"Skin": "Yellow_Blue_12",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 15,
+			"Driver": {
+				"Name": "Daniel Monteiro",
+				"Team": "",
+				"Nation": "OTH",
+				"Guid": "76561198000889643",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_mercedes_190_evo2",
+			"Skin": "0_Sonax_3",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 16,
+			"Driver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_mercedes_190_evo2",
+			"Skin": "Silver_Blue_13",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 17,
+			"Driver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_mercedes_190_evo2",
+			"Skin": "Nero_Ossidiana_72",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 18,
+			"Driver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_mercedes_190_evo2",
+			"Skin": "Rosso_Opale_67",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 19,
+			"Driver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_mercedes_190_evo2",
+			"Skin": "Blue_71",
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"CarId": 20,
+			"Driver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": [
+					""
+				]
+			},
+			"Model": "ks_mercedes_190_evo2",
+			"Skin": "Mystic_White_designo_55",
+			"BallastKG": 0,
+			"Restrictor": 0
+		}
+	],
+	"Result": [
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "lotus_2_eleven_gt4",
+			"BestLap": 100089,
+			"TotalTime": 2721604,
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "lotus_2_eleven_gt4",
+			"BestLap": 99909,
+			"TotalTime": 2737949,
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "lotus_exige_v6_cup",
+			"BestLap": 100475,
+			"TotalTime": 2746056,
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "lotus_exige_v6_cup",
+			"BestLap": 101463,
+			"TotalTime": 2785850,
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "lotus_exige_v6_cup",
+			"BestLap": 101168,
+			"TotalTime": 2789744,
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "lotus_exige_v6_cup",
+			"BestLap": 100822,
+			"TotalTime": 2791545,
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "lotus_exige_v6_cup",
+			"BestLap": 102359,
+			"TotalTime": 2733596,
+			"BallastKG": 0,
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "",
+			"DriverGuid": "",
+			"CarId": 20,
+			"CarModel": "lotus_2_eleven_gt4",
+			"BestLap": 999999999,
+			"TotalTime": 0,
+			"BallastKG": 0,
+			"Restrictor": 0
+		}
+	],
+	"Laps": [
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 3961089,
+			"LapTime": 106600,
+			"Sectors": [
+				28502,
+				41625,
+				36473
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 3962223,
+			"LapTime": 107752,
+			"Sectors": [
+				29547,
+				42038,
+				36167
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 3964676,
+			"LapTime": 110192,
+			"Sectors": [
+				31037,
+				42453,
+				36702
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 3967315,
+			"LapTime": 112766,
+			"Sectors": [
+				29233,
+				46138,
+				37395
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 3967718,
+			"LapTime": 113242,
+			"Sectors": [
+				31144,
+				44663,
+				37435
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 3978240,
+			"LapTime": 123766,
+			"Sectors": [
+				43900,
+				42691,
+				37175
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "oyvind andersen",
+			"DriverGuid": "76561197993215150",
+			"CarId": 5,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 3979248,
+			"LapTime": 124755,
+			"Sectors": [
+				31524,
+				43451,
+				49780
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 3982082,
+			"LapTime": 127598,
+			"Sectors": [
+				48633,
+				42200,
+				36765
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 3990836,
+			"LapTime": 136314,
+			"Sectors": [
+				51344,
+				44820,
+				40150
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 3991677,
+			"LapTime": 137182,
+			"Sectors": [
+				55210,
+				43699,
+				38273
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 3994409,
+			"LapTime": 139933,
+			"Sectors": [
+				58294,
+				44168,
+				37471
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4061322,
+			"LapTime": 100229,
+			"Sectors": [
+				22614,
+				41382,
+				36233
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4063282,
+			"LapTime": 101057,
+			"Sectors": [
+				22901,
+				41814,
+				36342
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4067012,
+			"LapTime": 102341,
+			"Sectors": [
+				22993,
+				42646,
+				36702
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4069368,
+			"LapTime": 102049,
+			"Sectors": [
+				23006,
+				42476,
+				36567
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4070876,
+			"LapTime": 103154,
+			"Sectors": [
+				23986,
+				42242,
+				36926
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4080988,
+			"LapTime": 102736,
+			"Sectors": [
+				23329,
+				42422,
+				36985
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4085698,
+			"LapTime": 103619,
+			"Sectors": [
+				24240,
+				42435,
+				36944
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "oyvind andersen",
+			"DriverGuid": "76561197993215150",
+			"CarId": 5,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4093918,
+			"LapTime": 114668,
+			"Sectors": [
+				24088,
+				53532,
+				37048
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4095630,
+			"LapTime": 103964,
+			"Sectors": [
+				24116,
+				43101,
+				36747
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4099793,
+			"LapTime": 105382,
+			"Sectors": [
+				25764,
+				42219,
+				37399
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4102316,
+			"LapTime": 111482,
+			"Sectors": [
+				25159,
+				46076,
+				40247
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4161773,
+			"LapTime": 100447,
+			"Sectors": [
+				22745,
+				41248,
+				36454
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4164000,
+			"LapTime": 100704,
+			"Sectors": [
+				22777,
+				41859,
+				36068
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4168523,
+			"LapTime": 101514,
+			"Sectors": [
+				22674,
+				42201,
+				36639
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4170174,
+			"LapTime": 100810,
+			"Sectors": [
+				22676,
+				41621,
+				36513
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4173153,
+			"LapTime": 102274,
+			"Sectors": [
+				23150,
+				42287,
+				36837
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4184486,
+			"LapTime": 103510,
+			"Sectors": [
+				23108,
+				42143,
+				38259
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4187236,
+			"LapTime": 101541,
+			"Sectors": [
+				23236,
+				41684,
+				36621
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4198604,
+			"LapTime": 102976,
+			"Sectors": [
+				23443,
+				42318,
+				37215
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "oyvind andersen",
+			"DriverGuid": "76561197993215150",
+			"CarId": 5,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4199249,
+			"LapTime": 105329,
+			"Sectors": [
+				23303,
+				42737,
+				39289
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4202769,
+			"LapTime": 102975,
+			"Sectors": [
+				23342,
+				42390,
+				37243
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4211496,
+			"LapTime": 109181,
+			"Sectors": [
+				23997,
+				44441,
+				40743
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4262376,
+			"LapTime": 100599,
+			"Sectors": [
+				22748,
+				41504,
+				36347
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4264350,
+			"LapTime": 100359,
+			"Sectors": [
+				22909,
+				41454,
+				35996
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4269761,
+			"LapTime": 101241,
+			"Sectors": [
+				22702,
+				42052,
+				36487
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4271597,
+			"LapTime": 101426,
+			"Sectors": [
+				22825,
+				41989,
+				36612
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4274620,
+			"LapTime": 101463,
+			"Sectors": [
+				22974,
+				42061,
+				36428
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4286972,
+			"LapTime": 102493,
+			"Sectors": [
+				23068,
+				42615,
+				36810
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4288056,
+			"LapTime": 100822,
+			"Sectors": [
+				22886,
+				41247,
+				36689
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4301129,
+			"LapTime": 102515,
+			"Sectors": [
+				23257,
+				42309,
+				36949
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "oyvind andersen",
+			"DriverGuid": "76561197993215150",
+			"CarId": 5,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4302273,
+			"LapTime": 103017,
+			"Sectors": [
+				23272,
+				42773,
+				36972
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4305704,
+			"LapTime": 102919,
+			"Sectors": [
+				23120,
+				42787,
+				37012
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4318309,
+			"LapTime": 106815,
+			"Sectors": [
+				23740,
+				43753,
+				39322
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4362605,
+			"LapTime": 100224,
+			"Sectors": [
+				22643,
+				41301,
+				36280
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4364252,
+			"LapTime": 99909,
+			"Sectors": [
+				22562,
+				41405,
+				35942
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4373454,
+			"LapTime": 101855,
+			"Sectors": [
+				23105,
+				42004,
+				36746
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4374321,
+			"LapTime": 104562,
+			"Sectors": [
+				22842,
+				45108,
+				36612
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4377820,
+			"LapTime": 103194,
+			"Sectors": [
+				24659,
+				41994,
+				36541
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4389309,
+			"LapTime": 102335,
+			"Sectors": [
+				23572,
+				42080,
+				36683
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4390174,
+			"LapTime": 102120,
+			"Sectors": [
+				23527,
+				41814,
+				36779
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4403478,
+			"LapTime": 102359,
+			"Sectors": [
+				23204,
+				42255,
+				36900
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "oyvind andersen",
+			"DriverGuid": "76561197993215150",
+			"CarId": 5,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4405859,
+			"LapTime": 103589,
+			"Sectors": [
+				23134,
+				43042,
+				37413
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4408986,
+			"LapTime": 103294,
+			"Sectors": [
+				23577,
+				42542,
+				37175
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4428115,
+			"LapTime": 109808,
+			"Sectors": [
+				24196,
+				46210,
+				39402
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4462699,
+			"LapTime": 100089,
+			"Sectors": [
+				22625,
+				41171,
+				36293
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4464472,
+			"LapTime": 100219,
+			"Sectors": [
+				22643,
+				41643,
+				35933
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4474447,
+			"LapTime": 100992,
+			"Sectors": [
+				22800,
+				41948,
+				36244
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4476576,
+			"LapTime": 102258,
+			"Sectors": [
+				22662,
+				41917,
+				37679
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4480616,
+			"LapTime": 102793,
+			"Sectors": [
+				23606,
+				42516,
+				36671
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4491477,
+			"LapTime": 102175,
+			"Sectors": [
+				23178,
+				42344,
+				36653
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4491959,
+			"LapTime": 101789,
+			"Sectors": [
+				23219,
+				42021,
+				36549
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4506476,
+			"LapTime": 102990,
+			"Sectors": [
+				23992,
+				42133,
+				36865
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "oyvind andersen",
+			"DriverGuid": "76561197993215150",
+			"CarId": 5,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4509427,
+			"LapTime": 103557,
+			"Sectors": [
+				23632,
+				42408,
+				37517
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4511594,
+			"LapTime": 102606,
+			"Sectors": [
+				23099,
+				42652,
+				36855
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4533887,
+			"LapTime": 105771,
+			"Sectors": [
+				23807,
+				43705,
+				38259
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4563039,
+			"LapTime": 100336,
+			"Sectors": [
+				22733,
+				41302,
+				36301
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4567169,
+			"LapTime": 102700,
+			"Sectors": [
+				22564,
+				43960,
+				36176
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4575743,
+			"LapTime": 101295,
+			"Sectors": [
+				22882,
+				42012,
+				36401
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4578147,
+			"LapTime": 101574,
+			"Sectors": [
+				22869,
+				42358,
+				36347
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4583140,
+			"LapTime": 102520,
+			"Sectors": [
+				23194,
+				42232,
+				37094
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4593929,
+			"LapTime": 102453,
+			"Sectors": [
+				23162,
+				42228,
+				37063
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4594929,
+			"LapTime": 102972,
+			"Sectors": [
+				23209,
+				42602,
+				37161
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4611986,
+			"LapTime": 105516,
+			"Sectors": [
+				25838,
+				42800,
+				36878
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "oyvind andersen",
+			"DriverGuid": "76561197993215150",
+			"CarId": 5,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4613177,
+			"LapTime": 103756,
+			"Sectors": [
+				23156,
+				43128,
+				37472
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4616545,
+			"LapTime": 104944,
+			"Sectors": [
+				23152,
+				43303,
+				38489
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4641411,
+			"LapTime": 107523,
+			"Sectors": [
+				24097,
+				44500,
+				38926
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4663638,
+			"LapTime": 100594,
+			"Sectors": [
+				22722,
+				41584,
+				36288
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4670258,
+			"LapTime": 103092,
+			"Sectors": [
+				22523,
+				44204,
+				36365
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4676368,
+			"LapTime": 100633,
+			"Sectors": [
+				22626,
+				41696,
+				36311
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4680886,
+			"LapTime": 102743,
+			"Sectors": [
+				24363,
+				42029,
+				36351
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4686578,
+			"LapTime": 103434,
+			"Sectors": [
+				23302,
+				43551,
+				36581
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4695882,
+			"LapTime": 101956,
+			"Sectors": [
+				23067,
+				42056,
+				36833
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4696323,
+			"LapTime": 101398,
+			"Sectors": [
+				23062,
+				41670,
+				36666
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4715736,
+			"LapTime": 103751,
+			"Sectors": [
+				23310,
+				42830,
+				37611
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "oyvind andersen",
+			"DriverGuid": "76561197993215150",
+			"CarId": 5,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4715943,
+			"LapTime": 102759,
+			"Sectors": [
+				22992,
+				42704,
+				37063
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4718732,
+			"LapTime": 102191,
+			"Sectors": [
+				23261,
+				41999,
+				36931
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4747939,
+			"LapTime": 106519,
+			"Sectors": [
+				23813,
+				44303,
+				38403
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4764329,
+			"LapTime": 100688,
+			"Sectors": [
+				22595,
+				41571,
+				36522
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4770241,
+			"LapTime": 99990,
+			"Sectors": [
+				22603,
+				41305,
+				36082
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4777162,
+			"LapTime": 100788,
+			"Sectors": [
+				22690,
+				41846,
+				36252
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4782631,
+			"LapTime": 101748,
+			"Sectors": [
+				22629,
+				41921,
+				37198
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4788920,
+			"LapTime": 102338,
+			"Sectors": [
+				23121,
+				42146,
+				37071
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4797938,
+			"LapTime": 102056,
+			"Sectors": [
+				22938,
+				42007,
+				37111
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4798861,
+			"LapTime": 102542,
+			"Sectors": [
+				22919,
+				42462,
+				37161
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4820111,
+			"LapTime": 104376,
+			"Sectors": [
+				23902,
+				43254,
+				37220
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4822240,
+			"LapTime": 103507,
+			"Sectors": [
+				23393,
+				42966,
+				37148
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4854924,
+			"LapTime": 106997,
+			"Sectors": [
+				23923,
+				44393,
+				38681
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4865038,
+			"LapTime": 100704,
+			"Sectors": [
+				22700,
+				41518,
+				36486
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4870670,
+			"LapTime": 100422,
+			"Sectors": [
+				22778,
+				41333,
+				36311
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4879091,
+			"LapTime": 101934,
+			"Sectors": [
+				23022,
+				42084,
+				36828
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4884581,
+			"LapTime": 101952,
+			"Sectors": [
+				23085,
+				42466,
+				36401
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4890856,
+			"LapTime": 101932,
+			"Sectors": [
+				23020,
+				42259,
+				36653
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4900568,
+			"LapTime": 102634,
+			"Sectors": [
+				23560,
+				42044,
+				37030
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4901061,
+			"LapTime": 102202,
+			"Sectors": [
+				23313,
+				42052,
+				36837
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4922657,
+			"LapTime": 102545,
+			"Sectors": [
+				23282,
+				42436,
+				36827
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4924976,
+			"LapTime": 102736,
+			"Sectors": [
+				23369,
+				42071,
+				37296
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4961800,
+			"LapTime": 106878,
+			"Sectors": [
+				23690,
+				43975,
+				39213
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4965354,
+			"LapTime": 100313,
+			"Sectors": [
+				22671,
+				41490,
+				36152
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4971141,
+			"LapTime": 100476,
+			"Sectors": [
+				22671,
+				41742,
+				36063
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 4980485,
+			"LapTime": 101394,
+			"Sectors": [
+				23089,
+				41882,
+				36423
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 4986402,
+			"LapTime": 101825,
+			"Sectors": [
+				22995,
+				41561,
+				37269
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 4992866,
+			"LapTime": 102007,
+			"Sectors": [
+				22924,
+				42638,
+				36445
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5002795,
+			"LapTime": 102228,
+			"Sectors": [
+				23221,
+				41760,
+				37247
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5003369,
+			"LapTime": 102309,
+			"Sectors": [
+				23306,
+				42471,
+				36532
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5025868,
+			"LapTime": 103210,
+			"Sectors": [
+				23213,
+				42782,
+				37215
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5029904,
+			"LapTime": 104927,
+			"Sectors": [
+				23063,
+				44164,
+				37700
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5066381,
+			"LapTime": 101023,
+			"Sectors": [
+				22701,
+				41665,
+				36657
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5071879,
+			"LapTime": 100737,
+			"Sectors": [
+				22652,
+				41544,
+				36541
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5081442,
+			"LapTime": 100961,
+			"Sectors": [
+				22734,
+				41764,
+				36463
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5090867,
+			"LapTime": 104470,
+			"Sectors": [
+				25342,
+				42372,
+				36756
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5094904,
+			"LapTime": 102034,
+			"Sectors": [
+				23050,
+				42372,
+				36612
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5105614,
+			"LapTime": 102249,
+			"Sectors": [
+				23040,
+				42263,
+				36946
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5110943,
+			"LapTime": 108152,
+			"Sectors": [
+				23319,
+				47420,
+				37413
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5115465,
+			"LapTime": 153665,
+			"Sectors": [
+				23328,
+				43488,
+				86849
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5129561,
+			"LapTime": 103694,
+			"Sectors": [
+				23347,
+				42997,
+				37350
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5132950,
+			"LapTime": 103044,
+			"Sectors": [
+				23128,
+				42700,
+				37216
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5167018,
+			"LapTime": 100634,
+			"Sectors": [
+				22690,
+				41517,
+				36427
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5173711,
+			"LapTime": 101839,
+			"Sectors": [
+				22634,
+				41531,
+				37674
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5183264,
+			"LapTime": 101820,
+			"Sectors": [
+				23070,
+				41886,
+				36864
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5192837,
+			"LapTime": 101975,
+			"Sectors": [
+				22812,
+				42525,
+				36638
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5197185,
+			"LapTime": 102277,
+			"Sectors": [
+				23055,
+				42385,
+				36837
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5207900,
+			"LapTime": 102289,
+			"Sectors": [
+				23300,
+				42260,
+				36729
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5214146,
+			"LapTime": 103201,
+			"Sectors": [
+				23182,
+				42696,
+				37323
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5232601,
+			"LapTime": 103039,
+			"Sectors": [
+				23178,
+				42462,
+				37399
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5236130,
+			"LapTime": 120666,
+			"Sectors": [
+				31799,
+				49176,
+				39691
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5248774,
+			"LapTime": 115821,
+			"Sectors": [
+				23215,
+				42386,
+				50220
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5267502,
+			"LapTime": 100479,
+			"Sectors": [
+				22597,
+				41526,
+				36356
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5274410,
+			"LapTime": 100698,
+			"Sectors": [
+				22650,
+				41741,
+				36307
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5284058,
+			"LapTime": 100795,
+			"Sectors": [
+				22733,
+				41707,
+				36355
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5294271,
+			"LapTime": 101437,
+			"Sectors": [
+				22570,
+				42111,
+				36756
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5298988,
+			"LapTime": 101800,
+			"Sectors": [
+				23203,
+				41981,
+				36616
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5310389,
+			"LapTime": 102489,
+			"Sectors": [
+				23090,
+				42678,
+				36721
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5323355,
+			"LapTime": 109216,
+			"Sectors": [
+				23014,
+				42867,
+				43335
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5336601,
+			"LapTime": 104001,
+			"Sectors": [
+				24341,
+				42489,
+				37171
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5346145,
+			"LapTime": 110015,
+			"Sectors": [
+				24048,
+				44774,
+				41193
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5352400,
+			"LapTime": 103625,
+			"Sectors": [
+				22936,
+				43465,
+				37224
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5367908,
+			"LapTime": 100403,
+			"Sectors": [
+				22662,
+				41517,
+				36224
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5375014,
+			"LapTime": 100601,
+			"Sectors": [
+				22625,
+				41760,
+				36216
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5385411,
+			"LapTime": 101355,
+			"Sectors": [
+				22767,
+				41976,
+				36612
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5396274,
+			"LapTime": 102007,
+			"Sectors": [
+				22775,
+				42750,
+				36482
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5400960,
+			"LapTime": 101967,
+			"Sectors": [
+				23190,
+				42183,
+				36594
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5412964,
+			"LapTime": 102577,
+			"Sectors": [
+				23755,
+				42120,
+				36702
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Callum Hornby",
+			"DriverGuid": "76561197965721845",
+			"CarId": 3,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5427203,
+			"LapTime": 103848,
+			"Sectors": [
+				23037,
+				43164,
+				37647
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5439695,
+			"LapTime": 103090,
+			"Sectors": [
+				23210,
+				42404,
+				37476
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5455686,
+			"LapTime": 103286,
+			"Sectors": [
+				23393,
+				42233,
+				37660
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5459085,
+			"LapTime": 112943,
+			"Sectors": [
+				24465,
+				44559,
+				43919
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5468515,
+			"LapTime": 100604,
+			"Sectors": [
+				22795,
+				41594,
+				36215
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5475740,
+			"LapTime": 100739,
+			"Sectors": [
+				22804,
+				41639,
+				36296
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5486302,
+			"LapTime": 100890,
+			"Sectors": [
+				22864,
+				41774,
+				36252
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5503436,
+			"LapTime": 102473,
+			"Sectors": [
+				23071,
+				42593,
+				36809
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5504262,
+			"LapTime": 107992,
+			"Sectors": [
+				22699,
+				48456,
+				36837
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5515607,
+			"LapTime": 102646,
+			"Sectors": [
+				23702,
+				42089,
+				36855
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5542926,
+			"LapTime": 103236,
+			"Sectors": [
+				23018,
+				43182,
+				37036
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5561528,
+			"LapTime": 105842,
+			"Sectors": [
+				23506,
+				43385,
+				38951
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5567162,
+			"LapTime": 108079,
+			"Sectors": [
+				24199,
+				44249,
+				39631
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5569134,
+			"LapTime": 100614,
+			"Sectors": [
+				22908,
+				41462,
+				36244
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5576890,
+			"LapTime": 101154,
+			"Sectors": [
+				22529,
+				42017,
+				36608
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5588475,
+			"LapTime": 102172,
+			"Sectors": [
+				23040,
+				42308,
+				36824
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5606458,
+			"LapTime": 103017,
+			"Sectors": [
+				23151,
+				42808,
+				37058
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5607883,
+			"LapTime": 103623,
+			"Sectors": [
+				23460,
+				42803,
+				37360
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5617665,
+			"LapTime": 102061,
+			"Sectors": [
+				22848,
+				42124,
+				37089
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5645785,
+			"LapTime": 102860,
+			"Sectors": [
+				23517,
+				42345,
+				36998
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5665500,
+			"LapTime": 103970,
+			"Sectors": [
+				23110,
+				42998,
+				37862
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5669925,
+			"LapTime": 100786,
+			"Sectors": [
+				22742,
+				41828,
+				36216
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5678030,
+			"LapTime": 101141,
+			"Sectors": [
+				22770,
+				41885,
+				36486
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5684733,
+			"LapTime": 117572,
+			"Sectors": [
+				24342,
+				53811,
+				39419
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5690596,
+			"LapTime": 102120,
+			"Sectors": [
+				23199,
+				42290,
+				36631
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5708432,
+			"LapTime": 101970,
+			"Sectors": [
+				23112,
+				42219,
+				36639
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5709046,
+			"LapTime": 101168,
+			"Sectors": [
+				22612,
+				41819,
+				36737
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5719737,
+			"LapTime": 102075,
+			"Sectors": [
+				23064,
+				42444,
+				36567
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5748791,
+			"LapTime": 103007,
+			"Sectors": [
+				23294,
+				42400,
+				37313
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5768135,
+			"LapTime": 102634,
+			"Sectors": [
+				23065,
+				42214,
+				37355
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5770495,
+			"LapTime": 100567,
+			"Sectors": [
+				22685,
+				41428,
+				36454
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5779780,
+			"LapTime": 101756,
+			"Sectors": [
+				23794,
+				41639,
+				36323
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5792505,
+			"LapTime": 101907,
+			"Sectors": [
+				23184,
+				41822,
+				36901
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5792946,
+			"LapTime": 108214,
+			"Sectors": [
+				24590,
+				44316,
+				39308
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5818354,
+			"LapTime": 109917,
+			"Sectors": [
+				23026,
+				50261,
+				36630
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5819449,
+			"LapTime": 110406,
+			"Sectors": [
+				22939,
+				50890,
+				36577
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5821750,
+			"LapTime": 102015,
+			"Sectors": [
+				22940,
+				42112,
+				36963
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5853301,
+			"LapTime": 104510,
+			"Sectors": [
+				23339,
+				43165,
+				38006
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5871714,
+			"LapTime": 101215,
+			"Sectors": [
+				22744,
+				42151,
+				36320
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5873780,
+			"LapTime": 105643,
+			"Sectors": [
+				23909,
+				44348,
+				37386
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5881219,
+			"LapTime": 101442,
+			"Sectors": [
+				22727,
+				42013,
+				36702
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5893615,
+			"LapTime": 101115,
+			"Sectors": [
+				22778,
+				41846,
+				36491
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5920182,
+			"LapTime": 101825,
+			"Sectors": [
+				23053,
+				42026,
+				36746
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5921171,
+			"LapTime": 101726,
+			"Sectors": [
+				22837,
+				42133,
+				36756
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5923788,
+			"LapTime": 102041,
+			"Sectors": [
+				22949,
+				42152,
+				36940
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5944829,
+			"LapTime": 151885,
+			"Sectors": [
+				24224,
+				44776,
+				82885
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 5957173,
+			"LapTime": 103871,
+			"Sectors": [
+				23466,
+				43015,
+				37390
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5972456,
+			"LapTime": 100738,
+			"Sectors": [
+				22640,
+				41720,
+				36378
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5977576,
+			"LapTime": 103794,
+			"Sectors": [
+				23104,
+				43488,
+				37202
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 5982870,
+			"LapTime": 101654,
+			"Sectors": [
+				23229,
+				41958,
+				36467
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 5995115,
+			"LapTime": 101501,
+			"Sectors": [
+				23112,
+				41831,
+				36558
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6022820,
+			"LapTime": 102634,
+			"Sectors": [
+				23150,
+				42723,
+				36761
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6026246,
+			"LapTime": 105078,
+			"Sectors": [
+				23137,
+				45220,
+				36721
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6026971,
+			"LapTime": 103187,
+			"Sectors": [
+				23420,
+				42769,
+				36998
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6059845,
+			"LapTime": 115016,
+			"Sectors": [
+				31092,
+				44491,
+				39433
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6060997,
+			"LapTime": 103827,
+			"Sectors": [
+				23555,
+				43191,
+				37081
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6072950,
+			"LapTime": 100490,
+			"Sectors": [
+				22591,
+				41648,
+				36251
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6085340,
+			"LapTime": 102467,
+			"Sectors": [
+				22759,
+				42817,
+				36891
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6096467,
+			"LapTime": 101352,
+			"Sectors": [
+				23133,
+				41930,
+				36289
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6103381,
+			"LapTime": 125802,
+			"Sectors": [
+				22850,
+				65593,
+				37359
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6125524,
+			"LapTime": 102700,
+			"Sectors": [
+				23266,
+				42489,
+				36945
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6129747,
+			"LapTime": 102778,
+			"Sectors": [
+				23070,
+				42871,
+				36837
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6130648,
+			"LapTime": 104408,
+			"Sectors": [
+				23625,
+				43523,
+				37260
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6168215,
+			"LapTime": 107217,
+			"Sectors": [
+				23782,
+				46296,
+				37139
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6173511,
+			"LapTime": 100559,
+			"Sectors": [
+				22692,
+				41611,
+				36256
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6185003,
+			"LapTime": 125161,
+			"Sectors": [
+				40831,
+				45482,
+				38848
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6186309,
+			"LapTime": 100974,
+			"Sectors": [
+				22673,
+				41904,
+				36397
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6196986,
+			"LapTime": 100521,
+			"Sectors": [
+				22585,
+				41625,
+				36311
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6206689,
+			"LapTime": 103306,
+			"Sectors": [
+				23057,
+				42386,
+				37863
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6228644,
+			"LapTime": 103118,
+			"Sectors": [
+				23113,
+				43051,
+				36954
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6232558,
+			"LapTime": 102813,
+			"Sectors": [
+				23505,
+				42228,
+				37080
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6233003,
+			"LapTime": 102359,
+			"Sectors": [
+				22682,
+				43092,
+				36585
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6272398,
+			"LapTime": 104183,
+			"Sectors": [
+				23282,
+				42688,
+				38213
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6274095,
+			"LapTime": 100578,
+			"Sectors": [
+				22737,
+				41633,
+				36208
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6288310,
+			"LapTime": 102006,
+			"Sectors": [
+				23300,
+				41968,
+				36738
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6294849,
+			"LapTime": 109846,
+			"Sectors": [
+				25359,
+				44702,
+				39785
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6297459,
+			"LapTime": 100475,
+			"Sectors": [
+				22491,
+				41755,
+				36229
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6309560,
+			"LapTime": 102871,
+			"Sectors": [
+				23163,
+				42160,
+				37548
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6331480,
+			"LapTime": 102832,
+			"Sectors": [
+				23348,
+				42696,
+				36788
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6336418,
+			"LapTime": 103864,
+			"Sectors": [
+				23462,
+				43012,
+				37390
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6336488,
+			"LapTime": 103489,
+			"Sectors": [
+				23195,
+				43219,
+				37075
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6374564,
+			"LapTime": 100466,
+			"Sectors": [
+				22621,
+				41576,
+				36269
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6378390,
+			"LapTime": 105991,
+			"Sectors": [
+				25284,
+				43461,
+				37246
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6389779,
+			"LapTime": 101470,
+			"Sectors": [
+				22688,
+				42071,
+				36711
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6398493,
+			"LapTime": 101036,
+			"Sectors": [
+				22835,
+				41842,
+				36359
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6402828,
+			"LapTime": 107979,
+			"Sectors": [
+				23657,
+				44951,
+				39371
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6412695,
+			"LapTime": 103128,
+			"Sectors": [
+				23032,
+				42759,
+				37337
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6433974,
+			"LapTime": 102489,
+			"Sectors": [
+				23189,
+				42503,
+				36797
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6439590,
+			"LapTime": 103105,
+			"Sectors": [
+				23630,
+				42481,
+				36994
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6441588,
+			"LapTime": 105171,
+			"Sectors": [
+				24090,
+				43983,
+				37098
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6475597,
+			"LapTime": 101028,
+			"Sectors": [
+				22737,
+				41678,
+				36613
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6483728,
+			"LapTime": 105337,
+			"Sectors": [
+				23630,
+				44069,
+				37638
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6491239,
+			"LapTime": 101467,
+			"Sectors": [
+				22668,
+				41926,
+				36873
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6499666,
+			"LapTime": 101171,
+			"Sectors": [
+				22637,
+				42165,
+				36369
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6509869,
+			"LapTime": 107032,
+			"Sectors": [
+				24223,
+				44131,
+				38678
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6516782,
+			"LapTime": 104089,
+			"Sectors": [
+				22995,
+				41989,
+				39105
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6537265,
+			"LapTime": 103288,
+			"Sectors": [
+				23373,
+				42929,
+				36986
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6542433,
+			"LapTime": 102848,
+			"Sectors": [
+				23244,
+				42835,
+				36769
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6543534,
+			"LapTime": 101951,
+			"Sectors": [
+				22941,
+				41917,
+				37093
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Axel Moebius",
+			"DriverGuid": "76561198113854003",
+			"CarId": 1,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6576093,
+			"LapTime": 100493,
+			"Sectors": [
+				22572,
+				41624,
+				36297
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Maciej Sochacki",
+			"DriverGuid": "76561198096003985",
+			"CarId": 14,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6588081,
+			"LapTime": 104352,
+			"Sectors": [
+				23482,
+				43241,
+				37629
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Yohann Karolczak",
+			"DriverGuid": "76561198027881774",
+			"CarId": 8,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6592439,
+			"LapTime": 101197,
+			"Sectors": [
+				22681,
+				42070,
+				36446
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Steen Skov Laursen",
+			"DriverGuid": "76561197992687126",
+			"CarId": 4,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6600542,
+			"LapTime": 100883,
+			"Sectors": [
+				22566,
+				41688,
+				36629
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Bert Hoenigmann",
+			"DriverGuid": "76561198808721767",
+			"CarId": 11,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6615539,
+			"LapTime": 105683,
+			"Sectors": [
+				23311,
+				43627,
+				38745
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Michal Strzelec",
+			"DriverGuid": "76561198083007421",
+			"CarId": 7,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6622720,
+			"LapTime": 105936,
+			"Sectors": [
+				24261,
+				43839,
+				37836
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "john power",
+			"DriverGuid": "76561198084642156",
+			"CarId": 10,
+			"CarModel": "bmw_m3_e30_dtm",
+			"Timestamp": 6640326,
+			"LapTime": 103056,
+			"Sectors": [
+				23037,
+				42898,
+				37121
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "H",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Daniel Monteiro",
+			"DriverGuid": "76561198000889643",
+			"CarId": 15,
+			"CarModel": "ks_mercedes_190_evo2",
+			"Timestamp": 6644238,
+			"LapTime": 101810,
+			"Sectors": [
+				22944,
+				42290,
+				36576
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "M",
+			"Restrictor": 0
+		},
+		{
+			"DriverName": "Fernando Pina",
+			"DriverGuid": "76561198069577469",
+			"CarId": 2,
+			"CarModel": "ks_alfa_romeo_155_v6",
+			"Timestamp": 6646040,
+			"LapTime": 102508,
+			"Sectors": [
+				23051,
+				42422,
+				37035
+			],
+			"Cuts": 0,
+			"BallastKG": 0,
+			"Tyre": "S",
+			"Restrictor": 0
+		}
+	],
+	"Events": [
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 5,
+			"Driver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 32.498943,
+			"WorldPosition": {
+				"X": 550.54987,
+				"Y": -8.792742,
+				"Z": 215.4841
+			},
+			"RelPosition": {
+				"X": -0.8918805,
+				"Y": 0.5977835,
+				"Z": -2.1236567
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 5,
+			"Driver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 66.047966,
+			"WorldPosition": {
+				"X": 526.6214,
+				"Y": -9.787698,
+				"Z": 221.86916
+			},
+			"RelPosition": {
+				"X": 0.86857635,
+				"Y": -0.07767396,
+				"Z": 1.8606472
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 5,
+			"Driver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 45.91719,
+			"WorldPosition": {
+				"X": -559.30347,
+				"Y": 49.88341,
+				"Z": -357.58963
+			},
+			"RelPosition": {
+				"X": 0.76984763,
+				"Y": -0.36473787,
+				"Z": 2.0386918
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 5,
+			"Driver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 14,
+			"OtherDriver": {
+				"Name": "Maciej Sochacki",
+				"Team": "",
+				"Nation": "POL",
+				"Guid": "76561198096003985",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 14.463132,
+			"WorldPosition": {
+				"X": -65.866104,
+				"Y": 2.717192,
+				"Z": 400.40814
+			},
+			"RelPosition": {
+				"X": -0.7689726,
+				"Y": -0.18717222,
+				"Z": 2.0454123
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 14,
+			"Driver": {
+				"Name": "Maciej Sochacki",
+				"Team": "",
+				"Nation": "POL",
+				"Guid": "76561198096003985",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 5,
+			"OtherDriver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 13.348549,
+			"WorldPosition": {
+				"X": -65.888306,
+				"Y": 2.721588,
+				"Z": 400.4635
+			},
+			"RelPosition": {
+				"X": 0.71013427,
+				"Y": -0.19361722,
+				"Z": -2.4141376
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 5,
+			"Driver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 14,
+			"OtherDriver": {
+				"Name": "Maciej Sochacki",
+				"Team": "",
+				"Nation": "POL",
+				"Guid": "76561198096003985",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 4.5804334,
+			"WorldPosition": {
+				"X": -175.97635,
+				"Y": 6.4818487,
+				"Z": 253.7928
+			},
+			"RelPosition": {
+				"X": -0.8916631,
+				"Y": -0.25440386,
+				"Z": 1.7916181
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 14,
+			"Driver": {
+				"Name": "Maciej Sochacki",
+				"Team": "",
+				"Nation": "POL",
+				"Guid": "76561198096003985",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 5,
+			"OtherDriver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 4.5127015,
+			"WorldPosition": {
+				"X": -175.77917,
+				"Y": 6.442739,
+				"Z": 254.05305
+			},
+			"RelPosition": {
+				"X": 0.79054046,
+				"Y": -0.34585947,
+				"Z": -2.0093794
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 5,
+			"Driver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 14,
+			"OtherDriver": {
+				"Name": "Maciej Sochacki",
+				"Team": "",
+				"Nation": "POL",
+				"Guid": "76561198096003985",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 3.4755595,
+			"WorldPosition": {
+				"X": -295.38748,
+				"Y": 8.77615,
+				"Z": 76.78999
+			},
+			"RelPosition": {
+				"X": -0.89187366,
+				"Y": -0.058056742,
+				"Z": 1.8149328
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 14,
+			"Driver": {
+				"Name": "Maciej Sochacki",
+				"Team": "",
+				"Nation": "POL",
+				"Guid": "76561198096003985",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 5,
+			"OtherDriver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 1.7931817,
+			"WorldPosition": {
+				"X": -295.3638,
+				"Y": 8.939506,
+				"Z": 76.84623
+			},
+			"RelPosition": {
+				"X": 0.85883594,
+				"Y": 0.05392951,
+				"Z": 0.06829375
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 5,
+			"Driver": {
+				"Name": "oyvind andersen",
+				"Team": "",
+				"Nation": "NOR",
+				"Guid": "76561197993215150",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 62.039925,
+			"WorldPosition": {
+				"X": -456.00226,
+				"Y": 50.60309,
+				"Z": -392.39197
+			},
+			"RelPosition": {
+				"X": 0.76988935,
+				"Y": -0.16134077,
+				"Z": 2.0559118
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 3,
+			"Driver": {
+				"Name": "Callum Hornby",
+				"Team": "",
+				"Nation": "ENG",
+				"Guid": "76561197965721845",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 19.602262,
+			"WorldPosition": {
+				"X": -542.90643,
+				"Y": 51.942745,
+				"Z": -362.72668
+			},
+			"RelPosition": {
+				"X": -0.75231165,
+				"Y": 0.62556523,
+				"Z": -2.398666
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 3,
+			"Driver": {
+				"Name": "Callum Hornby",
+				"Team": "",
+				"Nation": "ENG",
+				"Guid": "76561197965721845",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 52.654167,
+			"WorldPosition": {
+				"X": -12.884451,
+				"Y": 2.895537,
+				"Z": 87.87065
+			},
+			"RelPosition": {
+				"X": -0.89189744,
+				"Y": 0.59778416,
+				"Z": -2.1236517
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 10,
+			"Driver": {
+				"Name": "john power",
+				"Team": "",
+				"Nation": "AC",
+				"Guid": "76561198084642156",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 15,
+			"OtherDriver": {
+				"Name": "Daniel Monteiro",
+				"Team": "",
+				"Nation": "OTH",
+				"Guid": "76561198000889643",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 10.873453,
+			"WorldPosition": {
+				"X": -602.8807,
+				"Y": 48.83703,
+				"Z": -354.7788
+			},
+			"RelPosition": {
+				"X": -0.72223264,
+				"Y": -0.09713313,
+				"Z": -2.295286
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 15,
+			"Driver": {
+				"Name": "Daniel Monteiro",
+				"Team": "",
+				"Nation": "OTH",
+				"Guid": "76561198000889643",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 10,
+			"OtherDriver": {
+				"Name": "john power",
+				"Team": "",
+				"Nation": "AC",
+				"Guid": "76561198084642156",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 8.197018,
+			"WorldPosition": {
+				"X": -602.7724,
+				"Y": 48.861946,
+				"Z": -354.7133
+			},
+			"RelPosition": {
+				"X": -0.17939547,
+				"Y": -0.12885877,
+				"Z": 1.9903005
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 11,
+			"Driver": {
+				"Name": "Bert Hoenigmann",
+				"Team": "",
+				"Nation": "USA",
+				"Guid": "76561198808721767",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 45.935127,
+			"WorldPosition": {
+				"X": -96.65612,
+				"Y": 6.2450686,
+				"Z": 330.57925
+			},
+			"RelPosition": {
+				"X": -0.7455713,
+				"Y": -0.10320823,
+				"Z": 1.8955343
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 1,
+			"Driver": {
+				"Name": "Axel Moebius",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561198113854003",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 37.052864,
+			"WorldPosition": {
+				"X": -158.6172,
+				"Y": 10.44548,
+				"Z": 435.10886
+			},
+			"RelPosition": {
+				"X": 0.7699267,
+				"Y": -0.36474395,
+				"Z": 2.0386734
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 1,
+			"Driver": {
+				"Name": "Axel Moebius",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561198113854003",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 3.2323747,
+			"WorldPosition": {
+				"X": -154.64966,
+				"Y": 10.620409,
+				"Z": 441.908
+			},
+			"RelPosition": {
+				"X": -0.8918302,
+				"Y": -0.05807968,
+				"Z": 1.8148887
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 8,
+			"Driver": {
+				"Name": "Yohann Karolczak",
+				"Team": "",
+				"Nation": "FRA",
+				"Guid": "76561198027881774",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 28.610807,
+			"WorldPosition": {
+				"X": -79.11589,
+				"Y": 4.543007,
+				"Z": 421.0576
+			},
+			"RelPosition": {
+				"X": 0.722252,
+				"Y": -0.059072718,
+				"Z": -2.3090913
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 1,
+			"Driver": {
+				"Name": "Axel Moebius",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561198113854003",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 27.011036,
+			"WorldPosition": {
+				"X": -88.5398,
+				"Y": 5.466729,
+				"Z": 423.71564
+			},
+			"RelPosition": {
+				"X": 0.7522976,
+				"Y": -0.017718527,
+				"Z": -2.4130793
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 11,
+			"Driver": {
+				"Name": "Bert Hoenigmann",
+				"Team": "",
+				"Nation": "USA",
+				"Guid": "76561198808721767",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 4,
+			"OtherDriver": {
+				"Name": "Steen Skov Laursen",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561197992687126",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 9.02171,
+			"WorldPosition": {
+				"X": -38.02219,
+				"Y": 0.86528784,
+				"Z": 406.7689
+			},
+			"RelPosition": {
+				"X": -0.000016987324,
+				"Y": -0.1472967,
+				"Z": -2.3043656
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 4,
+			"Driver": {
+				"Name": "Steen Skov Laursen",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561197992687126",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 11,
+			"OtherDriver": {
+				"Name": "Bert Hoenigmann",
+				"Team": "",
+				"Nation": "USA",
+				"Guid": "76561198808721767",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 9.922851,
+			"WorldPosition": {
+				"X": -37.91328,
+				"Y": 0.95687354,
+				"Z": 406.97675
+			},
+			"RelPosition": {
+				"X": 0.75362253,
+				"Y": -0.07958882,
+				"Z": 2.0216484
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 1,
+			"Driver": {
+				"Name": "Axel Moebius",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561198113854003",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 36.344044,
+			"WorldPosition": {
+				"X": -126.26384,
+				"Y": 8.320084,
+				"Z": 434.6494
+			},
+			"RelPosition": {
+				"X": -0.76991683,
+				"Y": -0.16133924,
+				"Z": 2.0559225
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 4,
+			"Driver": {
+				"Name": "Steen Skov Laursen",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561197992687126",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 15,
+			"OtherDriver": {
+				"Name": "Daniel Monteiro",
+				"Team": "",
+				"Nation": "OTH",
+				"Guid": "76561198000889643",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 52.804268,
+			"WorldPosition": {
+				"X": -100.15371,
+				"Y": 5.835983,
+				"Z": 408.80148
+			},
+			"RelPosition": {
+				"X": -0.8342444,
+				"Y": -0.08589833,
+				"Z": 0.6038234
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 15,
+			"Driver": {
+				"Name": "Daniel Monteiro",
+				"Team": "",
+				"Nation": "OTH",
+				"Guid": "76561198000889643",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 4,
+			"OtherDriver": {
+				"Name": "Steen Skov Laursen",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561197992687126",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 51.29374,
+			"WorldPosition": {
+				"X": -100.115135,
+				"Y": 5.8575006,
+				"Z": 408.82172
+			},
+			"RelPosition": {
+				"X": 0.71015376,
+				"Y": -0.12894374,
+				"Z": 1.991924
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 1,
+			"Driver": {
+				"Name": "Axel Moebius",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561198113854003",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 4,
+			"OtherDriver": {
+				"Name": "Steen Skov Laursen",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561197992687126",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 17.009764,
+			"WorldPosition": {
+				"X": -104.75566,
+				"Y": 6.0963106,
+				"Z": 383.38074
+			},
+			"RelPosition": {
+				"X": -0.89188623,
+				"Y": -0.1679666,
+				"Z": 1.8019273
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 10,
+			"Driver": {
+				"Name": "john power",
+				"Team": "",
+				"Nation": "AC",
+				"Guid": "76561198084642156",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 15,
+			"OtherDriver": {
+				"Name": "Daniel Monteiro",
+				"Team": "",
+				"Nation": "OTH",
+				"Guid": "76561198000889643",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 7.98103,
+			"WorldPosition": {
+				"X": -101.46537,
+				"Y": 5.881058,
+				"Z": 405.82385
+			},
+			"RelPosition": {
+				"X": 0.7455651,
+				"Y": -0.10320912,
+				"Z": 1.8955061
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 4,
+			"Driver": {
+				"Name": "Steen Skov Laursen",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561197992687126",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 1,
+			"OtherDriver": {
+				"Name": "Axel Moebius",
+				"Team": "",
+				"Nation": "DNK",
+				"Guid": "76561198113854003",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 18.074347,
+			"WorldPosition": {
+				"X": -104.74914,
+				"Y": 6.083448,
+				"Z": 383.37167
+			},
+			"RelPosition": {
+				"X": 0.5518657,
+				"Y": -0.16142729,
+				"Z": 2.081217
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_CAR",
+			"CarId": 15,
+			"Driver": {
+				"Name": "Daniel Monteiro",
+				"Team": "",
+				"Nation": "OTH",
+				"Guid": "76561198000889643",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": 10,
+			"OtherDriver": {
+				"Name": "john power",
+				"Team": "",
+				"Nation": "AC",
+				"Guid": "76561198084642156",
+				"GuidsList": [
+					""
+				]
+			},
+			"ImpactSpeed": 16.21407,
+			"WorldPosition": {
+				"X": -101.877594,
+				"Y": 5.8944607,
+				"Z": 405.8993
+			},
+			"RelPosition": {
+				"X": -0.8450799,
+				"Y": -0.17624097,
+				"Z": 1.200074
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 10,
+			"Driver": {
+				"Name": "john power",
+				"Team": "",
+				"Nation": "AC",
+				"Guid": "76561198084642156",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 23.200201,
+			"WorldPosition": {
+				"X": -89.37416,
+				"Y": 5.7741394,
+				"Z": 423.9367
+			},
+			"RelPosition": {
+				"X": 0.8417256,
+				"Y": 0.28544876,
+				"Z": -1.8404074
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 15,
+			"Driver": {
+				"Name": "Daniel Monteiro",
+				"Team": "",
+				"Nation": "OTH",
+				"Guid": "76561198000889643",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 20.484285,
+			"WorldPosition": {
+				"X": -71.60039,
+				"Y": 3.6399899,
+				"Z": 418.9923
+			},
+			"RelPosition": {
+				"X": 0.0000030994415,
+				"Y": -0.41164955,
+				"Z": 2.0981784
+			}
+		},
+		{
+			"Type": "COLLISION_WITH_ENV",
+			"CarId": 15,
+			"Driver": {
+				"Name": "Daniel Monteiro",
+				"Team": "",
+				"Nation": "OTH",
+				"Guid": "76561198000889643",
+				"GuidsList": [
+					""
+				]
+			},
+			"OtherCarId": -1,
+			"OtherDriver": {
+				"Name": "",
+				"Team": "",
+				"Nation": "",
+				"Guid": "",
+				"GuidsList": null
+			},
+			"ImpactSpeed": 16.205772,
+			"WorldPosition": {
+				"X": -86.76464,
+				"Y": 5.242086,
+				"Z": 423.18427
+			},
+			"RelPosition": {
+				"X": 0.7101738,
+				"Y": -0.10136658,
+				"Z": -2.4366145
+			}
+		}
+	]
+}
