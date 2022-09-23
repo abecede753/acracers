@@ -36,8 +36,9 @@ class Driver:
 
 
 class Car:
-    def __init__(self, carnumber, model, skin, fixed_setup):
-        self.carnumber = carnumber  # carnumber 0=fastest, 1=a bit slower, ...
+    """available car for the event."""
+    def __init__(self, carindex, model, skin, fixed_setup):
+        self.carindex = carindex  # 0=fastest, 1=a bit slower, ...
         self.model = model
         self.skin = skin
         self.fixed_setup = fixed_setup
@@ -51,20 +52,21 @@ class EntryList(CParser):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.cars = self._get_cars()
+        self.distinct_cars = self._get_cars()
 
     def _get_cars(self):
+        """get the different car models. (equals number of rounds)"""
         the_cars = []
+        carindex = 0
         for groupname in self.ini.keys():
             if 'CAR' in groupname:
-                carnumber = int(groupname[groupname.rfind('_') + 1:])
                 the_cars.append(Car(
-                    carnumber,
+                    carindex,
                     self.ini[groupname].get('MODEL'),
                     self.ini[groupname].get('SKIN'),
-                    self.ini[groupname].get('GUID'),
-                    self.ini[groupname].get('DRIVERNAME'),
-                    self.ini[groupname].get('FIXED_SETUP')))
+                    self.ini[groupname].get('FIXED_SETUP'),
+                    ))
+                carindex += 1
         return the_cars
 
 
@@ -75,17 +77,15 @@ class ServerSetup:
         self.server_cfg = ServerConfig(server_cfg_filename)
         self.entry_list = EntryList(entry_list_filename)
 
-        self.cars_count = 1
         self.drivers = []
-        import pdb; pdb.set_trace()
         
         # self.server.serverconfig.ini['SERVER']['CARS'] = self.cars[0]
 
     @property
     def rounds(self):
-        return len(self.entry_list.cars)
+        return len(self.entry_list.distinct_cars)
 
-    def write(self):
+    def write(self, race_number):
         """overwrite server_cfg.ini and entry_list.ini
         according to current values."""
 

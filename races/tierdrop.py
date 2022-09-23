@@ -1,9 +1,10 @@
+import demjson
 import os
 import pathlib
 
 from django.conf import settings
 
-from adhoc.raceconfigs import ServerSetup
+from adhoc.raceconfigs import ServerSetup, Driver
 from main.acserver import ac_run
 
 
@@ -40,22 +41,42 @@ def build_grid(drivers, max_clients):
 class Tierdrop:
 
     def __init__(self, adhocrace):
-        self.race = adhocrace
+        self.adhocrace = adhocrace
 
     def initialize(self):
         self.rootdir = pathlib.Path(settings.ACWRAPPEREXE).parent
         self.sessioncfgdir = self.rootdir / 'cfg'
-        self.server = ServerSetup(
+        self.serversetup = ServerSetup(
             os.path.join(self.sessioncfgdir, 'server_cfg.ini'),
             os.path.join(self.sessioncfgdir, 'entry_list.ini'))
+        self.cars = self.serversetup.entry_list.distinct_cars
+
+    def get_current_drivers(self):
+        """read results/RACE.json and create driverlist in order
+        from this race."""
+        resultfiles = sorted(
+            [x for x in (self.rootdir / 'results').glob('*RACE*json')])
+        if not resultfiles:
+            return []
+        result = demjson.decode(resultfiles[-1].open().read())
+        drivers = []
+        for d in result['Result']:
+            car = next(c for c in self.cars if c.model == d['CarModel'])
+            drivers.append(Driver(d['DriverName'], d['DriverGuid'], car))
+        return drivers
+
+    def advance_drivers(self):
+        """better half of drivers get a slower car."""
+        for d in self.drivers[:(len(self.drivers) - (len(self.drivers) // 2))]:
+            d.car = self.cars[d.car.index + 1]
 
     def run(self):
         """directory is prepared, all files are there etc."""
         self.initialize()
         current_round = 0
-        ac_run()
-        while (current_round < self.server.rounds) and \
-                self.race.result_available:
+        raw_input("ACRUN")  # ac_run()
+        while (current_round < self.serversetup.rounds) and \
+                self.adhocrace.result_available:
             current_round += 1
-            self.server
-        self.server.rounds
+            self.drivers = self.get_current_drivers()
+            self.advance_drivers()

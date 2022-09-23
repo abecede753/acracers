@@ -5,7 +5,7 @@ from django.conf import settings
 from django.core.management.base import BaseCommand
 
 from adhoc.models import AdhocRace
-from main.acserver import ac_run, pause
+from main.acserver import pause
 
 
 logger = logging.getLogger(__name__)
@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
 
     proc = None
-    race = None
+    adhocrace = None
     overrides = None
 
     def __init__(self, *args, **kwargs):
@@ -35,14 +35,14 @@ class Command(BaseCommand):
             if not self.setup_race():
                 pause()
                 continue
-            self.race.run()
-            result_available = self.race.teardown()
-            if not result_available:
-                self.race.delete()  # no need to save an empty session.
+            self.adhocrace.run()
+            have_result = self.adhocrace.teardown()
+            if not have_result:
+                self.adhocrace.delete()  # no need to save an empty session.
 
     def setup_race(self):
         if not AdhocRace.objects.filter(index__gt=0).count():
             return False
-        self.race = AdhocRace.objects.all().order_by('index')[0]
-        self.race.startup(self.overrides)
+        self.adhocrace = AdhocRace.objects.all().order_by('index')[0]
+        self.adhocrace.startup(self.overrides)
         return True
