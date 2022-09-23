@@ -26,18 +26,20 @@ class ServerConfig(CParser):
 
 class Driver:
     """A driver with their STEAM ID."""
-    def __init__(self, name='', steam_id=''):
+    def __init__(self, name='', steam_id='', car=None):
         self.name = name
         self.steam_id = steam_id
+        self.car = car
+
+    def __repr__(self):
+        return self.name
 
 
 class Car:
-    def __init__(self, carnumber, model, skin, guid, drivername, fixed_setup):
-        self.carnumber = carnumber
+    def __init__(self, carnumber, model, skin, fixed_setup):
+        self.carnumber = carnumber  # carnumber 0=fastest, 1=a bit slower, ...
         self.model = model
         self.skin = skin
-        self.guid = guid
-        self.drivername = drivername
         self.fixed_setup = fixed_setup
 
     def __repr__(self):
