@@ -19,18 +19,20 @@ def build_grid(drivers, max_clients):
 
     num_empty_groups = len(groups) - 1
     total_empty_slots = max_clients - len(drivers)
-    if not num_empty_groups:  # only one vehiclenumber in the race
+
+    # only one group
+    if not num_empty_groups:
         return groups.pop(0)
 
+    # multiple groups...
     empty_group_size, extra_spots = divmod(total_empty_slots, num_empty_groups)
     result = groups.pop(0)
-    first_time = True
     for group in groups:
-        if first_time:
-            result += [None] * (empty_group_size + extra_spots)
-            first_time = False
+        if extra_spots > 0:
+            result += [None] * (empty_group_size + 1)
+            extra_spots -= 1
         else:
-            result += [None] * empty_group_size
+            result += [None] * (empty_group_size)
         result += group
     return result
 
