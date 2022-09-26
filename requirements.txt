@@ -41,6 +41,7 @@ dask==2022.8.0
 debugpy==1.6.2
 decorator==5.1.1
 defusedxml==0.7.1
+demjson==2.2.4
 discord.py==0.16.12
 Django==4.1
 django-bootstrap-icons==0.8.1
