@@ -62,14 +62,15 @@ class Tierdrop:
         result = demjson.decode(resultfiles[-1].open().read())
         drivers = []
         for d in result['Result']:
-            car = next(c for c in self.cars if c.model == d['CarModel'])
-            drivers.append(Driver(d['DriverName'], d['DriverGuid'], car))
-        return drivers
+            if d['TotalTime'] > 1:
+                car = next(c for c in self.cars if c.model == d['CarModel'])
+                drivers.append(Driver(d['DriverName'], d['DriverGuid'], car))
+        self.drivers = drivers
 
     def advance_drivers(self):
         """better half of drivers get a slower car."""
         for d in self.drivers[:(len(self.drivers) - (len(self.drivers) // 2))]:
-            d.car = self.cars[d.car.index + 1]
+            d.car = self.cars[d.car.carindex + 1]
 
     def create_initial_entry_list_file(self):
         """since original entry_list.ini consists only of a few cars,
@@ -100,7 +101,7 @@ class Tierdrop:
         while (current_round < self.serversetup.rounds) and \
                 self.adhocrace.result_available:
             current_round += 1
-            self.drivers = self.get_current_drivers()
+            self.get_current_drivers()
             self.advance_drivers()
             self.create_entry_list_file()
-
+            ac_run()

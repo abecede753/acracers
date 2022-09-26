@@ -101,7 +101,7 @@ class BuildGridTest(TestCase):
         adhocrace = AdhocRace()
         td = Tierdrop(adhocrace)
         td.initialize()
-        td.create_initial_entry_list()
+        td.create_initial_entry_list_file()
 
         content = (rootdir / 'cfg' / 'entry_list.ini').open().read()
         assert '[CAR_1]' in content
@@ -109,5 +109,24 @@ class BuildGridTest(TestCase):
         assert '[CAR_24]' not in content
         assert 'lotus_2_eleven_gt4' in content
 
-
-
+    def test_second_grid(self):
+        resultsdir = self.init_acdirectory() / 'results'
+        resultsdir.mkdir(parents=True, exist_ok=True)
+        adhocrace = AdhocRace()
+        td = Tierdrop(adhocrace)
+        testfilesdir = pathlib.Path(__file__).parent / 'testfiles'
+        # pathlib.Path(__file__).parent / 'testfiles' / '1_RACE.json'
+        shutil.copyfile(testfilesdir / '1_RACE.json',
+                        resultsdir / '1_RACE.json')
+        td.initialize()
+        td.get_current_drivers()
+        assert [(x.name, x.car.model) for x in td.drivers] == \
+               [('u3', 'lotus_2_eleven_gt4'),
+                ('u2', 'lotus_2_eleven_gt4'),
+                ('u1', 'lotus_2_eleven_gt4')]
+        td.advance_drivers()
+        print("new", [(x.name, x.car.model) for x in td.drivers])
+        assert [(x.name, x.car.model) for x in td.drivers] == \
+               [('u3', 'lotus_exige_v6_cup'),
+                ('u2', 'lotus_exige_v6_cup'),
+                ('u1', 'lotus_2_eleven_gt4')]

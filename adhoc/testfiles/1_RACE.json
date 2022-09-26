@@ -27,8 +27,8 @@
                         "Restrictor": 0
                 },
                 {
-                        "DriverName": "u3",
-                        "DriverGuid": "9993",
+                        "DriverName": "u1",
+                        "DriverGuid": "9991",
                         "CarId": 2,
                         "CarModel": "lotus_2_eleven_gt4",
                         "BestLap": 103251,
@@ -47,7 +47,7 @@
                         "Restrictor": 0
                 },
                 {
-                        "DriverName": "u0",
+                        "DriverName": "u4",
                         "DriverGuid": "lotus_2_eleven_gt4",
                         "CarId": 10,
                         "CarModel": "lotus_2_eleven_gt4",
