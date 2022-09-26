@@ -51,6 +51,11 @@ class Tierdrop:
             os.path.join(self.sessioncfgdir, 'server_cfg.ini'),
             os.path.join(self.sessioncfgdir, 'entry_list.ini'))
         self.cars = self.serversetup.entry_list.distinct_cars
+        servername = self.serversetup.server_cfg.ini['SERVER']['NAME']
+        if 'ℹ' in servername:
+            part1, part2 = servername.split('ℹ')
+            servername = part1 + '{0}ℹ' + part2
+        self.servername = servername
 
     def get_current_drivers(self):
         """read results/RACE.json and create driverlist in order
@@ -92,16 +97,69 @@ class Tierdrop:
         with (self.sessioncfgdir / 'entry_list.ini').open('w') as f:
             cfg.write(f, space_around_delimiters=False)
 
+    def create_entry_list_file(self):
+        cfg = configparser.RawConfigParser()
+        cfg.optionxform = str
+        for index, driver in enumerate(self.drivers):
+            if driver is None:
+                cfg['CAR_{0}'.format(index)] = {
+                    'MODEL': self.cars[0].model,
+                    'SKIN': self.cars[0].skin,
+                    'SPECTATOR_MODE': '0',
+                    'DRIVERNAME': 'unused',
+                    'TEAM': '',
+                    'GUID': '0000000000',
+                    'BALLAST': '0',
+                    'RESTRICTOR': '0',
+                    'FIXED_SETUP': self.cars[0].fixed_setup}
+            else:
+                cfg['CAR_{0}'.format(index)] = {
+                    'MODEL': driver.car.model,
+                    'SKIN': driver.car.skin,
+                    'SPECTATOR_MODE': '0',
+                    'DRIVERNAME': driver.name,
+                    'TEAM': '',
+                    'GUID': driver.steam_id,
+                    'BALLAST': '0',
+                    'RESTRICTOR': '0',
+                    'FIXED_SETUP': driver.car.fixed_setup}
+
+        with (self.sessioncfgdir / 'entry_list.ini').open('w') as f:
+            cfg.write(f, space_around_delimiters=False)
+
+    def change_server_cfg_first_race(self):
+        self.serversetup.server_cfg.ini['SERVER']['NAME'] = \
+            self.servername.format(' ROUND 1 ')
+        self.serversetup.server_cfg.save()
+
+    def change_server_cfg_followup_races(self, roundnumber):
+        for sectionname in ('QUALIFY', 'BOOK', 'PRACTICE'):
+            self.serversetup.server_cfg.ini.remove_section(sectionname)
+        self.serversetup.server_cfg.ini['RACE']['WAIT_TIME'] = '120'
+        self.serversetup.server_cfg.ini['SERVER']['NAME'] = \
+            self.servername.format(' ROUND {0} '.format(roundnumber))
+        self.serversetup.server_cfg.ini['SERVER']['RACE_OVER_TIME'] = '60'
+        self.serversetup.server_cfg.ini['SERVER']['RESULT_SCREEN_TIME'] = '20'
+        self.serversetup.server_cfg.ini['SERVER']['PICKUP_MODE_ENABLED'] = '0'
+        self.serversetup.server_cfg.ini['SERVER']['LOCKED_ENTRY_LIST'] = '1'
+        self.serversetup.server_cfg.save()
+
     def run(self):
         """directory is prepared, all files are there etc."""
         self.initialize()
+        self.change_server_cfg_first_race()
         current_round = 0
-        self.create_initial_entry_list_file()
         ac_run()
         while (current_round < self.serversetup.rounds) and \
                 self.adhocrace.result_available:
             current_round += 1
             self.get_current_drivers()
             self.advance_drivers()
+            self.drivers = build_grid(
+                self.drivers, self.serversetup.server_cfg.max_clients)
             self.create_entry_list_file()
+            self.change_server_cfg_followup_races(current_round + 1)
+            # delete old results files
+            for jsonfile in (self.rootdir / 'results').glob('*json'):
+                jsonfile.unlink()
             ac_run()

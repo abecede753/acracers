@@ -30,14 +30,15 @@ class Command(BaseCommand):
             start_ts__isnull=False).delete()
 
     def handle(self, *args, **kwargs):
-        while not self.race_available:
-            pause()
-        self.adhocrace = AdhocRace.objects.all().order_by('index')[0]
-        self.adhocrace.startup(self.overrides)
-        self.adhocrace.run()
-        have_result = self.adhocrace.teardown()
-        if not have_result:
-            self.adhocrace.delete()  # no need to save an empty session.
+        while True:
+            while not self.race_available:
+                pause()
+            self.adhocrace = AdhocRace.objects.all().order_by('index')[0]
+            self.adhocrace.startup(self.overrides)
+            self.adhocrace.run()
+            have_result = self.adhocrace.teardown()
+            if not have_result:
+                self.adhocrace.delete()  # no need to save an empty session.
 
     @property
     def race_available(self):

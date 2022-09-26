@@ -44,7 +44,7 @@ class Car:
         self.carindex = carindex  # 0=fastest, 1=a bit slower, ...
         self.model = model
         self.skin = skin
-        self.fixed_setup = fixed_setup
+        self.fixed_setup = fixed_setup or ''
 
     def __repr__(self):
         return self.model

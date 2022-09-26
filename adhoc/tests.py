@@ -122,11 +122,11 @@ class BuildGridTest(TestCase):
         td.get_current_drivers()
         assert [(x.name, x.car.model) for x in td.drivers] == \
                [('u3', 'lotus_2_eleven_gt4'),
-                ('u2', 'lotus_2_eleven_gt4'),
+                ('abe', 'lotus_2_eleven_gt4'),
                 ('u1', 'lotus_2_eleven_gt4')]
         td.advance_drivers()
-        print("new", [(x.name, x.car.model) for x in td.drivers])
         assert [(x.name, x.car.model) for x in td.drivers] == \
                [('u3', 'lotus_exige_v6_cup'),
-                ('u2', 'lotus_exige_v6_cup'),
+                ('abe', 'lotus_exige_v6_cup'),
                 ('u1', 'lotus_2_eleven_gt4')]
+        pass
