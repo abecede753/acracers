@@ -148,6 +148,7 @@ class Tierdrop:
         """directory is prepared, all files are there etc."""
         self.initialize()
         self.change_server_cfg_first_race()
+        self.create_initial_entry_list_file()
         current_round = 0
         ac_run()
         while (current_round < self.serversetup.rounds) and \
