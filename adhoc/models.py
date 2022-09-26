@@ -10,7 +10,7 @@ from django.utils import timezone
 from adhoc.raceconfigs import ServerConfig, EntryList
 from main.acserver import ac_run
 from races.models import RaceSetup
-from races.tierdrop import Tierdrop
+from adhoc.tierdrop import Tierdrop
 
 
 def cleanup_AdhocRace_indices():

@@ -1,3 +1,4 @@
+import configparser
 import demjson
 import os
 import pathlib
@@ -13,9 +14,9 @@ def build_grid(drivers, max_clients):
        ordered by last race finishing position. cars must be the cars for the
        next race.
     """
-    # group by carnumber
-    vehiclenumbers = set(map(lambda driver: driver.car.carnumber, drivers))
-    groups = [[y for y in drivers if y.car.carnumber == vehiclenumber]
+    # group by carindex
+    vehiclenumbers = set(map(lambda driver: driver.car.carindex, drivers))
+    groups = [[y for y in drivers if y.car.carindex == vehiclenumber]
               for vehiclenumber in vehiclenumbers]
 
     num_empty_groups = len(groups) - 1
@@ -70,13 +71,36 @@ class Tierdrop:
         for d in self.drivers[:(len(self.drivers) - (len(self.drivers) // 2))]:
             d.car = self.cars[d.car.index + 1]
 
+    def create_initial_entry_list_file(self):
+        """since original entry_list.ini consists only of a few cars,
+        build the grid with fastest car."""
+        car = self.serversetup.entry_list.distinct_cars[0]  # ['CAR_0']
+        cfg = configparser.RawConfigParser()
+        cfg.optionxform = str
+        for index in range(self.serversetup.server_cfg.max_clients):
+            cfg['CAR_{0}'.format(index)] = {
+                'MODEL': car.model,
+                'SKIN': car.skin,
+                'SPECTATOR_MODE': '0',
+                'DRIVERNAME': '',
+                'TEAM': '',
+                'GUID': '',
+                'BALLAST': '0',
+                'RESTRICTOR': '0',
+                'FIXED_SETUP': car.fixed_setup}
+        with (self.sessioncfgdir / 'entry_list.ini').open('w') as f:
+            cfg.write(f, space_around_delimiters=False)
+
     def run(self):
         """directory is prepared, all files are there etc."""
         self.initialize()
         current_round = 0
-        raw_input("ACRUN")  # ac_run()
+        self.create_initial_entry_list_file()
+        ac_run()
         while (current_round < self.serversetup.rounds) and \
                 self.adhocrace.result_available:
             current_round += 1
             self.drivers = self.get_current_drivers()
             self.advance_drivers()
+            self.create_entry_list_file()
+

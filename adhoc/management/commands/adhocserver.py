@@ -1,5 +1,4 @@
 import logging
-import pathlib
 
 from django.conf import settings
 from django.core.management.base import BaseCommand
@@ -20,9 +19,9 @@ class Command(BaseCommand):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.overrides = {
-            'SERVER': {'HTTP_PORT': 8081,
-                       'TCP_PORT': 9001,
-                       'UDP_PORT': 9001
+            'SERVER': {'HTTP_PORT': settings.ACSERVERPORT,
+                       'TCP_PORT': settings.ACSERVERTCPPORT,
+                       'UDP_PORT': settings.ACSERVERUDPPORT
                        }
         }
         # remove any previously crashed session
@@ -31,18 +30,15 @@ class Command(BaseCommand):
             start_ts__isnull=False).delete()
 
     def handle(self, *args, **kwargs):
-        while True:
-            if not self.setup_race():
-                pause()
-                continue
-            self.adhocrace.run()
-            have_result = self.adhocrace.teardown()
-            if not have_result:
-                self.adhocrace.delete()  # no need to save an empty session.
-
-    def setup_race(self):
-        if not AdhocRace.objects.filter(index__gt=0).count():
-            return False
+        while not self.race_available:
+            pause()
         self.adhocrace = AdhocRace.objects.all().order_by('index')[0]
         self.adhocrace.startup(self.overrides)
-        return True
+        self.adhocrace.run()
+        have_result = self.adhocrace.teardown()
+        if not have_result:
+            self.adhocrace.delete()  # no need to save an empty session.
+
+    @property
+    def race_available(self):
+        return AdhocRace.objects.filter(index__gt=0).count()

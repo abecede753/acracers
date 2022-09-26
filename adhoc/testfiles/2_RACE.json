@@ -1,0 +1,62 @@
+{
+        "TrackName": "doningtonpark2018",
+        "TrackConfig": "national",
+        "Type": "RACE",
+        "DurationSecs": 0,
+        "RaceLaps": 0,
+        "Cars": [],
+        "Result": [
+                {
+                        "DriverName": "u3",
+                        "DriverGuid": "9993",
+                        "CarId": 1,
+                        "CarModel": "lotus_2_eleven_gt4",
+                        "BestLap": 85369,
+                        "TotalTime": 902391,
+                        "BallastKG": 0,
+                        "Restrictor": 0
+                },
+                {
+                        "DriverName": "u2",
+                        "DriverGuid": "9992",
+                        "CarId": 0,
+                        "CarModel": "lotus_2_eleven_gt4",
+                        "BestLap": 103151,
+                        "TotalTime": 916992,
+                        "BallastKG": 0,
+                        "Restrictor": 0
+                },
+                {
+                        "DriverName": "u3",
+                        "DriverGuid": "9993",
+                        "CarId": 2,
+                        "CarModel": "lotus_2_eleven_gt4",
+                        "BestLap": 103251,
+                        "TotalTime": 917992,
+                        "BallastKG": 0,
+                        "Restrictor": 0
+                },
+                {
+                        "DriverName": "u0",
+                        "DriverGuid": "9990",
+                        "CarId": 3,
+                        "CarModel": "lotus_2_eleven_gt4",
+                        "BestLap": 999999999,
+                        "TotalTime": 0,
+                        "BallastKG": 0,
+                        "Restrictor": 0
+                },
+                {
+                        "DriverName": "u0",
+                        "DriverGuid": "lotus_2_eleven_gt4",
+                        "CarId": 10,
+                        "CarModel": "lotus_2_eleven_gt4",
+                        "BestLap": 999999999,
+                        "TotalTime": 0,
+                        "BallastKG": 0,
+                        "Restrictor": 0
+                }
+        ],
+        "Laps": [],
+        "Events": [] 
+}

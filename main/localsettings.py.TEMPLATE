@@ -36,6 +36,8 @@ ACSERVERWRAPPERROOT = '/some/dir/acracers/acserverwrapper'
 ACSERVERWRAPPERIP = "127.0.0.1"
 ACSERVERWRAPPERPORT = 8991
 ACSERVERPORT = 8081
+ACSERVERTCPPORT = 9001
+ACSERVERUDPPORT = 9001
 
 # executable filename of "acServer" incl. path.
 ACSERVEREXE = '/some/dir/acracers/kunos/acServer'

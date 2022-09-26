@@ -22,6 +22,9 @@ class CParser:
 
 class ServerConfig(CParser):
     """AC config in cfg/server_cfg.ini in a pythonic format."""
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.max_clients = int(self.ini['SERVER']['MAX_CLIENTS'])
 
 
 class Driver:
@@ -54,8 +57,11 @@ class EntryList(CParser):
         super().__init__(*args, **kwargs)
         self.distinct_cars = self._get_cars()
 
+    def __iter__(self):
+        return iter(self.ini)
+
     def _get_cars(self):
-        """get the different car models. (equals number of rounds)"""
+        """get the different available car models. (equals number of rounds)"""
         the_cars = []
         carindex = 0
         for groupname in self.ini.keys():
@@ -68,6 +74,9 @@ class EntryList(CParser):
                     ))
                 carindex += 1
         return the_cars
+
+    def write(self, filepath, drivers):
+        """write entry_list.ini with the current drivers."""
 
 
 class ServerSetup:
@@ -84,6 +93,10 @@ class ServerSetup:
     @property
     def rounds(self):
         return len(self.entry_list.distinct_cars)
+
+    @property
+    def gridslots(self):
+        return len(self.server_cfg.distinct_cars)
 
     def write(self, race_number):
         """overwrite server_cfg.ini and entry_list.ini
