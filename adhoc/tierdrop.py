@@ -28,6 +28,7 @@ def build_grid(drivers, max_clients):
 
     # multiple groups...
     empty_group_size, extra_spots = divmod(total_empty_slots, num_empty_groups)
+    groups.reverse()
     result = groups.pop(0)
     for group in groups:
         if extra_spots > 0:
@@ -129,7 +130,9 @@ class Tierdrop:
 
     def change_server_cfg_first_race(self):
         self.serversetup.server_cfg.ini['SERVER']['NAME'] = \
-            self.servername.format(' ROUND 1 ')
+            self.servername.format(
+                ' ROUND 1/{0} '.format(self.serversetup.rounds))
+        self.serversetup.server_cfg.ini['RACE']['WAIT_TIME'] = '30'
         self.serversetup.server_cfg.save()
 
     def change_server_cfg_followup_races(self, roundnumber):
@@ -137,7 +140,9 @@ class Tierdrop:
             self.serversetup.server_cfg.ini.remove_section(sectionname)
         self.serversetup.server_cfg.ini['RACE']['WAIT_TIME'] = '120'
         self.serversetup.server_cfg.ini['SERVER']['NAME'] = \
-            self.servername.format(' ROUND {0} '.format(roundnumber))
+            self.servername.format(
+                ' ROUND {0}/{1} '.format(roundnumber,
+                                         self.serversetup.rounds))
         self.serversetup.server_cfg.ini['SERVER']['RACE_OVER_TIME'] = '60'
         self.serversetup.server_cfg.ini['SERVER']['RESULT_SCREEN_TIME'] = '20'
         self.serversetup.server_cfg.ini['SERVER']['PICKUP_MODE_ENABLED'] = '0'

@@ -27,7 +27,7 @@ class BuildGridTest(TestCase):
         grid = build_grid(drivers, 10)
         self.assertEqual(
             str(grid),
-            '[a, b, c, None, None, None, None, None, None, d]'
+            '[d, None, None, None, None, None, None, a, b, c]'
         )
 
         # 6 drivers in 3 groups
@@ -36,11 +36,11 @@ class BuildGridTest(TestCase):
         grid = build_grid(drivers, 10)
         self.assertEqual(
             str(grid),
-            '[a, b, c, None, None, d, None, None, e, f]')
+            '[e, f, None, None, d, None, None, a, b, c]')
         grid = build_grid(drivers, 11)
         self.assertEqual(
             str(grid),
-            '[a, b, c, None, None, None, d, None, None, e, f]')
+            '[e, f, None, None, None, d, None, None, a, b, c]')
 
         # add another driver for group "audi" after other groups
         # and see whether they get pushed into their group correctly
@@ -48,15 +48,15 @@ class BuildGridTest(TestCase):
         grid = build_grid(drivers, 11)
         self.assertEqual(
             str(grid),
-            '[a, b, c, g, None, None, d, None, None, e, f]')
+            '[e, f, None, None, d, None, None, a, b, c, g]')
         grid = build_grid(drivers, 7)
         self.assertEqual(
             str(grid),
-            '[a, b, c, g, d, e, f]')
+            '[e, f, d, a, b, c, g]')
         grid = build_grid(drivers, 8)
         self.assertEqual(
             str(grid),
-            '[a, b, c, g, None, d, e, f]')
+            '[e, f, None, d, a, b, c, g]')
 
         # 10 drivers in 5 groups...
         drivers += Driver('h', '0008', Car(3, 'datsun', 'yellow', 1)),
@@ -64,23 +64,13 @@ class BuildGridTest(TestCase):
         drivers += Driver('j', '0010', Car(4, 'equus', 'red', 1)),
         lengrid = 20
         desired = [
-            (10, '[a, b, c, g, d, e, f, h, i, j]'),
-            (11, '[a, b, c, g, None, d, e, f, h, i, j]'),
-            (12, '[a, b, c, g, None, d, None, e, f, h, i, j]'),
-            (13, '[a, b, c, g, None, d, None, e, f, None, h, i, j]'),
-            (14, '[a, b, c, g, None, d, None, e, f, None, h, i, None, j]'),
-            (15, '[a, b, c, g, None, None, d, None, e, f, None, h, i, None, '
-             'j]'),
-            (16, '[a, b, c, g, None, None, d, None, None, e, f, None, h, i, '
-             'None, j]'),
-            (17, '[a, b, c, g, None, None, d, None, None, e, f, None, None, '
-             'h, i, None, j]'),
-            (18, '[a, b, c, g, None, None, d, None, None, e, f, None, None, '
-             'h, i, None, None, j]'),
-            (19, '[a, b, c, g, None, None, None, d, None, None, e, f, None, '
-             'None, h, i, None, None, j]')]
+            (10, '[j, h, i, e, f, d, a, b, c, g]'),
+            (11, '[j, None, h, i, e, f, d, a, b, c, g]'),
+            (15, '[j, None, None, h, i, None, e, f, None, d, None, a, b, '
+             'c, g]'),
+        ]
 
-        for idx, lengrid in enumerate(range(10, 20)):
+        for idx, lengrid in enumerate([10, 11, 15]):
             grid = build_grid(drivers, lengrid)
             self.assertEqual(len(grid), desired[idx][0])
         self.assertEqual(str(grid), desired[idx][1])
@@ -95,7 +85,7 @@ class BuildGridTest(TestCase):
         for fname in ('entry_list.ini', 'server_cfg.ini'):
             shutil.copyfile(testfilesdir / fname, sessioncfgdir / fname)
         return sessionrootdir
-    
+
     def test_initial_grid(self):
         rootdir = self.init_acdirectory()
         adhocrace = AdhocRace()
@@ -115,7 +105,6 @@ class BuildGridTest(TestCase):
         adhocrace = AdhocRace()
         td = Tierdrop(adhocrace)
         testfilesdir = pathlib.Path(__file__).parent / 'testfiles'
-        # pathlib.Path(__file__).parent / 'testfiles' / '1_RACE.json'
         shutil.copyfile(testfilesdir / '1_RACE.json',
                         resultsdir / '1_RACE.json')
         td.initialize()
