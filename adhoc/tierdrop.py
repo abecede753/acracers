@@ -4,6 +4,7 @@ import os
 import pathlib
 
 from django.conf import settings
+from django.template.loader import get_template
 
 from adhoc.raceconfigs import ServerSetup, Driver
 from main.acserver import ac_run
@@ -149,23 +150,35 @@ class Tierdrop:
         self.serversetup.server_cfg.ini['SERVER']['LOCKED_ENTRY_LIST'] = '1'
         self.serversetup.server_cfg.save()
 
+    def set_welcome_msg(self):
+        tmplname = 'others'
+        if self.current_round == 0:
+            tmplname = 'first'
+        if self.current_round == self.serversetup.rounds - 1:
+            tmplname = 'last'
+        tmpl = get_template('adhod/welcomes/{0}.txt'.format(tmplname))
+        (self.rootdir / 'welcome.txt').write_text(tmpl.render())
+
     def run(self):
         """directory is prepared, all files are there etc."""
         self.initialize()
         self.change_server_cfg_first_race()
         self.create_initial_entry_list_file()
-        current_round = 0
+        self.current_round = 0
+        self.set_welcome_msg()
         ac_run()
-        while (current_round < self.serversetup.rounds) and \
+        while (self.current_round < self.serversetup.rounds) and \
                 self.adhocrace.result_available:
-            current_round += 1
+            self.current_round += 1
             self.get_current_drivers()
             self.advance_drivers()
             self.drivers = build_grid(
                 self.drivers, self.serversetup.server_cfg.max_clients)
             self.create_entry_list_file()
-            self.change_server_cfg_followup_races(current_round + 1)
+            self.change_server_cfg_followup_races(
+                self.current_round + 1)
             # delete old results files
             for jsonfile in (self.rootdir / 'results').glob('*json'):
                 jsonfile.unlink()
+            self.set_welcome_msg()
             ac_run()

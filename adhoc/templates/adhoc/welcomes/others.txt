@@ -1,0 +1,13 @@
+{% include "main/welcomes/header.txt" %}
+TIERDROP PLAYLIST - ROUND {{ round }} OF {{ rounds }}
+
+Stay in your position until the lights go green!
+
+After the race close the game, wait a few seconds until
+the server advances to the next session.
+
+If you finish in the faster half of drivers, you will
+be put into a slower car for the next race.
+The fastest driver in the slowest car after round {{ rounds }}
+will win the playlist.
+.

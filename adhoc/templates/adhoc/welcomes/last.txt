@@ -1,0 +1,7 @@
+{% include "main/welcomes/header.txt" %}
+TIERDROP PLAYLIST - LAST ROUND
+
+Stay in your position until the lights go green!
+
+The fastest driver in the slowest car wins the playlist!
+.
