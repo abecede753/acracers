@@ -157,7 +157,9 @@ class Tierdrop:
         if self.current_round == self.serversetup.rounds - 1:
             tmplname = 'last'
         tmpl = get_template('adhoc/welcomes/{0}.txt'.format(tmplname))
-        (self.rootdir / 'welcome.txt').write_text(tmpl.render())
+        (self.rootdir / 'welcome.txt').write_text(
+            tmpl.render({'round': self.current_round + 1,
+                         'rounds': self.serversetup.rounds}))
 
     def run(self):
         """directory is prepared, all files are there etc."""
