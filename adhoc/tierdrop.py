@@ -156,7 +156,7 @@ class Tierdrop:
             tmplname = 'first'
         if self.current_round == self.serversetup.rounds - 1:
             tmplname = 'last'
-        tmpl = get_template('adhod/welcomes/{0}.txt'.format(tmplname))
+        tmpl = get_template('adhoc/welcomes/{0}.txt'.format(tmplname))
         (self.rootdir / 'welcome.txt').write_text(tmpl.render())
 
     def run(self):
