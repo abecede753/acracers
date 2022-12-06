@@ -9,6 +9,9 @@ from django.template.loader import get_template
 from adhoc.raceconfigs import ServerSetup, Driver
 from main.acserver import ac_run
 
+# no more than this number of empty grid spots on start between each group
+MAX_EMPTY_SPOTS = 6
+
 
 def build_grid(drivers, max_clients):
     """drivers is a list in this format:
@@ -33,10 +36,10 @@ def build_grid(drivers, max_clients):
     result = groups.pop(0)
     for group in groups:
         if extra_spots > 0:
-            result += [None] * (empty_group_size + 1)
+            result += [None] * (min(empty_group_size + 1, MAX_EMPTY_SPOTS))
             extra_spots -= 1
         else:
-            result += [None] * (empty_group_size)
+            result += [None] * (min(empty_group_size, MAX_EMPTY_SPOTS))
         result += group
     return result
 
