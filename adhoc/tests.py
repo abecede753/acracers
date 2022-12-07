@@ -24,7 +24,15 @@ class BuildGridTest(TestCase):
 
         # 4 drivers in 2 groups
         drivers += [Driver('d', '0004', Car(1, 'bmw', 'black', 1))]
-        grid = build_grid(drivers, 10)
+        grid = build_grid(drivers, 6)
+        self.assertEqual(
+            str(grid),
+            '[d, None, None, a, b, c]'
+        )
+
+        # also 4 drivers but larger grid available that is shortened
+        # by the MAX_EMPTY_SPOTS constant in tierdrop.py
+        grid = build_grid(drivers, 20)
         self.assertEqual(
             str(grid),
             '[d, None, None, None, None, None, None, a, b, c]'
